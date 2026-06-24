@@ -1,0 +1,115 @@
+---
+name: Publish to GitHub Packages (Fork)
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - '2026.5.3-modified-*'
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  publish-npm:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        package:
+          - packages/tsconfig
+          - packages/eslint-config
+          - packages/prettier-config
+          - packages/docusaurus-config
+          - packages/logger-js
+          - packages/esbuild-plugin-live-reload
+          - packages/client-ts
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@Aryma-f4'
+
+      - name: Rename and Publish
+        working-directory: ${{ matrix.package }}
+        run: |
+          # Rename package to match GitHub owner scope
+          sed -i 's/"name": "@goauthentik\//"name": "@Aryma-f4\//g' package.json
+          
+          # Install dependencies (using corepack if available or npm)
+          if [ -f "package-lock.json" ]; then
+            npm ci
+          else
+            npm install
+          fi
+          
+          # Build if there is a build script
+          if npm run | grep -q "build"; then
+            npm run build
+          fi
+          
+          # Publish to GitHub Packages
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  publish-python:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        package:
+          - packages/ak-guardian
+          - packages/django-channels-postgres
+          - packages/django-dramatiq-postgres
+          - packages/django-postgres-cache
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install build tools
+        run: pip install build twine
+
+      - name: Rename and Build
+        working-directory: ${{ matrix.package }}
+        run: |
+          # Note: Python packages on GPR use a different mechanism (often just via PyPI or simple indexes)
+          # GitHub Packages for Python is still in Beta/Limited.
+          # We'll build the wheel at least.
+          python -m build
+
+      - name: Publish to GitHub Packages (Simplified)
+        working-directory: ${{ matrix.package }}
+        run: |
+          # GitHub Packages for Python uses the same endpoint as others but with specific auth
+          # For now, we'll just demonstrate the build. 
+          # To actually publish to GPR as Python, one would use twine with GITHUB_TOKEN
+          # twine upload --repository-url https://maven.pkg.github.com/Aryma-f4/authentik-with-import dist/*
+          echo "Built package in ${{ matrix.package }}"
+        env:
+          TWINE_USERNAME: ${{ github.actor }}
+          TWINE_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+
+  publish-rust:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        package:
+          - packages/ak-axum
+          - packages/ak-common
+          - packages/client-rust
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Build
+        working-directory: ${{ matrix.package }}
+        run: cargo build --release
