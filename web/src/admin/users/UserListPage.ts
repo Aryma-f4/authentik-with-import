@@ -2,6 +2,7 @@ import "#admin/reports/ExportButton";
 import "#admin/users/UserActiveForm";
 import "#admin/users/ak-user-wizard";
 import "#admin/users/UserBulkRevokeSessionsForm";
+import "#admin/users/UserCSVImportForm";
 import "#admin/users/UserForm";
 import "#admin/users/UserImpersonateForm";
 import "#admin/users/UserPasswordForm";
@@ -399,6 +400,11 @@ export class UserListPage extends WithLicenseSummary(
                     .createExport=${this.createExport}
                     .exportParams=${this.buildExportParams}
                 ></ak-reports-export-button> `,
+                html`<ak-user-csv-import>
+                    <button slot="trigger" class="pf-c-button pf-m-secondary" type="button">
+                        ${msg("Import CSV")}
+                    </button>
+                </ak-user-csv-import> `,
             ];
         });
     }
