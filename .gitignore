@@ -228,6 +228,10 @@ data/
 
 # Local Netlify folder
 .netlify
+
+# Local git worktrees
+.worktrees/
+
 .ruff_cache
 source_docs/
 
