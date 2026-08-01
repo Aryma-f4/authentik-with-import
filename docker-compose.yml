@@ -1,0 +1,63 @@
+services:
+  redis:
+    image: docker.io/library/redis:7-alpine
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli ping | grep PONG || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    networks:
+      - authentik
+
+  server:
+    image: ${AUTHENTIK_IMAGE:-ghcr.io/aryma-f4/server}:${AUTHENTIK_TAG:-poltekkes-v1}
+    restart: unless-stopped
+    command: server
+    ports:
+      - "9000:9000"
+      - "9443:9443"
+    environment:
+      AUTHENTIK_REDIS__HOST: redis
+      AUTHENTIK_REDIS__PORT: 6379
+      AUTHENTIK_POSTGRESQL__HOST: 169.58.58.149
+      AUTHENTIK_POSTGRESQL__PORT: 54322
+      AUTHENTIK_POSTGRESQL__NAME: polkesma
+      AUTHENTIK_POSTGRESQL__USER: postgres
+      AUTHENTIK_POSTGRESQL__PASSWORD: ${AUTHENTIK_POSTGRESQL__PASSWORD:?required}
+      AUTHENTIK_POSTGRESQL__DEFAULT_SCHEMA: sso
+      AUTHENTIK_POSTGRESQL__SSLMODE: disable
+      AUTHENTIK_SECRET_KEY: ${AUTHENTIK_SECRET_KEY:?required}
+      AUTHENTIK_BOOTSTRAP_EMAIL: ${AUTHENTIK_BOOTSTRAP_EMAIL:-admin@polkesma.local}
+      AUTHENTIK_BOOTSTRAP_USERNAME: ${AUTHENTIK_BOOTSTRAP_USERNAME:-admin}
+      AUTHENTIK_BOOTSTRAP_PASSWORD: ${AUTHENTIK_BOOTSTRAP_PASSWORD:-changeme123}
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - authentik
+
+  worker:
+    image: ${AUTHENTIK_IMAGE:-ghcr.io/aryma-f4/server}:${AUTHENTIK_TAG:-poltekkes-v1}
+    restart: unless-stopped
+    command: worker
+    environment:
+      AUTHENTIK_REDIS__HOST: redis
+      AUTHENTIK_REDIS__PORT: 6379
+      AUTHENTIK_POSTGRESQL__HOST: 169.58.58.149
+      AUTHENTIK_POSTGRESQL__PORT: 54322
+      AUTHENTIK_POSTGRESQL__NAME: polkesma
+      AUTHENTIK_POSTGRESQL__USER: postgres
+      AUTHENTIK_POSTGRESQL__PASSWORD: ${AUTHENTIK_POSTGRESQL__PASSWORD:?required}
+      AUTHENTIK_POSTGRESQL__DEFAULT_SCHEMA: sso
+      AUTHENTIK_POSTGRESQL__SSLMODE: disable
+      AUTHENTIK_SECRET_KEY: ${AUTHENTIK_SECRET_KEY:?required}
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - authentik
+
+networks:
+  authentik:
+    driver: bridge
