@@ -21,20 +21,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
-        
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-        
+
+      - name: Set lowercase owner
+        run: echo "LOWER_OWNER=${GITHUB_REPOSITORY_OWNER,,}" >> "$GITHUB_ENV"
+
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
-          username: ${{ github.repository_owner }}
+          username: ${{ env.LOWER_OWNER }}
           password: ${{ secrets.GITHUB_TOKEN }}
-          
+
       - name: Build and Push
         uses: docker/build-push-action@v5
         with:
@@ -43,8 +46,8 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/server:${{ github.event.inputs.tag }}
-            ghcr.io/${{ github.repository_owner }}/server:latest
+            ghcr.io/${{ env.LOWER_OWNER }}/server:${{ github.event.inputs.tag }}
+            ghcr.io/${{ env.LOWER_OWNER }}/server:latest
           build-args: |
             GIT_BUILD_HASH=${{ github.sha }}
           cache-from: type=gha
@@ -63,20 +66,23 @@ jobs:
           - rac
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
-        
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-        
+
+      - name: Set lowercase owner
+        run: echo "LOWER_OWNER=${GITHUB_REPOSITORY_OWNER,,}" >> "$GITHUB_ENV"
+
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
-          username: ${{ github.repository_owner }}
+          username: ${{ env.LOWER_OWNER }}
           password: ${{ secrets.GITHUB_TOKEN }}
-          
+
       - name: Build and Push
         uses: docker/build-push-action@v5
         with:
@@ -85,8 +91,8 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/outpost-${{ matrix.type }}:${{ github.event.inputs.tag }}
-            ghcr.io/${{ github.repository_owner }}/outpost-${{ matrix.type }}:latest
+            ghcr.io/${{ env.LOWER_OWNER }}/outpost-${{ matrix.type }}:${{ github.event.inputs.tag }}
+            ghcr.io/${{ env.LOWER_OWNER }}/outpost-${{ matrix.type }}:latest
           build-args: |
             GIT_BUILD_HASH=${{ github.sha }}
           cache-from: type=gha
@@ -97,20 +103,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
-        
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-        
+
+      - name: Set lowercase owner
+        run: echo "LOWER_OWNER=${GITHUB_REPOSITORY_OWNER,,}" >> "$GITHUB_ENV"
+
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
-          username: ${{ github.repository_owner }}
+          username: ${{ env.LOWER_OWNER }}
           password: ${{ secrets.GITHUB_TOKEN }}
-          
+
       - name: Build and Push
         uses: docker/build-push-action@v5
         with:
@@ -119,7 +128,9 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/website:${{ github.event.inputs.tag }}
-            ghcr.io/${{ github.repository_owner }}/website:latest
+            ghcr.io/${{ env.LOWER_OWNER }}/website:${{ github.event.inputs.tag }}
+            ghcr.io/${{ env.LOWER_OWNER }}/website:latest
+          build-args: |
+            GIT_BUILD_HASH=${{ github.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
