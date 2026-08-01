@@ -23,17 +23,14 @@ const assets = [
         path.dirname(EntryPoint.StandaloneLoading.out),
     ],
     [path.resolve(PackageRoot, "src", "assets", "images"), "./assets/images"],
+    [path.resolve(PackageRoot, "src", "assets", "brand", "logo.png"), "./assets/icons/icon.png"],
+    [path.resolve(PackageRoot, "src", "assets", "brand", "logo.svg"), "./assets/icons/icon_left_brand.svg"],
     [require.resolve("@goauthentik/brand-assets/brand.png"), "./assets/icons/brand.png"],
     [require.resolve("@goauthentik/brand-assets/brand.svg"), "./assets/icons/brand.svg"],
-    [require.resolve("@goauthentik/brand-assets/icon.png"), "./assets/icons/icon.png"],
     [require.resolve("@goauthentik/brand-assets/icon.svg"), "./assets/icons/icon.svg"],
     [
         require.resolve("@goauthentik/brand-assets/icon_left_brand.png"),
         "./assets/icons/icon_left_brand.png",
-    ],
-    [
-        require.resolve("@goauthentik/brand-assets/icon_left_brand.svg"),
-        "./assets/icons/icon_left_brand.svg",
     ],
     [
         require.resolve("@goauthentik/brand-assets/icon_pride_lgbt.png"),
