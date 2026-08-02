@@ -11,7 +11,7 @@ import { PasswordManagerPrefill } from "#flow/stages/identification/Identificati
 import { PasswordChallenge, PasswordChallengeResponseRequest } from "@goauthentik/api";
 
 import { msg } from "@lit/localize";
-import { CSSResult, html, TemplateResult } from "lit";
+import { CSSResult, html, PropertyValues, TemplateResult } from "lit";
 import { customElement } from "lit/decorators.js";
 
 import PFButton from "@patternfly/patternfly/components/Button/button.css";
@@ -25,13 +25,47 @@ import PFTitle from "@patternfly/patternfly/components/Title/title.css";
 export class PasswordStage extends BaseStage<PasswordChallenge, PasswordChallengeResponseRequest> {
     static styles: CSSResult[] = [PFLogin, PFInputGroup, PFForm, PFFormControl, PFButton, PFTitle];
 
+    #autoSubmitted = false;
+
+    get #willAutoSubmit(): boolean {
+        if (this.#autoSubmitted) return false;
+
+        const hasErrors =
+            this.challenge?.responseErrors?.password ||
+            this.challenge?.responseErrors?.non_field_errors;
+
+        return !!PasswordManagerPrefill.password && !hasErrors;
+    }
+
     #errors(field: string): ErrorProp[] | undefined {
         const errors = this.challenge?.responseErrors?.[field];
 
         return errors;
     }
 
+    public override firstUpdated(changedProperties: PropertyValues): void {
+        super.firstUpdated(changedProperties);
+
+        if (this.#willAutoSubmit) {
+            this.#autoSubmitted = true;
+
+            // The password was captured on the identification stage. Auto-submit it
+            // directly instead of reading the (unrendered) form's FormData, which would
+            // be empty and fail validation with "This field is required".
+            const password = PasswordManagerPrefill.password;
+
+            this.updateComplete.then(() => this.submitForm(undefined, { password }));
+        }
+    }
+
     render(): TemplateResult {
+        // The password was already captured on the identification stage and will be
+        // auto-submitted immediately. Render a loading card instead of the form so the
+        // user never sees a flash of a password field between stages.
+        if (this.#willAutoSubmit) {
+            return html`<ak-flow-card .challenge=${this.challenge} loading></ak-flow-card>`;
+        }
+
         return html`<ak-flow-card .challenge=${this.challenge}>
             <form class="pf-c-form" @submit=${this.submitForm}>
                 ${FlowUserDetails({ challenge: this.challenge })}

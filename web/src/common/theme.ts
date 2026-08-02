@@ -291,10 +291,33 @@ export const applyDocumentTheme = ((
 }) satisfies UIThemeListener;
 
 /**
+ * The `localStorage` key used to persist the user's explicit theme choice.
+ *
+ * This must match the key read by the theme bootstrap script in
+ * `authentik/core/templates/base/theme.html` so the choice survives a reload
+ * on every interface (flow, user, and admin).
+ */
+export const ThemeStorageKey = "theme";
+
+/**
+ * Persists the given theme choice to `localStorage` so it survives reloads
+ * instead of falling back to the system color scheme.
+ *
+ * @param theme The theme choice to persist.
+ */
+export function persistThemeChoice(theme: ResolvedUITheme): void {
+    try {
+        window.localStorage?.setItem(ThemeStorageKey, theme);
+    } catch {
+        // localStorage can be unavailable (e.g. sandboxed contexts).
+    }
+}
+
+/**
  * Applies the given theme choice to the document element.
  *
  * @param hint The theme choice hint to apply.
- * @param documentElement The document element to apply the theme choice to.
+ * @param doc The document to apply the theme choice to.
  *
  * @remarks
  * There are a few scenarios that this function covers:
@@ -307,12 +330,19 @@ export const applyDocumentTheme = ((
  *
  * - The developer tools overriding the system color scheme
  * - The attribute is manually changed to an invalid value
+ *
+ * Explicit (`"light"` / `"dark"`) choices are persisted to `localStorage` so the
+ * theme survives a reload on every interface instead of tracking the OS setting.
  */
 export function applyThemeChoice(hint?: CSSColorSchemeValue, doc: Document = document): void {
     const themeChoice = !hint || hint === "auto" ? "auto" : resolveUITheme(hint);
 
     doc.documentElement.dataset.themeChoice = themeChoice;
     document.documentElement.classList.toggle("pf-theme-dark", themeChoice === "dark");
+
+    if (themeChoice !== "auto") {
+        persistThemeChoice(themeChoice);
+    }
 }
 
 /**

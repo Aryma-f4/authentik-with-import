@@ -40,6 +40,7 @@ export const LocaleLoaderRecord: Record<TargetLanguageTag, () => Promise<LocaleM
     "es-ES": () => import("#locales/es-ES"),
     "fi-FI": () => import("#locales/fi-FI"),
     "fr-FR": () => import("#locales/fr-FR"),
+    "id": () => import("#locales/id"),
     "it-IT": () => import("#locales/it-IT"),
     "ja-JP": () => import("#locales/ja-JP"),
     "ko-KR": () => import("#locales/ko-KR"),

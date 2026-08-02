@@ -92,7 +92,19 @@ export class SessionContextController extends ReactiveContextController<APIResul
         const nextUIConfig = createUIConfig(settings);
         this.uiConfigContext.setValue(nextUIConfig);
         this.host.uiConfig = nextUIConfig;
-        const colorScheme = formatColorScheme(nextUIConfig.theme.base);
+        let colorScheme = formatColorScheme(nextUIConfig.theme.base);
+
+        if (colorScheme === "auto") {
+            // Don't track the system color scheme. Prefer the theme choice that
+            // was already applied at page load (persisted in localStorage by the
+            // theme bootstrap script), so a refresh keeps the last selected theme
+            // on every interface.
+            const { themeChoice } = this.host.ownerDocument.documentElement.dataset;
+
+            if (themeChoice === "dark" || themeChoice === "light") {
+                colorScheme = themeChoice;
+            }
+        }
 
         applyThemeChoice(colorScheme, this.host.ownerDocument);
 

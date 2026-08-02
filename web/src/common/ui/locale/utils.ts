@@ -126,29 +126,35 @@ export function findSupportedLocale(candidates: string[]): TargetLanguageTag | n
 const sessionLocaleKey = "authentik:locale";
 
 /**
- * Persist the given locale code to sessionStorage.
+ * Persist the given locale code to localStorage.
+ *
+ * @remarks
+ *
+ * localStorage is used instead of sessionStorage so that the chosen locale
+ * survives a logout and a browser restart — i.e. the login page (and admin)
+ * come back with the same language the user last selected.
  */
 export function setSessionLocale(languageTag: TargetLanguageTag | null): void {
     try {
         if (!languageTag || languageTag === SourceLanguageTag) {
-            sessionStorage?.removeItem?.(sessionLocaleKey);
+            localStorage?.removeItem?.(sessionLocaleKey);
             return;
         }
 
-        sessionStorage?.setItem?.(sessionLocaleKey, languageTag);
+        localStorage?.setItem?.(sessionLocaleKey, languageTag);
     } catch (error) {
-        console.debug("authentik/locale: Unable to persist locale to sessionStorage", error);
+        console.debug("authentik/locale: Unable to persist locale to localStorage", error);
     }
 }
 
 /**
- * Retrieve the persisted locale code from sessionStorage.
+ * Retrieve the persisted locale code from localStorage.
  */
 export function getSessionLocale(): string | null {
     try {
-        return sessionStorage?.getItem?.(sessionLocaleKey) || null;
+        return localStorage?.getItem?.(sessionLocaleKey) || null;
     } catch (error) {
-        console.debug("authentik/locale: Unable to read locale from sessionStorage", error);
+        console.debug("authentik/locale: Unable to read locale from localStorage", error);
     }
 
     return null;

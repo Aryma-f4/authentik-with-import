@@ -7977,10 +7977,6 @@ Las vinculaciones a grupos/usuarios se verifican en función del usuario del eve
 <trans-unit id="sa4be93eb7f4e51e3">
   <source>Site links</source>
 </trans-unit>
-<trans-unit id="s6fe64b4625517333">
-  <source>Powered by authentik</source>
-  <target>Desarrollado por authentik</target>
-</trans-unit>
 <trans-unit id="sd766cdc29b25ff95">
   <source>Authenticating with Apple...</source>
   <target>Autenticando con Apple...</target>
@@ -8099,10 +8095,6 @@ Las vinculaciones a grupos/usuarios se verifican en función del usuario del eve
   <source>Verifying...</source>
   <target>Verificando...</target>
 </trans-unit>
-<trans-unit id="s1c336c2d6cef77b3">
-  <source>Remember me on this device</source>
-  <target>Recuérdame en este dispositivo</target>
-</trans-unit>
 <trans-unit id="seb6ab868740e4e36">
   <source>Continue with <x id="0" equiv-text="${name}"/></source>
 </trans-unit>
@@ -8120,10 +8112,6 @@ Las vinculaciones a grupos/usuarios se verifican en función del usuario del eve
 </trans-unit>
 <trans-unit id="s05a941e4b4bfca9f">
   <source>Additional actions</source>
-</trans-unit>
-<trans-unit id="s6ecfc18dbfeedd76">
-  <source>Select one of the options below to continue.</source>
-  <target>Selecciona una de las opciones siguientes para continuar.</target>
 </trans-unit>
 <trans-unit id="s091d5407b5b32e84">
   <source>Or</source>
@@ -10770,9 +10758,6 @@ Las vinculaciones a grupos/usuarios se verifican en función del usuario del eve
 <trans-unit id="sfef81bb4077a56fd">
   <source>Type a new password...</source>
 </trans-unit>
-<trans-unit id="sf9ec917e3e986bc1">
-  <source>When enabled, your username will be remembered on this device for future logins.</source>
-</trans-unit>
 <trans-unit id="form.submitting.no-entity">
   <source><x id="0" equiv-text="${submittingVerb}"/>...</source>
   <note from="lit-localize">The message shown while a form is being submitted, when no entity name is provided.</note>
@@ -11290,6 +11275,105 @@ Las vinculaciones a grupos/usuarios se verifican en función del usuario del eve
 </trans-unit>
 <trans-unit id="s19ccfb86a879e6b9">
   <source>Also known as Entity ID. Defaults to the Metadata URL.</source>
+</trans-unit>
+<trans-unit id="s4d9e9f34f4dab66c">
+  <source>There are no valid users to import.</source>
+</trans-unit>
+<trans-unit id="s5787e20cab57b383">
+  <source>Unknown error</source>
+</trans-unit>
+<trans-unit id="s499bbb3f424cabcf">
+  <source>Successfully imported <x id="0" equiv-text="${summary.created}"/> user(s).</source>
+</trans-unit>
+<trans-unit id="s39b264e9e23ecd39">
+  <source>Imported <x id="0" equiv-text="${summary.created}"/> user(s), <x id="1" equiv-text="${summary.failed.length}"/> row(s) failed.</source>
+</trans-unit>
+<trans-unit id="s0cf4b316d1ccdd17">
+  <source>Line <x id="0" equiv-text="${error.line}"/>: <x id="1" equiv-text="${error.message}"/></source>
+</trans-unit>
+<trans-unit id="s6421462baadc558e">
+  <source>Created <x id="0" equiv-text="${this.summary.created}"/> user(s).</source>
+</trans-unit>
+<trans-unit id="sea1a00fcb00af42e">
+  <source><x id="0" equiv-text="${this.summary.failed.length}"/> row(s) could not be imported:</source>
+</trans-unit>
+<trans-unit id="s0a0d5830d1120fc7">
+  <source><x id="0" equiv-text="${users.length}"/> valid user(s) ready to import.</source>
+</trans-unit>
+<trans-unit id="s3f04204fdf24d9a4">
+  <source><x id="0" equiv-text="${errors.length}"/> row(s) will be skipped:</source>
+</trans-unit>
+<trans-unit id="s965b949bd40d9b44">
+  <source>Import users from CSV</source>
+</trans-unit>
+<trans-unit id="s2ef91ef6fc201dad">
+  <source>Upload or paste a CSV file to create multiple users at once. The first row must be a header. The only required column is 'username'; supported columns are username, name, email, type, is_active and path.</source>
+</trans-unit>
+<trans-unit id="sa8750f0b5b612d6b">
+  <source>CSV file</source>
+</trans-unit>
+<trans-unit id="s3d4afc5fae1a7052">
+  <source>Or paste CSV content</source>
+</trans-unit>
+<trans-unit id="sb4ce6ee55b53771b">
+  <source>Download example CSV</source>
+</trans-unit>
+<trans-unit id="s147a601e02e7abe4">
+  <source>Import CSV</source>
+</trans-unit>
+<trans-unit id="brand.footer.copyright">
+  <source>© <x id="0" equiv-text="${new Date().getFullYear()}"/> Authentik Security, Inc.</source>
+</trans-unit>
+<trans-unit id="identification.remember-me.description">
+  <source>When enabled, your username will be remembered on this device for future logins.</source>
+</trans-unit>
+<trans-unit id="identification.remember-me.label">
+  <source>Remember me</source>
+</trans-unit>
+<trans-unit id="identification.password.placeholder">
+  <source>Please enter your password</source>
+</trans-unit>
+<trans-unit id="identification.email.label">
+  <source>Username or Email</source>
+</trans-unit>
+<trans-unit id="identification.email.placeholder">
+  <source>username or email</source>
+</trans-unit>
+<trans-unit id="identification.forgot-password.label">
+  <source>Forgot password?</source>
+</trans-unit>
+<trans-unit id="identification.submit.label">
+  <source>Sign in</source>
+</trans-unit>
+<trans-unit id="identification.logo.alt-text">
+  <source>Poltekkes Kemenkes Malang</source>
+</trans-unit>
+<trans-unit id="identification.help.prefix">
+  <source>Need help?</source>
+</trans-unit>
+<trans-unit id="identification.help.link">
+  <source>Contact an Administrator</source>
+</trans-unit>
+<trans-unit id="identification.enroll.prefix">
+  <source>Need an account?</source>
+</trans-unit>
+<trans-unit id="identification.enroll.link">
+  <source>Sign up.</source>
+</trans-unit>
+<trans-unit id="brand.footer.powered-by">
+  <source>Powered by authentik</source>
+</trans-unit>
+<trans-unit id="s05b4cc821335fe04">
+  <source>Poltekkes Kemenkes Malang</source>
+</trans-unit>
+<trans-unit id="flow.theme-toggle.aria-label">
+  <source>Toggle theme</source>
+</trans-unit>
+<trans-unit id="flow.locale-toggle.aria-label">
+  <source>Change language</source>
+</trans-unit>
+<trans-unit id="flow.copyright">
+  <source>@ 2026 Poltekkes Kemenkes Malang</source>
 </trans-unit>
 </body>
 </file>

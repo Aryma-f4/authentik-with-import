@@ -98,7 +98,7 @@ export abstract class BaseStage<Tin extends StageChallengeLike, Tout = unknown>
         }
     }
 
-    public submitForm = async (event?: SubmitEvent, defaults?: Tout): Promise<boolean> => {
+    public async submitForm(event?: SubmitEvent, defaults?: Tout): Promise<boolean> {
         event?.preventDefault();
 
         const payload: Record<string, unknown> = defaults || {};
@@ -126,7 +126,7 @@ export abstract class BaseStage<Tin extends StageChallengeLike, Tout = unknown>
 
             return successful;
         });
-    };
+    }
 
     protected renderNonFieldErrors() {
         const nonFieldErrors = this.challenge?.responseErrors?.non_field_errors;

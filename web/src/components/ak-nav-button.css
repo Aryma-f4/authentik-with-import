@@ -2,6 +2,18 @@
     display: flex;
 }
 
+/* Language selector in the shared header tools (admin + user navbar). */
+ak-locale-select {
+    --ak-c-locale-select--Color: var(--pf-global--Color--100);
+    align-self: center;
+    margin-inline: var(--pf-global--spacer--xs);
+    min-height: var(--pf-global--target-size--MinHeight);
+}
+
+:host([theme="dark"]) ak-locale-select {
+    --ak-c-locale-select--Color: var(--pf-global--Color--light-100);
+}
+
 .pf-c-avatar {
     background-color: var(--pf-global--BackgroundColor--light-200);
     overflow: hidden;

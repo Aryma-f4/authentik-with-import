@@ -14,12 +14,9 @@ import AutoRedirect from "#flow/stages/identification/controllers/AutoRedirectCo
 import CaptchaDisplayController from "#flow/stages/identification/controllers/CaptchaDisplayController";
 import RememberMeController from "#flow/stages/identification/controllers/RememberMeController";
 import WebauthnController from "#flow/stages/identification/controllers/WebauthnController";
+import PoltekkesStyles from "#flow/stages/identification/poltekkes-login.css";
 import Styles from "#flow/stages/identification/styles.css";
-import {
-    compareLoginSource,
-    formatUIFieldLabel,
-    OR_LIST_FORMATTERS,
-} from "#flow/stages/identification/utils";
+import { compareLoginSource } from "#flow/stages/identification/utils";
 
 import {
     FlowDesignationEnum,
@@ -27,7 +24,6 @@ import {
     IdentificationChallengeResponseRequest,
     LoginChallengeTypes,
     LoginSource,
-    UserFieldsEnum,
 } from "@goauthentik/api";
 
 import { kebabCase } from "change-case";
@@ -36,6 +32,7 @@ import { msg, str } from "@lit/localize";
 import { html, nothing, PropertyValues, ReactiveControllerHost } from "lit";
 import { createRef, ref } from "lit-html/directives/ref.js";
 import { customElement, property } from "lit/decorators.js";
+import { classMap } from "lit/directives/class-map.js";
 import { repeat } from "lit/directives/repeat.js";
 
 import PFAlert from "@patternfly/patternfly/components/Alert/alert.css";
@@ -47,6 +44,8 @@ import PFLogin from "@patternfly/patternfly/components/Login/login.css";
 import PFTitle from "@patternfly/patternfly/components/Title/title.css";
 
 type IdentificationFooter = Partial<Pick<IdentificationChallenge, "enrollUrl" | "recoveryUrl">>;
+
+const POLTEKKES_LOGO_URL = "/static/dist/assets/images/poltekkes-logo.png";
 
 export type IdentificationHost = IdentificationStage & ReactiveControllerHost;
 
@@ -70,6 +69,7 @@ export class IdentificationStage extends BaseStage<
         PFButton,
         ...RememberMeController.styles,
         Styles,
+        PoltekkesStyles,
     ];
 
     /**
@@ -292,22 +292,27 @@ export class IdentificationStage extends BaseStage<
             autocomplete = `${autocomplete} webauthn`;
         }
 
-        return html`<input
-            ${ref(this.autofocusTarget.reference)}
-            id=${id}
-            type=${type}
-            name="uidField"
-            placeholder=${label}
-            autofocus
-            autocomplete=${autocomplete}
-            spellcheck="false"
-            inputmode=${type === "email" ? "email" : "text"}
-            autocapitalize="none"
-            enterkeyhint=${passwordFields ? "next" : "go"}
-            class="pf-c-form-control"
-            value=${initialUserIdentification ?? ""}
-            required
-        />`;
+        const iconClass = type === "email" ? "fa-envelope" : "fa-user";
+
+        return html`<div class="ak-poltekkes-input-wrap">
+            <i class="fas ${iconClass} ak-poltekkes-input-icon" aria-hidden="true"></i>
+            <input
+                ${ref(this.autofocusTarget.reference)}
+                id=${id}
+                type=${type}
+                name="uidField"
+                placeholder=${label}
+                autofocus
+                autocomplete=${autocomplete}
+                spellcheck="false"
+                inputmode=${type === "email" ? "email" : "text"}
+                autocapitalize="none"
+                enterkeyhint=${passwordFields ? "next" : "go"}
+                class="pf-c-form-control"
+                value=${initialUserIdentification ?? ""}
+                required
+            />
+        </div>`;
     }
 
     protected renderPasswordFields(challenge: IdentificationChallenge) {
@@ -315,53 +320,65 @@ export class IdentificationStage extends BaseStage<
         return html`<ak-flow-input-password
             .inputRef=${this.passwordFieldRef}
             label=${msg("Password")}
+            placeholder=${msg("Please enter your password", {
+                id: "identification.password.placeholder",
+            })}
             input-id="ak-stage-identification-password"
-            class="pf-c-form__group"
+            class="pf-c-form__group ak-poltekkes-password-input"
             .errors=${challenge.responseErrors?.password}
             ?allow-show-password=${allowShowPassword}
             prefill=${PasswordManagerPrefill.password ?? ""}
         ></ak-flow-input-password> `;
     }
 
+    protected renderRememberMe() {
+        return (
+            this.rememberMeController?.renderToggleInput() ??
+            html`<label class="remember-me-switch">
+                <input class="pf-c-check__input" type="checkbox" name="remember-me" />
+                <span class="pf-c-check__label"
+                    >${msg("Remember me", { id: "identification.remember-me.label" })}</span
+                >
+            </label>`
+        );
+    }
+
     protected renderInput(challenge: IdentificationChallenge) {
-        const { flowDesignation, passwordFields, passwordlessUrl, primaryAction, userFields } =
-            challenge;
+        const { flowDesignation, passwordFields, passwordlessUrl, recoveryUrl } = challenge;
 
-        const fields = (userFields || []).sort();
-
-        if (fields.length === 0) {
-            return html`<p>${msg("Select one of the options below to continue.")}</p>`;
-        }
-
-        const {
-            inputID,
-            defaultUserIdentification: initialUserIdentification,
-            rememberMeController,
-        } = this;
+        const { inputID, defaultUserIdentification: initialUserIdentification } = this;
 
         const offerRecovery = flowDesignation === FlowDesignationEnum.Recovery;
-        const type = fields.length === 1 && fields[0] === UserFieldsEnum.Email ? "email" : "text";
 
-        const label = OR_LIST_FORMATTERS.format(fields.map((field) => formatUIFieldLabel(field)));
+        const label = msg("Username or Email", { id: "identification.email.label" });
+        const placeholder = msg("username or email", {
+            id: "identification.email.placeholder",
+        });
 
         // prettier-ignore
         return html`${offerRecovery ? this.renderRecoveryMessage() : nothing}
             <div class="pf-c-form__group">
                 ${AKLabel({ required: true, htmlFor: inputID }, label)}
-                ${this.renderUidField(inputID, type, label, initialUserIdentification, passwordFields)}
-                ${rememberMeController?.renderToggleInput() ?? null}
+                ${this.renderUidField(inputID, "text", placeholder, initialUserIdentification, true)}
                 ${AKFormErrors({ errors: challenge.responseErrors?.uid_field })}
             </div>
-            ${passwordFields ? this.renderPasswordFields(challenge) : nothing}
+            ${this.renderPasswordFields(challenge)}
+            <div class="ak-poltekkes-form-options">
+                ${this.renderRememberMe()}
+                ${recoveryUrl
+                    ? html`<a class="ak-poltekkes-link" href=${recoveryUrl}
+                           data-ouia-component-id="recovery">${msg("Forgot password?", { id: "identification.forgot-password.label" })}</a>`
+                    : nothing}
+            </div>
             ${this.renderNonFieldErrors()}
             ${this.#captcha.render()}
             <div class="pf-c-form__group ${this.#captcha.live ? "" : "pf-m-action"}">
                 <button
                     ?disabled=${this.#captcha.pending}
                     type="submit"
-                    class="pf-c-button pf-m-primary pf-m-block"
+                    class="ak-poltekkes-submit"
                 >
-                    ${primaryAction}
+                    ${msg("Sign in", { id: "identification.submit.label" })}
                 </button>
             </div>
             ${passwordlessUrl ? html`<ak-divider>${msg("Or")}</ak-divider>` : nothing}`;
@@ -440,7 +457,7 @@ export class IdentificationStage extends BaseStage<
         const { applicationPre, passwordlessUrl, showSourceLabels, sources = [] } = challenge;
 
         return html`
-            <form class="pf-c-form" @submit=${this.submitForm}>
+            <form class="pf-c-form ak-poltekkes-form" @submit=${this.submitForm}>
                 ${applicationPre ? this.renderPrelude(applicationPre) : nothing}
                 ${this.renderInput(challenge)}
                 ${passwordlessUrl ? this.renderPasswordlessUrl(passwordlessUrl) : nothing}
@@ -479,16 +496,57 @@ export class IdentificationStage extends BaseStage<
 
     public override render() {
         const { challenge } = this;
-        const { enrollUrl, recoveryUrl } = challenge ?? {};
-        const hasFooter = !!enrollUrl || !!recoveryUrl;
+        const { enrollUrl } = challenge ?? {};
 
-        return html`<ak-flow-card .challenge=${challenge} part="flow-card">
-            ${challenge ? this.renderIdentificationStage(challenge) : nothing}
-            ${hasFooter ? this.renderFooter({ enrollUrl, recoveryUrl }) : nothing}
-        </ak-flow-card>`;
+        if (!challenge) {
+            return html`<ak-flow-card .challenge=${challenge} part="flow-card"></ak-flow-card>`;
+        }
+
+        return html`<div
+            class="ak-poltekkes-wrapper ${classMap({
+                "ak-poltekkes-theme-dark": this.activeTheme === "dark",
+            })}"
+        >
+            <div class="ak-poltekkes-card">
+                <div class="ak-poltekkes-card-header">
+                    <img
+                        src=${POLTEKKES_LOGO_URL}
+                        alt="${msg("Poltekkes Kemenkes Malang", {
+                            id: "identification.logo.alt-text",
+                        })}"
+                    />
+                </div>
+                ${this.renderIdentificationStage(challenge)}
+            </div>
+            <div class="ak-poltekkes-help">
+                ${msg("Need help?", { id: "identification.help.prefix" })}
+                <a href="mailto:admin@poltekkes-malang.ac.id"
+                    >${msg("Contact an Administrator", { id: "identification.help.link" })}</a
+                >
+            </div>
+            ${enrollUrl
+                ? html`<div class="ak-poltekkes-help">
+                      ${msg("Need an account?", { id: "identification.enroll.prefix" })}
+                      <a href="${enrollUrl}" data-ouia-component-id="enroll"
+                          >${msg("Sign up.", { id: "identification.enroll.link" })}</a
+                      >
+                  </div>`
+                : nothing}
+        </div>`;
     }
 
     //#endregion
+
+    public override async submitForm(
+        event?: SubmitEvent,
+        defaults?: IdentificationChallengeResponseRequest,
+    ): Promise<boolean> {
+        const password = this.passwordFieldRef.value?.value;
+        if (password) {
+            PasswordManagerPrefill.password = password;
+        }
+        return super.submitForm(event, defaults);
+    }
 }
 
 export default IdentificationStage;

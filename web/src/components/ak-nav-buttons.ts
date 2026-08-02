@@ -1,6 +1,7 @@
 import "#elements/forms/HorizontalFormElement";
 import "#components/ak-switch-input";
 import "#elements/buttons/ActionButton/ak-action-button";
+import "#elements/locale/ak-locale-select";
 import "@patternfly/elements/pf-tooltip/pf-tooltip.js";
 
 import { aki } from "#common/api/client";
@@ -201,6 +202,8 @@ export class NavigationButtons extends WithNotifications(WithSession(AKElement))
                 ${this.renderAPIDrawerTrigger()}
                 <!-- -->
                 ${this.renderNotificationDrawerTrigger()}
+                <!-- -->
+                <ak-locale-select class="pf-m-light" data-testid="locale-select"></ak-locale-select>
                 <!-- -->
                 ${this.renderSettings()}
                 <div class="pf-c-page__header-tools-item">

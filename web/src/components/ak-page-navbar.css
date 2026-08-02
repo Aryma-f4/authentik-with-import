@@ -1,6 +1,6 @@
 :host {
     --pf-c-page__header-tools--MarginRight: 0;
-    --ak-c-page-navbar__brand-logo--Height: var(--pf-global--FontSize--4xl, 2.25rem);
+    --ak-c-page-navbar__brand-logo--Height: 4.5rem;
     --ak-c-page-navbar__brand---BackgroundColor: var(--pf-c-page__sidebar--BackgroundColor);
     --ak-c-page-navbar--Height: 7.5rem;
 }

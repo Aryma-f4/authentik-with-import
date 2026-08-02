@@ -5,7 +5,7 @@ import { AKElement } from "#elements/Base";
 
 import { FooterLink } from "@goauthentik/api";
 
-import { msg } from "@lit/localize";
+import { msg, str } from "@lit/localize";
 import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { map } from "lit/directives/map.js";
@@ -36,7 +36,13 @@ export class BrandLinks extends AKElement {
         const links = [
             ...this.links,
             {
-                name: msg("Powered by authentik"),
+                name: msg("Powered by authentik", { id: "brand.footer.powered-by" }),
+                href: null,
+            },
+            {
+                name: msg(str`© ${new Date().getFullYear()} Authentik Security, Inc.`, {
+                    id: "brand.footer.copyright",
+                }),
                 href: null,
             },
         ];

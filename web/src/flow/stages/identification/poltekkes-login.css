@@ -1,0 +1,270 @@
+/* Custom Poltekkes Kemenkes Malang login theme */
+
+:host {
+    --ak-poltekkes-primary: #0b5c3e;
+    --ak-poltekkes-primary-hover: #084e33;
+
+    /* Light theme (default) */
+    --ak-poltekkes-text: #1f2937;
+    --ak-poltekkes-muted: #6b7280;
+    --ak-poltekkes-card-bg: #ffffff;
+    --ak-poltekkes-card-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    --ak-poltekkes-input-bg: #f9fafb;
+    --ak-poltekkes-input-border: #e5e7eb;
+    --ak-poltekkes-input-color: #1f2937;
+    --ak-poltekkes-input-placeholder: #9ca3af;
+    --ak-poltekkes-input-focus-ring: rgba(11, 92, 62, 0.1);
+    --ak-poltekkes-input-radius: 0.5rem;
+    --ak-poltekkes-logo-size: 9rem;
+}
+
+/* Dark theme */
+
+.ak-poltekkes-wrapper.ak-poltekkes-theme-dark {
+    --ak-poltekkes-text: #f9fafb;
+    --ak-poltekkes-muted: #9ca3af;
+    --ak-poltekkes-card-bg: #1f2937;
+    --ak-poltekkes-card-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+    --ak-poltekkes-input-bg: #111827;
+    --ak-poltekkes-input-border: #374151;
+    --ak-poltekkes-input-color: #f9fafb;
+    --ak-poltekkes-input-placeholder: #6b7280;
+    --ak-poltekkes-input-focus-ring: rgba(16, 185, 129, 0.2);
+    --ak-poltekkes-input-radius: 0.5rem;
+}
+
+.ak-poltekkes-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 58rem;
+    /* Left-align the form so it sits right next to the sidebar image,
+       instead of floating centered in the column with a visible gap. */
+    margin: 0 auto 0 0;
+}
+
+.ak-poltekkes-card {
+    background: var(--ak-poltekkes-card-bg);
+    border-radius: 1rem;
+    box-shadow: var(--ak-poltekkes-card-shadow);
+    padding: 4.75rem;
+    width: 100%;
+    color: var(--ak-poltekkes-text);
+    transition:
+        background 0.15s,
+        color 0.15s,
+        box-shadow 0.15s;
+}
+
+.ak-poltekkes-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.875rem;
+    margin-bottom: 1.5rem;
+}
+
+.ak-poltekkes-card-header img {
+    width: var(--ak-poltekkes-logo-size);
+    height: var(--ak-poltekkes-logo-size);
+    object-fit: contain;
+}
+
+.ak-poltekkes-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.ak-poltekkes-form .pf-c-form__group {
+    margin: 0;
+}
+
+.ak-poltekkes-form .pf-c-form__label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--ak-poltekkes-text);
+    margin-bottom: 0.375rem;
+    display: block;
+}
+
+.ak-poltekkes-input-wrap,
+.ak-poltekkes-password-input .pf-c-input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.ak-poltekkes-input-wrap .pf-c-form-control,
+.ak-poltekkes-password-input .pf-c-form-control {
+    background: var(--ak-poltekkes-input-bg);
+    border: 1px solid var(--ak-poltekkes-input-border);
+    border-radius: var(--ak-poltekkes-input-radius);
+    padding: 0.9rem 2.5rem 0.9rem 2.5rem;
+    font-size: 1rem;
+    width: 100%;
+    color: var(--ak-poltekkes-input-color);
+    transition:
+        border-color 0.15s,
+        box-shadow 0.15s,
+        background 0.15s,
+        color 0.15s;
+}
+
+.ak-poltekkes-input-wrap .pf-c-form-control::placeholder,
+.ak-poltekkes-password-input .pf-c-form-control::placeholder {
+    color: var(--ak-poltekkes-input-placeholder);
+}
+
+.ak-poltekkes-input-wrap .pf-c-form-control:focus,
+.ak-poltekkes-password-input .pf-c-form-control:focus {
+    border-color: var(--ak-poltekkes-primary);
+    box-shadow: 0 0 0 3px var(--ak-poltekkes-input-focus-ring);
+    outline: none;
+}
+
+.ak-poltekkes-input-icon,
+.ak-poltekkes-password-input .pf-c-input-group::before {
+    position: absolute;
+    left: 0.875rem;
+    color: var(--ak-poltekkes-muted);
+    font-size: 1rem;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Lock icon for the password field. */
+
+.ak-poltekkes-password-input .pf-c-input-group::before {
+    content: "\f023";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+.ak-poltekkes-input-wrap .pf-c-input-group {
+    width: 100%;
+    position: relative;
+}
+
+.ak-poltekkes-input-wrap .pf-c-button.pf-m-control,
+.ak-poltekkes-password-input .pf-c-button.pf-m-control {
+    position: absolute;
+    right: 0.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: var(--ak-poltekkes-muted);
+    padding: 0.5rem;
+    z-index: 1;
+}
+
+.ak-poltekkes-password-input .pf-c-form__group,
+.ak-poltekkes-password-input .pf-c-form__group-control {
+    margin: 0;
+    width: 100%;
+}
+
+.ak-poltekkes-form-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-top: -0.25rem;
+}
+
+.ak-poltekkes-form-options .remember-me-switch {
+    padding: 0;
+    margin: 0;
+}
+
+.ak-poltekkes-form-options .pf-c-check__input {
+    width: 1rem;
+    height: 1rem;
+    accent-color: var(--ak-poltekkes-primary);
+}
+
+.ak-poltekkes-form-options .pf-c-check__label {
+    font-size: 0.875rem;
+    color: var(--ak-poltekkes-text);
+}
+
+.ak-poltekkes-link {
+    font-size: 0.875rem;
+    color: var(--ak-poltekkes-primary);
+    text-decoration: none;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.ak-poltekkes-link:hover {
+    text-decoration: underline;
+}
+
+.ak-poltekkes-submit {
+    background: var(--ak-poltekkes-primary);
+    color: #ffffff;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1.05rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.15s;
+}
+
+.ak-poltekkes-submit:hover {
+    background: var(--ak-poltekkes-primary-hover);
+}
+
+.ak-poltekkes-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.ak-poltekkes-help {
+    font-size: 0.875rem;
+    color: var(--ak-poltekkes-text);
+    text-align: center;
+    transition: color 0.15s;
+}
+
+.ak-poltekkes-help a {
+    color: var(--ak-poltekkes-primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.ak-poltekkes-help a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+
+@media (max-width: 35rem) {
+    .ak-poltekkes-card {
+        padding: 1.5rem;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .ak-poltekkes-wrapper {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 25rem) {
+    .ak-poltekkes-card-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .ak-poltekkes-form-options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}

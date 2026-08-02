@@ -29,8 +29,9 @@
             const initialThemeChoice =
                 new URLSearchParams(window.location.search).get("theme") || locallyStoredTheme;
 
-            const themeChoice =
-                initialThemeChoice || documentElement.dataset.themeChoice || "auto";
+            /* Default to light instead of the system color scheme, so the theme
+               is stable across reloads and does not track the OS setting. */
+            const themeChoice = initialThemeChoice || "light";
 
             documentElement.dataset.themeChoice = themeChoice;
 

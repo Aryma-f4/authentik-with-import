@@ -10,6 +10,7 @@ import { applyUITheme, ResolvedUITheme, resolveUITheme, ThemeChangeEvent } from 
 import AKBase from "#styles/shadow/authentik-base.css" with { type: "bundled-text" };
 import PFBase from "#styles/shadow/patternfly-base.css" with { type: "bundled-text" };
 
+import { LOCALE_STATUS_EVENT, LocaleStatusEventDetail } from "@lit/localize";
 import { CSSResult, CSSResultGroup, CSSResultOrNative, LitElement, PropertyValues } from "lit";
 import { property } from "lit/decorators.js";
 
@@ -138,8 +139,20 @@ export class AKElement extends LitElement implements AKElementProps {
         }
     }
 
+    /**
+     * Re-render this element when the active locale changes, so `msg()`
+     * templates are re-evaluated with the newly-loaded translations.
+     */
+    #localeStatusListener = (event: CustomEvent<LocaleStatusEventDetail>) => {
+        if (event.detail.status !== "ready") return;
+
+        this.requestUpdate();
+    };
+
     public override connectedCallback(): void {
         super.connectedCallback();
+
+        window.addEventListener(LOCALE_STATUS_EVENT, this.#localeStatusListener);
 
         if (this.renderRoot !== this) {
             property({
@@ -164,6 +177,8 @@ export class AKElement extends LitElement implements AKElementProps {
 
     public override disconnectedCallback(): void {
         this.#themeAbortController?.abort();
+
+        window.removeEventListener(LOCALE_STATUS_EVENT, this.#localeStatusListener);
 
         const rootNode = this.getRootNode();
 
