@@ -18,6 +18,14 @@ No SSO button is added to the existing application login pages. A direct visit
 to an existing application login page continues to use its unchanged local
 authentication mechanism.
 
+### Legacy-login invariant
+
+OIDC is an additional entry path only. It must not replace, disable, redirect,
+or alter the existing login form, credential validation, local-session flow,
+login URLs, user records, or application-database schema. A deployment is
+accepted only when the SSO launch flow **and** the pre-existing direct login
+flow both work for a designated test account.
+
 ## Applications
 
 The integration covers these production hosts:
