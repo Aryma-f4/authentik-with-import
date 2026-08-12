@@ -8,7 +8,7 @@ from authentik.core.management.commands.import_poltekkes_users import (
     _normalise_username,
     open_import_input,
 )
-from authentik.core.models import Group, User
+from authentik.core.models import Group, User, UserGroup
 
 ROLE_GROUPS = {
     "1": "Poltekkes Mahasiswa",
@@ -25,6 +25,14 @@ def add_user_to_group(user: User, group: Group) -> bool:
         return False
     user.groups.add(group)
     return True
+
+
+def missing_group_memberships(group, users, member_ids, membership_factory=UserGroup):
+    """Build only the through-model rows not already present in a role group."""
+
+    return [
+        membership_factory(user=user, group=group) for user in users if user.pk not in member_ids
+    ]
 
 
 class Command(BaseCommand):
@@ -45,6 +53,7 @@ class Command(BaseCommand):
         groups = {
             role: Group.objects.get_or_create(name=name)[0] for role, name in ROLE_GROUPS.items()
         }
+        usernames_by_role = {role: set() for role in ROLE_GROUPS}
         csv_file = open_import_input(
             input_path=options["input"],
             input_url=options["input_url"],
@@ -60,15 +69,22 @@ class Command(BaseCommand):
                 if row.get("source") != options["source"] or not username or role not in groups:
                     counters["invalid"] += 1
                     continue
-                user = User.objects.filter(username=username).first()
-                if user is None:
-                    counters["missing"] += 1
-                    continue
-                if options["dry_run"]:
-                    counters["added"] += 1
-                    continue
-                if add_user_to_group(user, groups[role]):
-                    counters["added"] += 1
-                else:
-                    counters["existing"] += 1
+                usernames_by_role[role].add(username)
+
+        for role, usernames in usernames_by_role.items():
+            if not usernames:
+                continue
+            group = groups[role]
+            users = list(User.objects.filter(username__in=usernames).only("id", "username"))
+            counters["missing"] += len(usernames) - len(users)
+            existing_ids = set(
+                UserGroup.objects.filter(group=group, user__in=users).values_list(
+                    "user_id", flat=True
+                )
+            )
+            memberships = missing_group_memberships(group, users, existing_ids)
+            counters["existing"] += len(users) - len(memberships)
+            counters["added"] += len(memberships)
+            if not options["dry_run"] and memberships:
+                UserGroup.objects.bulk_create(memberships, batch_size=1000, ignore_conflicts=True)
         self.stdout.write(" ".join(f"{name}={value}" for name, value in counters.items()))

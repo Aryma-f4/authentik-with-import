@@ -17,7 +17,10 @@ from authentik.core.management.commands.import_poltekkes_users import (
     open_import_input,
     save_legacy_user,
 )
-from authentik.core.management.commands.sync_poltekkes_roles import add_user_to_group
+from authentik.core.management.commands.sync_poltekkes_roles import (
+    add_user_to_group,
+    missing_group_memberships,
+)
 from authentik.core.models import User
 
 
@@ -187,6 +190,20 @@ class TestRoleGroupMembership(SimpleTestCase):
         group = type("Group", (), {"pk": "student"})()
 
         self.assertFalse(add_user_to_group(user, group))
+
+    def test_builds_only_missing_membership_rows(self):
+        group = type("Group", (), {"pk": "student"})()
+        first = type("User", (), {"pk": "first"})()
+        second = type("User", (), {"pk": "second"})()
+
+        rows = missing_group_memberships(
+            group,
+            [first, second],
+            {"first"},
+            lambda **kwargs: (kwargs["user"].pk, kwargs["group"].pk),
+        )
+
+        self.assertEqual(rows, [("second", "student")])
 
     def test_unexpected_legacy_value_is_reported_without_raising(self):
         user = type("User", (), {"save": lambda self: (_ for _ in ()).throw(ValueError())})()
