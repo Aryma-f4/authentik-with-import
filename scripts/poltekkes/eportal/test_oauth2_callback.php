@@ -26,5 +26,9 @@ if (strpos($callback, 'empty($cfg->GetValue(') !== false) {
     fwrite(STDERR, "callback uses a PHP 5.5-only empty() expression\n");
     exit(1);
 }
+if (strpos($callback, "\$_SERVER['SCRIPT_NAME'] = '/index.php';") === false) {
+    fwrite(STDERR, "callback does not calculate dashboard URLs from the application root\n");
+    exit(1);
+}
 
 fwrite(STDOUT, "oauth2 callback checks passed\n");

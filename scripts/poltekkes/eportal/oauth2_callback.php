@@ -20,8 +20,12 @@ function portal_sso_bootstrap() {
     $root = dirname(__FILE__) . '/..';
     chdir($root);
 
+    // Configuration derives baseaddress from SCRIPT_NAME.  The callback lives
+    // in /sso/, but legacy dashboard URLs must always target /index.php.
+    $_SERVER['SCRIPT_NAME'] = '/index.php';
     require_once $root . '/config/configuration.class.php';
     $cfg = new Configuration();
+    $cfg->SetConfigDir($root . '/config/');
     $cfg->Load('base.conf.php');
     $docroot = $cfg->GetValue('docroot');
     if (empty($docroot)) {
