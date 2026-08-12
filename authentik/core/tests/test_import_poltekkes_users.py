@@ -152,6 +152,11 @@ class TestLegacyUserSave(SimpleTestCase):
 
         self.assertFalse(save_legacy_user(user))
 
+    def test_legacy_signal_error_is_reported_without_raising(self):
+        user = type("User", (), {"save": lambda self: (_ for _ in ()).throw(RuntimeError())})()
+
+        self.assertFalse(save_legacy_user(user))
+
 
 class TestPortalImporter(TestCase):
     """The importer creates only valid new portal users."""

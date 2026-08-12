@@ -129,7 +129,7 @@ def save_legacy_user(user: User) -> bool:
         raise
     except DatabaseError:
         return False
-    except (TypeError, UnicodeError, ValueError):
+    except Exception:  # noqa: BLE001 - legacy row hooks must not abort the whole batch.
         return False
     return True
 
