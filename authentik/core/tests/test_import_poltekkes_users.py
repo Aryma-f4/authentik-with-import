@@ -7,6 +7,7 @@ from unittest.mock import patch
 
 from django.contrib.auth.hashers import check_password, make_password
 from django.core.management import CommandError, call_command
+from django.db import DataError
 from django.test import SimpleTestCase, TestCase
 
 from authentik.core.management.commands.import_poltekkes_users import (
@@ -14,6 +15,7 @@ from authentik.core.management.commands.import_poltekkes_users import (
     encode_legacy_password_hash,
     merge_records,
     open_import_input,
+    save_legacy_user,
 )
 from authentik.core.models import User
 
@@ -135,6 +137,15 @@ class TestRemoteImportInput(SimpleTestCase):
             bearer_token="test-token",
         ) as csv_file:
             self.assertIn("\ufffd", csv_file.read())
+
+
+class TestLegacyUserSave(SimpleTestCase):
+    """One malformed legacy row must not stop later account imports."""
+
+    def test_database_error_is_reported_without_raising(self):
+        user = type("User", (), {"save": lambda self: (_ for _ in ()).throw(DataError())})()
+
+        self.assertFalse(save_legacy_user(user))
 
 
 class TestPortalImporter(TestCase):

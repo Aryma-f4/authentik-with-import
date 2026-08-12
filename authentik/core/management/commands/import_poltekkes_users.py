@@ -8,6 +8,7 @@ from urllib.parse import urlparse
 from urllib.request import Request, urlopen
 
 from django.core.management.base import BaseCommand, CommandError
+from django.db import DatabaseError
 
 from authentik.core.models import User
 
@@ -119,6 +120,16 @@ def open_import_input(
     return TextIOWrapper(response, encoding="utf-8", errors="replace", newline="")
 
 
+def save_legacy_user(user: User) -> bool:
+    """Save one account without allowing malformed legacy text to abort the batch."""
+
+    try:
+        user.save()
+    except DatabaseError:
+        return False
+    return True
+
+
 class Command(BaseCommand):
     """Import unique ePortal identities without exposing legacy password hashes."""
 
@@ -179,5 +190,6 @@ class Command(BaseCommand):
                     email=email,
                     password=encoded_password,
                 )
-                user.save()
+                if not save_legacy_user(user):
+                    counters["conflict"] += 1
         self.stdout.write(" ".join(f"{name}={value}" for name, value in counters.items()))
