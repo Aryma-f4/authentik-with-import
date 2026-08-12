@@ -1,7 +1,12 @@
-"""Safely merge legacy Poltekkes account records before importing them."""
+"""Safely merge and import legacy Poltekkes account records."""
 
+import csv
 from dataclasses import dataclass
 from string import hexdigits
+
+from django.core.management.base import BaseCommand, CommandError
+
+from authentik.core.models import User
 
 SOURCE_PRIORITY = ("eAkademik", "ePembayaran", "eRegistrasi", "ePortal", "eAdmisi")
 _SOURCE_ORDER = {source: index for index, source in enumerate(SOURCE_PRIORITY)}
@@ -83,3 +88,63 @@ def encode_legacy_password_hash(password_hash: str) -> str | None:
     if len(digest) == _MD5_DIGEST_LENGTH and all(character in hexdigits for character in digest):
         return f"poltekkes_md5${digest}"
     return None
+
+
+class Command(BaseCommand):
+    """Import unique ePortal identities without exposing legacy password hashes."""
+
+    help = "Import legacy Poltekkes users from a CSV export"
+
+    _fieldnames = ("source", "username", "name", "email", "password_hash")
+
+    def add_arguments(self, parser):
+        parser.add_argument("--input", required=True)
+        parser.add_argument("--source", choices=("ePortal",), required=True)
+        parser.add_argument("--dry-run", action="store_true")
+
+    def handle(self, *args, **options):
+        counters = {
+            "created": 0,
+            "existing": 0,
+            "invalid_hash": 0,
+            "blank_username": 0,
+            "conflict": 0,
+        }
+        try:
+            csv_file = open(options["input"], encoding="utf-8", newline="")
+        except OSError as exc:
+            raise CommandError("Could not open import input") from exc
+
+        with csv_file:
+            reader = csv.DictReader(csv_file)
+            if reader.fieldnames != list(self._fieldnames):
+                raise CommandError("Input must use the expected CSV headers")
+            for row in reader:
+                if row.get("source") != options["source"]:
+                    counters["conflict"] += 1
+                    continue
+                username = _normalise_username(row.get("username", ""))
+                if not username:
+                    counters["blank_username"] += 1
+                    continue
+                encoded_password = encode_legacy_password_hash(row.get("password_hash", ""))
+                if encoded_password is None:
+                    counters["invalid_hash"] += 1
+                    continue
+                if User.objects.filter(username=username).exists():
+                    counters["existing"] += 1
+                    continue
+                counters["created"] += 1
+                if options["dry_run"]:
+                    continue
+                email = row.get("email", "").strip().casefold()
+                if not _valid_email(email):
+                    email = ""
+                user = User(
+                    username=username,
+                    name=row.get("name", "").strip() or username,
+                    email=email,
+                    password=encoded_password,
+                )
+                user.save()
+        self.stdout.write(" ".join(f"{name}={value}" for name, value in counters.items()))
