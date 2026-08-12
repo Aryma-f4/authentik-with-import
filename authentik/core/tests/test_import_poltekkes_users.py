@@ -123,6 +123,19 @@ class TestRemoteImportInput(SimpleTestCase):
                 bearer_token="test-token",
             )
 
+    @patch("authentik.core.management.commands.import_poltekkes_users.urlopen")
+    def test_replaces_invalid_source_text_bytes(self, mock_urlopen):
+        mock_urlopen.return_value = BytesIO(
+            b"source,username,name,email,password_hash" + bytes([10, 255])
+        )
+
+        with open_import_input(
+            input_path=None,
+            input_url="https://sia.poltekkes-malang.ac.id/sso/export.csv",
+            bearer_token="test-token",
+        ) as csv_file:
+            self.assertIn("\ufffd", csv_file.read())
+
 
 class TestPortalImporter(TestCase):
     """The importer creates only valid new portal users."""

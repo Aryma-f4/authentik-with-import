@@ -114,7 +114,9 @@ def open_import_input(
         )
     except OSError as exc:
         raise CommandError("Could not fetch remote import input") from exc
-    return TextIOWrapper(response, encoding="utf-8", newline="")
+    # Legacy MySQL text may contain isolated non-UTF-8 bytes in display-name fields.
+    # Usernames and MD5 hashes are ASCII, so replacement keeps identity data intact.
+    return TextIOWrapper(response, encoding="utf-8", errors="replace", newline="")
 
 
 class Command(BaseCommand):
