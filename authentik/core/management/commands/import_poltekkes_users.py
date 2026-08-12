@@ -8,7 +8,7 @@ from urllib.parse import urlparse
 from urllib.request import Request, urlopen
 
 from django.core.management.base import BaseCommand, CommandError
-from django.db import DatabaseError
+from django.db import DatabaseError, OperationalError
 
 from authentik.core.models import User
 
@@ -125,7 +125,11 @@ def save_legacy_user(user: User) -> bool:
 
     try:
         user.save()
+    except OperationalError:
+        raise
     except DatabaseError:
+        return False
+    except (TypeError, UnicodeError, ValueError):
         return False
     return True
 
