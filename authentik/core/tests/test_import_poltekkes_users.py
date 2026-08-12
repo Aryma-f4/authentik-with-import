@@ -1,6 +1,6 @@
 """Tests for the safe Poltekkes legacy-user import helpers."""
 
-from django.contrib.auth.hashers import check_password
+from django.contrib.auth.hashers import check_password, make_password
 from django.test import SimpleTestCase
 
 from authentik.core.management.commands.import_poltekkes_users import (
@@ -74,6 +74,15 @@ class TestEncodeLegacyPasswordHash(SimpleTestCase):
 
         self.assertEqual(encoded, "poltekkes_md5$5f4dcc3b5aa765d61d8327deb882cf99")
         self.assertTrue(check_password("password", encoded))  # nosec: known test vector
+
+    def test_valid_raw_md5_rejects_wrong_password_and_requests_rehash(self):
+        encoded = encode_legacy_password_hash("5f4dcc3b5aa765d61d8327deb882cf99")
+        replacement_passwords = []
+
+        self.assertFalse(check_password("not-the-password", encoded))
+        self.assertTrue(check_password("password", encoded, replacement_passwords.append))
+        self.assertEqual(replacement_passwords, ["password"])
+        self.assertTrue(make_password(replacement_passwords[0]).startswith("pbkdf2_sha256$"))
 
     def test_rejects_unknown_hash_format(self):
         self.assertIsNone(encode_legacy_password_hash("not-a-supported-hash"))
