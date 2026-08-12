@@ -52,6 +52,16 @@ AUTHENTICATION_BACKENDS = [
     "guardian.backends.ObjectPermissionBackend",
 ]
 
+# Unsalted MD5 is accepted only to migrate verified legacy Poltekkes accounts.
+# PasswordHasher.must_update() upgrades it to the normal preferred hasher after login.
+PASSWORD_HASHERS = [
+    "django.contrib.auth.hashers.PBKDF2PasswordHasher",
+    "django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher",
+    "django.contrib.auth.hashers.Argon2PasswordHasher",
+    "django.contrib.auth.hashers.BCryptSHA256PasswordHasher",
+    "authentik.core.password_hashers.LegacyPoltekkesMD5PasswordHasher",
+]
+
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 # Application definition

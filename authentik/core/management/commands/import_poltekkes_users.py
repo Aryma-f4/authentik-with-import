@@ -1,0 +1,85 @@
+"""Safely merge legacy Poltekkes account records before importing them."""
+
+from dataclasses import dataclass
+from string import hexdigits
+
+SOURCE_PRIORITY = ("eAkademik", "ePembayaran", "eRegistrasi", "ePortal", "eAdmisi")
+_SOURCE_ORDER = {source: index for index, source in enumerate(SOURCE_PRIORITY)}
+_MD5_DIGEST_LENGTH = 32
+
+
+@dataclass(frozen=True)
+class ImportedRecord:
+    """A single account read from an application database."""
+
+    source: str
+    username: str
+    name: str
+    email: str
+    password_hash: str
+
+
+@dataclass(frozen=True)
+class ImportConflict:
+    """A merge anomaly without personally sensitive source values."""
+
+    username: str
+    kind: str
+    winner_source: str
+    other_source: str = ""
+
+
+def _normalise_username(username: str) -> str:
+    return username.strip().casefold()
+
+
+def _valid_email(email: str) -> bool:
+    return not email or ("@" in email and " " not in email)
+
+
+def _record_order(record: ImportedRecord) -> int:
+    return _SOURCE_ORDER.get(record.source, len(SOURCE_PRIORITY))
+
+
+def merge_records(
+    records: list[ImportedRecord],
+) -> tuple[list[ImportedRecord], list[ImportConflict]]:
+    """Deduplicate records by username, selecting the configured source winner."""
+
+    grouped: dict[str, list[ImportedRecord]] = {}
+    conflicts: list[ImportConflict] = []
+    for record in records:
+        username = _normalise_username(record.username)
+        if not username:
+            conflicts.append(ImportConflict("", "blank_username", record.source))
+            continue
+        grouped.setdefault(username, []).append(record)
+
+    winners: list[ImportedRecord] = []
+    for username, candidates in grouped.items():
+        candidates.sort(key=_record_order)
+        winner = candidates[0]
+        email = winner.email.strip().casefold()
+        for candidate in candidates[1:]:
+            candidate_email = candidate.email.strip().casefold()
+            if candidate.password_hash and candidate.password_hash != winner.password_hash:
+                conflicts.append(
+                    ImportConflict(
+                        username, "password_hash_conflict", winner.source, candidate.source
+                    )
+                )
+            if not email and _valid_email(candidate_email):
+                email = candidate_email
+        winners.append(
+            ImportedRecord(winner.source, username, winner.name, email, winner.password_hash)
+        )
+    return winners, conflicts
+
+
+def encode_legacy_password_hash(password_hash: str) -> str | None:
+    """Return a Django-compatible encoding for an explicitly supported legacy hash."""
+
+    digest = password_hash.strip().lower()
+    if len(digest) == _MD5_DIGEST_LENGTH and all(character in hexdigits for character in digest):
+        return f"poltekkes_md5${digest}"
+    return None
