@@ -2,7 +2,10 @@
 
 import csv
 from dataclasses import dataclass
+from io import TextIOWrapper
 from string import hexdigits
+from urllib.parse import urlparse
+from urllib.request import Request, urlopen
 
 from django.core.management.base import BaseCommand, CommandError
 
@@ -90,6 +93,30 @@ def encode_legacy_password_hash(password_hash: str) -> str | None:
     return None
 
 
+def open_import_input(
+    *, input_path: str | None, input_url: str | None, bearer_token: str | None
+) -> TextIOWrapper:
+    """Open a local CSV or a short-lived, authenticated HTTPS migration export."""
+
+    if input_path:
+        try:
+            return open(input_path, encoding="utf-8", newline="")
+        except OSError as exc:
+            raise CommandError("Could not open import input") from exc
+
+    if not input_url or urlparse(input_url).scheme != "https":
+        raise CommandError("Remote import input must use HTTPS")
+    if not bearer_token:
+        raise CommandError("Remote import input requires an access token")
+    try:
+        response = urlopen(
+            Request(input_url, headers={"Authorization": f"Bearer {bearer_token}"}), timeout=300
+        )
+    except OSError as exc:
+        raise CommandError("Could not fetch remote import input") from exc
+    return TextIOWrapper(response, encoding="utf-8", newline="")
+
+
 class Command(BaseCommand):
     """Import unique ePortal identities without exposing legacy password hashes."""
 
@@ -98,7 +125,10 @@ class Command(BaseCommand):
     _fieldnames = ("source", "username", "name", "email", "password_hash")
 
     def add_arguments(self, parser):
-        parser.add_argument("--input", required=True)
+        input_source = parser.add_mutually_exclusive_group(required=True)
+        input_source.add_argument("--input")
+        input_source.add_argument("--input-url")
+        parser.add_argument("--bearer-token")
         parser.add_argument("--source", choices=("ePortal",), required=True)
         parser.add_argument("--dry-run", action="store_true")
 
@@ -110,10 +140,11 @@ class Command(BaseCommand):
             "blank_username": 0,
             "conflict": 0,
         }
-        try:
-            csv_file = open(options["input"], encoding="utf-8", newline="")
-        except OSError as exc:
-            raise CommandError("Could not open import input") from exc
+        csv_file = open_import_input(
+            input_path=options["input"],
+            input_url=options["input_url"],
+            bearer_token=options["bearer_token"],
+        )
 
         with csv_file:
             reader = csv.DictReader(csv_file)

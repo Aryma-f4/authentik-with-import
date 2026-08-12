@@ -2,16 +2,18 @@
 
 import csv
 import tempfile
-from io import StringIO
+from io import BytesIO, StringIO
+from unittest.mock import patch
 
 from django.contrib.auth.hashers import check_password, make_password
-from django.core.management import call_command
+from django.core.management import CommandError, call_command
 from django.test import SimpleTestCase, TestCase
 
 from authentik.core.management.commands.import_poltekkes_users import (
     ImportedRecord,
     encode_legacy_password_hash,
     merge_records,
+    open_import_input,
 )
 from authentik.core.models import User
 
@@ -92,6 +94,34 @@ class TestEncodeLegacyPasswordHash(SimpleTestCase):
 
     def test_rejects_unknown_hash_format(self):
         self.assertIsNone(encode_legacy_password_hash("not-a-supported-hash"))
+
+
+class TestRemoteImportInput(SimpleTestCase):
+    """A remote migration source is fetched only over authenticated HTTPS."""
+
+    @patch("authentik.core.management.commands.import_poltekkes_users.urlopen")
+    def test_fetches_https_input_with_bearer_token(self, mock_urlopen):
+        response = BytesIO(b"source,username,name,email,password_hash\\n")
+        mock_urlopen.return_value = response
+
+        with open_import_input(
+            input_path=None,
+            input_url="https://sia.poltekkes-malang.ac.id/sso/export.csv",
+            bearer_token="test-token",
+        ) as csv_file:
+            self.assertEqual(csv_file.read(), "source,username,name,email,password_hash\\n")
+
+        request = mock_urlopen.call_args.args[0]
+        self.assertEqual(request.full_url, "https://sia.poltekkes-malang.ac.id/sso/export.csv")
+        self.assertEqual(request.get_header("Authorization"), "Bearer test-token")
+
+    def test_rejects_non_https_remote_input(self):
+        with self.assertRaisesMessage(CommandError, "HTTPS"):
+            open_import_input(
+                input_path=None,
+                input_url="http://sia.poltekkes-malang.ac.id/sso/export.csv",
+                bearer_token="test-token",
+            )
 
 
 class TestPortalImporter(TestCase):
