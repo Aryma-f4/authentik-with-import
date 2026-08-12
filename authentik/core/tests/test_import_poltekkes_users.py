@@ -17,6 +17,7 @@ from authentik.core.management.commands.import_poltekkes_users import (
     open_import_input,
     save_legacy_user,
 )
+from authentik.core.management.commands.sync_poltekkes_roles import add_user_to_group
 from authentik.core.models import User
 
 
@@ -146,6 +147,46 @@ class TestLegacyUserSave(SimpleTestCase):
         user = type("User", (), {"save": lambda self: (_ for _ in ()).throw(DataError())})()
 
         self.assertFalse(save_legacy_user(user))
+
+
+class TestRoleGroupMembership(SimpleTestCase):
+    """Role synchronization only adds a user when membership is absent."""
+
+    def test_adds_missing_membership(self):
+        class Groups:
+            def __init__(self):
+                self.added = []
+
+            def filter(self, **kwargs):
+                return self
+
+            def exists(self):
+                return False
+
+            def add(self, group):
+                self.added.append(group)
+
+        user = type("User", (), {"groups": Groups()})()
+        group = type("Group", (), {"pk": "student"})()
+
+        self.assertTrue(add_user_to_group(user, group))
+        self.assertEqual(user.groups.added, [group])
+
+    def test_keeps_existing_membership(self):
+        class Groups:
+            def filter(self, **kwargs):
+                return self
+
+            def exists(self):
+                return True
+
+            def add(self, group):
+                raise AssertionError("existing membership must not be re-added")
+
+        user = type("User", (), {"groups": Groups()})()
+        group = type("Group", (), {"pk": "student"})()
+
+        self.assertFalse(add_user_to_group(user, group))
 
     def test_unexpected_legacy_value_is_reported_without_raising(self):
         user = type("User", (), {"save": lambda self: (_ for _ in ()).throw(ValueError())})()
