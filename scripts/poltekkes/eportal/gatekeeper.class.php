@@ -227,6 +227,7 @@
                $_SESSION['role_base_portal'] = $userRole->FetchRole();
                $this->SetProperty("GateKeeperErrorMessage", "");
                $this->Disconnect();
+               return true;
             }
          } else {
             $this->Disconnect();

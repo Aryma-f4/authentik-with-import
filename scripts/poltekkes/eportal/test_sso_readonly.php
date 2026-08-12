@@ -32,4 +32,8 @@ if (strpos($source, 'if (!$trustedSso) {') === false) {
     fail_sso_readonly_test('legacy database writes are not guarded from SSO');
 }
 
+if (strpos($source, "\$_SESSION['role_base_portal'] = \$userRole->FetchRole();\n               \$this->SetProperty(\"GateKeeperErrorMessage\", \"\");\n               \$this->Disconnect();\n               return true;") === false) {
+    fail_sso_readonly_test('trusted SSO session setup must report success to the callback');
+}
+
 fwrite(STDOUT, "sso readonly gatekeeper checks passed\n");
