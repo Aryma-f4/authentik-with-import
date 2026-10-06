@@ -206,7 +206,10 @@ export function parseUserCSV(text: string): UserCSVParseResult {
             name: record.name || username,
         };
 
-        if (record.email) {
+        // A dash is commonly used in administrative spreadsheets to represent
+        // an empty optional value. Sending it as an email address makes the API
+        // reject every otherwise-valid row.
+        if (record.email && record.email !== "-") {
             user.email = record.email;
         }
 

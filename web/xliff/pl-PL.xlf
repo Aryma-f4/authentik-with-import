@@ -10913,9 +10913,6 @@ Powiązania z grupami/użytkownikami są sprawdzane względem użytkownika zdarz
 <trans-unit id="s499bbb3f424cabcf">
   <source>Successfully imported <x id="0" equiv-text="${summary.created}"/> user(s).</source>
 </trans-unit>
-<trans-unit id="s39b264e9e23ecd39">
-  <source>Imported <x id="0" equiv-text="${summary.created}"/> user(s), <x id="1" equiv-text="${summary.failed.length}"/> row(s) failed.</source>
-</trans-unit>
 <trans-unit id="s0cf4b316d1ccdd17">
   <source>Line <x id="0" equiv-text="${error.line}"/>: <x id="1" equiv-text="${error.message}"/></source>
 </trans-unit>
@@ -11002,6 +10999,36 @@ Powiązania z grupami/użytkownikami są sprawdzane względem użytkownika zdarz
 </trans-unit>
 <trans-unit id="flow.copyright">
   <source>@ 2026 Poltekkes Kemenkes Malang</source>
+</trans-unit>
+<trans-unit id="sfcbfc5d70360ae19">
+  <source>Temporary password set for <x id="0" equiv-text="${result.succeeded.length}"/> user(s).</source>
+</trans-unit>
+<trans-unit id="s7f8e5b3f7b8ad076">
+  <source>Password set for <x id="0" equiv-text="${result.succeeded.length}"/> user(s); <x id="1" equiv-text="${result.failed.length}"/> failed.</source>
+</trans-unit>
+<trans-unit id="sf3f06998c221bd01">
+  <source>Set temporary password</source>
+</trans-unit>
+<trans-unit id="s4042262ccdb9603c">
+  <source>The same temporary password will be set for <x id="0" equiv-text="${this.users.length}"/> selected user(s).</source>
+</trans-unit>
+<trans-unit id="s44771f9d8f5ad575">
+  <source>Temporary password</source>
+</trans-unit>
+<trans-unit id="s5515a136187c74c0">
+  <source>Confirm password</source>
+</trans-unit>
+<trans-unit id="seed297ff38eb3794">
+  <source>Some passwords could not be set</source>
+</trans-unit>
+<trans-unit id="s9a7dea5eb93a8aa4">
+  <source>Imported <x id="0" equiv-text="${summary.created}"/> user(s), <x id="1" equiv-text="${summary.failed.length}"/> row(s) failed and <x id="2" equiv-text="${summary.passwordFailed.length}"/> password(s) failed.</source>
+</trans-unit>
+<trans-unit id="sf9149f8d7e4448ff">
+  <source><x id="0" equiv-text="${this.summary.passwordFailed.length}"/> user(s) were created but their temporary password could not be set:</source>
+</trans-unit>
+<trans-unit id="s9348dc519a57dac1">
+  <source>Set Temporary Password</source>
 </trans-unit>
 </body>
 </file>

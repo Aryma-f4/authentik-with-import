@@ -3,13 +3,18 @@ import "#elements/buttons/SpinnerButton/index";
 import { aki } from "#common/api/client";
 import { EVENT_REFRESH } from "#common/constants";
 import { downloadFile } from "#common/download";
-import { parseAPIResponseError, pluckErrorDetail } from "#common/errors/network";
+import {
+    parseAPIResponseError,
+    pluckErrorDetail,
+    pluckFallbackFieldErrors,
+} from "#common/errors/network";
 import { MessageLevel } from "#common/messages";
 
 import { ModalButton } from "#elements/buttons/ModalButton";
 import { showMessage } from "#elements/messages/MessageContainer";
 import { SlottedTemplateResult } from "#elements/types";
 
+import { validateTemporaryPassword } from "#admin/users/bulkPassword";
 import {
     EXAMPLE_USER_CSV,
     parseUserCSV,
@@ -26,6 +31,7 @@ import { customElement, state } from "lit/decorators.js";
 interface ImportSummary {
     created: number;
     failed: UserCSVRowError[];
+    passwordFailed: UserCSVRowError[];
 }
 
 @customElement("ak-user-csv-import")
@@ -40,6 +46,15 @@ export class UserCSVImportForm extends ModalButton {
 
     @state()
     protected importing = false;
+
+    @state()
+    protected temporaryPassword = "";
+
+    @state()
+    protected passwordConfirmation = "";
+
+    @state()
+    protected revealPassword = false;
 
     @state()
     protected summary: ImportSummary | null = null;
@@ -66,6 +81,9 @@ export class UserCSVImportForm extends ModalButton {
         this.parseResult = null;
         this.summary = null;
         this.importing = false;
+        this.temporaryPassword = "";
+        this.passwordConfirmation = "";
+        this.revealPassword = false;
         this.open = false;
     };
 
@@ -102,6 +120,10 @@ export class UserCSVImportForm extends ModalButton {
 
     async #import(): Promise<void> {
         const result = this.parseResult;
+        const passwordValidationError = validateTemporaryPassword(
+            this.temporaryPassword,
+            this.passwordConfirmation,
+        );
 
         if (!result || result.users.length === 0) {
             showMessage({
@@ -111,13 +133,23 @@ export class UserCSVImportForm extends ModalButton {
             return;
         }
 
+        if (passwordValidationError) {
+            showMessage({ message: passwordValidationError, level: MessageLevel.error });
+            return;
+        }
+
         this.importing = true;
 
-        const summary: ImportSummary = { created: 0, failed: [...result.errors] };
+        const summary: ImportSummary = {
+            created: 0,
+            failed: [...result.errors],
+            passwordFailed: [],
+        };
+        const temporaryPassword = this.temporaryPassword;
 
         for (const { line, user } of result.users) {
             try {
-                await this.#coreAPI.coreUsersCreate({
+                const createdUser = await this.#coreAPI.coreUsersCreate({
                     userRequest: {
                         ...user,
                         groups: [],
@@ -125,12 +157,29 @@ export class UserCSVImportForm extends ModalButton {
                     },
                 });
                 summary.created += 1;
+
+                try {
+                    await this.#coreAPI.coreUsersSetPasswordCreate({
+                        id: createdUser.pk,
+                        userPasswordSetRequest: { password: temporaryPassword },
+                    });
+                } catch (error) {
+                    const apiError = await parseAPIResponseError(error);
+                    const fieldError = pluckFallbackFieldErrors(apiError)[0];
+                    summary.passwordFailed.push({
+                        line,
+                        message: msg(
+                            str`${user.username}: ${fieldError || pluckErrorDetail(apiError, msg("Unknown error"))}`,
+                        ),
+                    });
+                }
             } catch (error) {
                 const apiError = await parseAPIResponseError(error);
+                const fieldError = pluckFallbackFieldErrors(apiError)[0];
                 summary.failed.push({
                     line,
                     message: msg(
-                        str`${user.username}: ${pluckErrorDetail(apiError, msg("Unknown error"))}`,
+                        str`${user.username}: ${fieldError || pluckErrorDetail(apiError, msg("Unknown error"))}`,
                     ),
                 });
             }
@@ -150,12 +199,15 @@ export class UserCSVImportForm extends ModalButton {
 
         showMessage({
             message:
-                summary.failed.length === 0
+                summary.failed.length === 0 && summary.passwordFailed.length === 0
                     ? msg(str`Successfully imported ${summary.created} user(s).`)
                     : msg(
-                          str`Imported ${summary.created} user(s), ${summary.failed.length} row(s) failed.`,
+                          str`Imported ${summary.created} user(s), ${summary.failed.length} row(s) failed and ${summary.passwordFailed.length} password(s) failed.`,
                       ),
-            level: summary.failed.length === 0 ? MessageLevel.success : MessageLevel.warning,
+            level:
+                summary.failed.length === 0 && summary.passwordFailed.length === 0
+                    ? MessageLevel.success
+                    : MessageLevel.warning,
         });
     }
 
@@ -189,6 +241,14 @@ export class UserCSVImportForm extends ModalButton {
                     ? this.renderErrorList(
                           msg(str`${this.summary.failed.length} row(s) could not be imported:`),
                           this.summary.failed,
+                      )
+                    : nothing}
+                ${this.summary.passwordFailed.length > 0
+                    ? this.renderErrorList(
+                          msg(
+                              str`${this.summary.passwordFailed.length} user(s) were created but their temporary password could not be set:`,
+                          ),
+                          this.summary.passwordFailed,
                       )
                     : nothing}`;
         }
@@ -263,6 +323,57 @@ export class UserCSVImportForm extends ModalButton {
                                 "Download example CSV",
                             )}
                         </button>
+                    </div>
+                    <div class="pf-c-form__group">
+                        <label class="pf-c-form__label" for="csv-temporary-password">
+                            <span class="pf-c-form__label-text">${msg("Temporary password")}</span>
+                            <span class="pf-c-form__label-required" aria-hidden="true">&#42;</span>
+                        </label>
+                        <input
+                            id="csv-temporary-password"
+                            class="pf-c-form-control"
+                            type=${this.revealPassword ? "text" : "password"}
+                            autocomplete="new-password"
+                            required
+                            .value=${this.temporaryPassword}
+                            @input=${(event: Event) => {
+                                this.temporaryPassword = (event.target as HTMLInputElement).value;
+                            }}
+                        />
+                    </div>
+                    <div class="pf-c-form__group">
+                        <label class="pf-c-form__label" for="csv-password-confirmation">
+                            <span class="pf-c-form__label-text">${msg("Confirm password")}</span>
+                            <span class="pf-c-form__label-required" aria-hidden="true">&#42;</span>
+                        </label>
+                        <input
+                            id="csv-password-confirmation"
+                            class="pf-c-form-control"
+                            type=${this.revealPassword ? "text" : "password"}
+                            autocomplete="new-password"
+                            required
+                            .value=${this.passwordConfirmation}
+                            @input=${(event: Event) => {
+                                this.passwordConfirmation = (
+                                    event.target as HTMLInputElement
+                                ).value;
+                            }}
+                        />
+                    </div>
+                    <div class="pf-c-form__group">
+                        <label class="pf-c-check">
+                            <input
+                                class="pf-c-check__input"
+                                type="checkbox"
+                                .checked=${this.revealPassword}
+                                @change=${(event: Event) => {
+                                    this.revealPassword = (
+                                        event.target as HTMLInputElement
+                                    ).checked;
+                                }}
+                            />
+                            <span class="pf-c-check__label">${msg("Show password")}</span>
+                        </label>
                     </div>
                     ${this.renderFeedback()}
                 </form>

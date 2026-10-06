@@ -47,8 +47,8 @@
 <target>Aplikasi dengan penggunaan terbanyak</target>
 </trans-unit>
 <trans-unit id="s85a488cacb57688b">
-  <source>Welcome, <x id="0" equiv-text="${displayName}" /></source>
-<target>Selamat datang, <x id="0" equiv-text="${displayName}" /></target>
+  <source>Welcome, <x id="0" equiv-text="${displayName}"/></source>
+<target>Selamat datang, <x id="0" equiv-text="${displayName}"/></target>
 </trans-unit>
 <trans-unit id="scdb1bac161852c73">
   <source>Welcome</source>
@@ -119,12 +119,12 @@
 <target>Versi</target>
 </trans-unit>
 <trans-unit id="scefe482c547fb3f3">
-  <source>Based on <x id="0" equiv-text="${value.versionCurrent}" /></source>
-<target>Berdasarkan <x id="0" equiv-text="${value.versionCurrent}" /></target>
+  <source>Based on <x id="0" equiv-text="${value.versionCurrent}"/></source>
+<target>Berdasarkan <x id="0" equiv-text="${value.versionCurrent}"/></target>
 </trans-unit>
 <trans-unit id="s68a50b1ee6efee7b">
-  <source><x id="0" equiv-text="${value.versionLatest}" /> is available!</source>
-<target><x id="0" equiv-text="${value.versionLatest}" /> tersedia!</target>
+  <source><x id="0" equiv-text="${value.versionLatest}"/> is available!</source>
+<target><x id="0" equiv-text="${value.versionLatest}"/> tersedia!</target>
 </trans-unit>
 <trans-unit id="s08272eeeddfd244e">
   <source>An outpost is on an incorrect version!</source>
@@ -320,11 +320,11 @@
 </trans-unit>
 <trans-unit id="h4963ed14d7e239a9">
   <source>An attribute path like
-                                    <x id="0" equiv-text="&lt;code&gt;" />attributes.something.avatar<x id="1" equiv-text="&lt;/code&gt;" />, which can be used in
+                                    <x id="0" equiv-text="&lt;code&gt;"/>attributes.something.avatar<x id="1" equiv-text="&lt;/code&gt;"/>, which can be used in
                                     combination with the file field to allow users to upload custom
                                     avatars for themselves.</source>
 <target>Jalur atribut seperti
-                                    <x id="0" equiv-text="&lt;code&gt;" />attributes.something.avatar<x id="1" equiv-text="&lt;/code&gt;" />, yang dapat digunakan di
+                                    <x id="0" equiv-text="&lt;code&gt;"/>attributes.something.avatar<x id="1" equiv-text="&lt;/code&gt;"/>, yang dapat digunakan di
                                     kombinasi dengan bidang file untuk memungkinkan pengguna mengunggah kustom
                                     avatar untuk diri mereka sendiri.</target>
 </trans-unit>
@@ -333,10 +333,10 @@
 <target>Beberapa nilai dapat diatur, dipisahkan koma, dan autentik akan kembali ke mode berikutnya ketika tidak ada avatar yang ditemukan.</target>
 </trans-unit>
 <trans-unit id="h2fafcc3ebafea2f8">
-  <source>For example, setting this to <x id="0" equiv-text="&lt;code&gt;" />gravatar,initials<x id="1" equiv-text="&lt;/code&gt;" /> will
+  <source>For example, setting this to <x id="0" equiv-text="&lt;code&gt;"/>gravatar,initials<x id="1" equiv-text="&lt;/code&gt;"/> will
                                 attempt to get an avatar from Gravatar, and if the user has not
                                 configured on there, it will fallback to a generated avatar.</source>
-<target>Misalnya, menyetelnya ke <x id="0" equiv-text="&lt;code&gt;" />gravatar,initials<x id="1" equiv-text="&lt;/code&gt;" /> akan membantu
+<target>Misalnya, menyetelnya ke <x id="0" equiv-text="&lt;code&gt;"/>gravatar,initials<x id="1" equiv-text="&lt;/code&gt;"/> akan membantu
                                 mencoba untuk mendapatkan avatar dari Gravatar, dan jika pengguna belum
                                 dikonfigurasi di sana, itu akan kembali ke avatar yang dihasilkan.</target>
 </trans-unit>
@@ -374,9 +374,9 @@
 </trans-unit>
 <trans-unit id="h3ac79dc5cc553329">
   <source>When using an external logging solution for archiving, this can be
-                                set to <x id="0" equiv-text="&lt;code&gt;" />minutes=5<x id="1" equiv-text="&lt;/code&gt;" />.</source>
+                                set to <x id="0" equiv-text="&lt;code&gt;"/>minutes=5<x id="1" equiv-text="&lt;/code&gt;"/>.</source>
 <target>Saat menggunakan solusi logging eksternal untuk pengarsipan, hal ini bisa terjadi
-                                disetel ke <x id="0" equiv-text="&lt;code&gt;" />menit=5<x id="1" equiv-text="&lt;/code&gt;" />.</target>
+                                disetel ke <x id="0" equiv-text="&lt;code&gt;"/>menit=5<x id="1" equiv-text="&lt;/code&gt;"/>.</target>
 </trans-unit>
 <trans-unit id="s44536d20bb5c8257">
   <source>This setting only affects new Events, as the expiration is saved per-event.</source>
@@ -739,8 +739,8 @@
 <target>Cari aplikasi berdasarkan nama, grup atau penyedia...</target>
 </trans-unit>
 <trans-unit id="s66f572bec2bde9c4">
-  <source>External applications that use <x id="0" equiv-text="${this.brandingTitle}" /> as an identity provider via protocols like OAuth2 and SAML. All applications are shown here, even ones you cannot access.</source>
-<target>Aplikasi eksternal yang menggunakan <x id="0" equiv-text="${this.brandingTitle}" /> sebagai penyedia identitas melalui protokol seperti OAuth2 dan SAML. Semua aplikasi ditampilkan di sini, bahkan yang tidak dapat Anda akses.</target>
+  <source>External applications that use <x id="0" equiv-text="${this.brandingTitle}"/> as an identity provider via protocols like OAuth2 and SAML. All applications are shown here, even ones you cannot access.</source>
+<target>Aplikasi eksternal yang menggunakan <x id="0" equiv-text="${this.brandingTitle}"/> sebagai penyedia identitas melalui protokol seperti OAuth2 dan SAML. Semua aplikasi ditampilkan di sini, bahkan yang tidak dapat Anda akses.</target>
 </trans-unit>
 <trans-unit id="sb564f81eb057342e">
   <source>Application Icon</source>
@@ -759,12 +759,12 @@
 <target>Aplikasi</target>
 </trans-unit>
 <trans-unit id="sf07bfbe5316e7cc7">
-  <source>Application icon for "<x id="0" equiv-text="${item.name}" />"</source>
-<target>Ikon aplikasi untuk "<x id="0" equiv-text="${item.name}" />"</target>
+  <source>Application icon for "<x id="0" equiv-text="${item.name}"/>"</source>
+<target>Ikon aplikasi untuk "<x id="0" equiv-text="${item.name}"/>"</target>
 </trans-unit>
 <trans-unit id="sdb3b903354fbfb17">
-  <source>Open "<x id="0" equiv-text="${item.name}" />"</source>
-<target>Buka "<x id="0" equiv-text="${item.name}" />"</target>
+  <source>Open "<x id="0" equiv-text="${item.name}"/>"</source>
+<target>Buka "<x id="0" equiv-text="${item.name}"/>"</target>
 </trans-unit>
 <trans-unit id="s1f7698c061c208c9">
   <source>Open</source>
@@ -851,8 +851,8 @@
 <target>Login selama seminggu terakhir (per 8 jam)</target>
 </trans-unit>
 <trans-unit id="sb6fcdabf769208a1">
-  <source>Failed to fetch application "<x id="0" equiv-text="${this.applicationSlug}" />".</source>
-<target>Gagal mengambil aplikasi "<x id="0" equiv-text="${this.applicationSlug}" />".</target>
+  <source>Failed to fetch application "<x id="0" equiv-text="${this.applicationSlug}"/>".</source>
+<target>Gagal mengambil aplikasi "<x id="0" equiv-text="${this.applicationSlug}"/>".</target>
 </trans-unit>
 <trans-unit id="application.outpost.missing.warning">
   <source>Warning: Application is not used by any Outpost.</source>
@@ -983,8 +983,8 @@
 <target>Simpan Pengikatan</target>
 </trans-unit>
 <trans-unit id="sea74880d1b9b5d2e">
-  <source>Select a <x id="0" equiv-text="${title}" />...</source>
-<target>Pilih <x id="0" equiv-text="${title}" />...</target>
+  <source>Select a <x id="0" equiv-text="${title}"/>...</source>
+<target>Pilih <x id="0" equiv-text="${title}"/>...</target>
 </trans-unit>
 <trans-unit id="s931754aabd4a6a47">
   <source>Create a Policy/User/Group Binding</source>
@@ -1168,9 +1168,9 @@
 </trans-unit>
 <trans-unit id="h3b1f38bb34f8b1b6">
   <source> A valid OCI manifest URL, prefixed with the protocol
-                                              e.g. <x id="0" equiv-text="&lt;code&gt;" />oci://registry.domain.tld/path/to/manifest<x id="1" equiv-text="&lt;/code&gt;" /></source>
+                                              e.g. <x id="0" equiv-text="&lt;code&gt;"/>oci://registry.domain.tld/path/to/manifest<x id="1" equiv-text="&lt;/code&gt;"/></source>
 <target>URL manifes OCI yang valid, diawali dengan protokol
-                                              misalnya <x id="0" equiv-text="&lt;code&gt;" />oci://registry.domain.tld/path/to/manifest<x id="1" equiv-text="&lt;/code&gt;" /></target>
+                                              misalnya <x id="0" equiv-text="&lt;code&gt;"/>oci://registry.domain.tld/path/to/manifest<x id="1" equiv-text="&lt;/code&gt;"/></target>
 </trans-unit>
 <trans-unit id="sc19e397bee1e67f7">
   <source>Read more about</source>
@@ -1229,8 +1229,8 @@
 <target>Cetak Biru</target>
 </trans-unit>
 <trans-unit id="s6f8d15b5494ac41a">
-  <source>Apply "<x id="0" equiv-text="${item.name}" />" blueprint</source>
-<target>Terapkan cetak biru "<x id="0" equiv-text="${item.name}" />".</target>
+  <source>Apply "<x id="0" equiv-text="${item.name}"/>" blueprint</source>
+<target>Terapkan cetak biru "<x id="0" equiv-text="${item.name}"/>".</target>
 </trans-unit>
 <trans-unit id="sb8f855b49234b81b">
   <source>Apply</source>
@@ -1573,8 +1573,8 @@
 <target>Dikelola oleh autentik (Ditemukan)</target>
 </trans-unit>
 <trans-unit id="sef50d248448e0df1">
-  <source>Yes (<x id="0" equiv-text="${item.keyType?.toUpperCase()}" />)</source>
-<target>Ya (<x id="0" equiv-text="${item.keyType?.toUpperCase()}" />)</target>
+  <source>Yes (<x id="0" equiv-text="${item.keyType?.toUpperCase()}"/>)</source>
+<target>Ya (<x id="0" equiv-text="${item.keyType?.toUpperCase()}"/>)</target>
 </trans-unit>
 <trans-unit id="s33aa05f435c29753">
   <source>Update Certificate-Key Pair</source>
@@ -1717,8 +1717,8 @@
 <target>Linux</target>
 </trans-unit>
 <trans-unit id="sc5f2f9b4dce504d6">
-  <source>Successfully downloaded <x id="0" equiv-text="${this.config.filename}" />!</source>
-<target>Berhasil mengunduh <x id="0" equiv-text="${this.config.filename}" />!</target>
+  <source>Successfully downloaded <x id="0" equiv-text="${this.config.filename}"/>!</source>
+<target>Berhasil mengunduh <x id="0" equiv-text="${this.config.filename}"/>!</target>
 </trans-unit>
 <trans-unit id="s335acddfb181e9ad">
   <source>Connector setup</source>
@@ -1997,8 +1997,8 @@
 <target>Apakah pengguna utama</target>
 </trans-unit>
 <trans-unit id="sd667856c73082c35">
-  <source>Device <x id="0" equiv-text="${this.device?.name}" /></source>
-<target>Perangkat <x id="0" equiv-text="${this.device?.name}" /></target>
+  <source>Device <x id="0" equiv-text="${this.device?.name}"/></source>
+<target>Perangkat <x id="0" equiv-text="${this.device?.name}"/></target>
 </trans-unit>
 <trans-unit id="s6d4cc88f2426efaf">
   <source>Loading device...</source>
@@ -2045,8 +2045,8 @@
 <target>CPU</target>
 </trans-unit>
 <trans-unit id="sa10af889ecd36687">
-  <source><x id="0" equiv-text="${this.device?.facts.data.hardware?.cpuCount}" /> x <x id="1" equiv-text="${this.device?.facts.data.hardware?.cpuName}" /></source>
-<target><x id="0" equiv-text="${this.device?.facts.data.hardware?.cpuCount}" /> x <x id="1" equiv-text="${this.device?.facts.data.hardware?.cpuName}" /></target>
+  <source><x id="0" equiv-text="${this.device?.facts.data.hardware?.cpuCount}"/> x <x id="1" equiv-text="${this.device?.facts.data.hardware?.cpuName}"/></source>
+<target><x id="0" equiv-text="${this.device?.facts.data.hardware?.cpuCount}"/> x <x id="1" equiv-text="${this.device?.facts.data.hardware?.cpuName}"/></target>
 </trans-unit>
 <trans-unit id="s16e1bead7b9c95ce">
   <source>Memory</source>
@@ -2061,8 +2061,8 @@
 <target>Penggunaan disk utama</target>
 </trans-unit>
 <trans-unit id="s42636dae6e29892e">
-  <source>Agent version: <x id="0" equiv-text="${vendorData.agent_version ?? &quot;-&quot;}" /></source>
-<target>Versi agen: <x id="0" equiv-text="${vendorData.agent_version ?? &quot;-&quot;}" /></target>
+  <source>Agent version: <x id="0" equiv-text="${vendorData.agent_version ?? &quot;-&quot;}"/></source>
+<target>Versi agen: <x id="0" equiv-text="${vendorData.agent_version ?? &quot;-&quot;}"/></target>
 </trans-unit>
 <trans-unit id="s416211a967a6db4e">
   <source>Users / Groups</source>
@@ -2157,8 +2157,8 @@
 <target>Perkiraan pengguna internal</target>
 </trans-unit>
 <trans-unit id="sde9a3f41977ec1f8">
-  <source>Estimated user count one year from now based on <x id="0" equiv-text="${internalUsers}" /> current internal users and <x id="1" equiv-text="${forecastedInternalUsers}" /> forecasted internal users.</source>
-<target>Perkiraan jumlah pengguna satu tahun dari sekarang berdasarkan <x id="0" equiv-text="${internalUsers}" /> pengguna internal saat ini dan <x id="1" equiv-text="${forecastedInternalUsers}" /> perkiraan pengguna internal.</target>
+  <source>Estimated user count one year from now based on <x id="0" equiv-text="${internalUsers}"/> current internal users and <x id="1" equiv-text="${forecastedInternalUsers}"/> forecasted internal users.</source>
+<target>Perkiraan jumlah pengguna satu tahun dari sekarang berdasarkan <x id="0" equiv-text="${internalUsers}"/> pengguna internal saat ini dan <x id="1" equiv-text="${forecastedInternalUsers}"/> perkiraan pengguna internal.</target>
 </trans-unit>
 <trans-unit id="s531571491deb239a">
   <source>Approximately</source>
@@ -2169,8 +2169,8 @@
 <target>Perkiraan pengguna eksternal</target>
 </trans-unit>
 <trans-unit id="sf52479d6daa0a4a8">
-  <source>Estimated user count one year from now based on <x id="0" equiv-text="${externalUsers}" /> current external users and <x id="1" equiv-text="${forecastedExternalUsers}" /> forecasted external users.</source>
-<target>Perkiraan jumlah pengguna satu tahun dari sekarang berdasarkan <x id="0" equiv-text="${externalUsers}" /> pengguna eksternal saat ini dan <x id="1" equiv-text="${forecastedExternalUsers}" /> perkiraan pengguna eksternal.</target>
+  <source>Estimated user count one year from now based on <x id="0" equiv-text="${externalUsers}"/> current external users and <x id="1" equiv-text="${forecastedExternalUsers}"/> forecasted external users.</source>
+<target>Perkiraan jumlah pengguna satu tahun dari sekarang berdasarkan <x id="0" equiv-text="${externalUsers}"/> pengguna eksternal saat ini dan <x id="1" equiv-text="${forecastedExternalUsers}"/> perkiraan pengguna eksternal.</target>
 </trans-unit>
 <trans-unit id="sd22bd01bdf28c548">
   <source>Cumulative license expiry</source>
@@ -2181,12 +2181,12 @@
 <target>Tidak ada kadaluwarsa</target>
 </trans-unit>
 <trans-unit id="s0dd031b58ed4017c">
-  <source>Internal: <x id="0" equiv-text="${item.internalUsers}" /></source>
-<target>Dalaman: <x id="0" equiv-text="${item.internalUsers}" /></target>
+  <source>Internal: <x id="0" equiv-text="${item.internalUsers}"/></source>
+<target>Dalaman: <x id="0" equiv-text="${item.internalUsers}"/></target>
 </trans-unit>
 <trans-unit id="s57b07e524f8f5c2a">
-  <source>External: <x id="0" equiv-text="${item.externalUsers}" /></source>
-<target>Eksternal: <x id="0" equiv-text="${item.externalUsers}" /></target>
+  <source>External: <x id="0" equiv-text="${item.externalUsers}"/></source>
+<target>Eksternal: <x id="0" equiv-text="${item.externalUsers}"/></target>
 </trans-unit>
 <trans-unit id="s8c4bc6e515949112">
   <source>Your Install ID</source>
@@ -2225,15 +2225,15 @@
 <target>Status lisensi keseluruhan</target>
 </trans-unit>
 <trans-unit id="s4891ccdb173626ba">
-  <source>Internal user usage (<x id="0" equiv-text="${currentInternalUsers}" />/<x id="1" equiv-text="${licensedInternalUsers}" />)</source>
-<target>Penggunaan pengguna internal (<x id="0" equiv-text="${currentInternalUsers}" />/<x id="1" equiv-text="${licensedInternalUsers}" />)</target>
+  <source>Internal user usage (<x id="0" equiv-text="${currentInternalUsers}"/>/<x id="1" equiv-text="${licensedInternalUsers}"/>)</source>
+<target>Penggunaan pengguna internal (<x id="0" equiv-text="${currentInternalUsers}"/>/<x id="1" equiv-text="${licensedInternalUsers}"/>)</target>
 </trans-unit>
 <trans-unit id="s087d6f07b52b30ec">
-  <source><x id="0" equiv-text="${internalUserPercentage &lt; Infinity ? internalUserPercentage : &quot;∞&quot;}" />%</source>
+  <source><x id="0" equiv-text="${internalUserPercentage &lt; Infinity ? internalUserPercentage : &quot;∞&quot;}"/>%</source>
 </trans-unit>
 <trans-unit id="scad748da438c56d4">
-  <source>External user usage (<x id="0" equiv-text="${currentExternalUsers}" />/<x id="1" equiv-text="${licensedExternalUsers}" />)</source>
-<target>Penggunaan pengguna eksternal (<x id="0" equiv-text="${currentExternalUsers}" />/<x id="1" equiv-text="${licensedExternalUsers}" />)</target>
+  <source>External user usage (<x id="0" equiv-text="${currentExternalUsers}"/>/<x id="1" equiv-text="${licensedExternalUsers}"/>)</source>
+<target>Penggunaan pengguna eksternal (<x id="0" equiv-text="${currentExternalUsers}"/>/<x id="1" equiv-text="${licensedExternalUsers}"/>)</target>
 </trans-unit>
 <trans-unit id="sd0fcaa6952729a9a">
   <source>Data Exports</source>
@@ -2281,11 +2281,11 @@
 </trans-unit>
 <trans-unit id="h30bbf18fbf87fa57">
   <source>To create a data export, navigate to
-                            <x id="0" equiv-text="&lt;a href=&quot;#/identity/users&quot;&gt;" />Directory &gt; Users<x id="1" equiv-text="&lt;/a&gt;" /> or to
-                            <x id="2" equiv-text="&lt;a href=&quot;#/events/log&quot;&gt;" />Events &gt; Logs<x id="3" equiv-text="&lt;/a&gt;" />.</source>
+                            <x id="0" equiv-text="&lt;a href=&quot;#/identity/users&quot;&gt;"/>Directory &gt; Users<x id="1" equiv-text="&lt;/a&gt;"/> or to
+                            <x id="2" equiv-text="&lt;a href=&quot;#/events/log&quot;&gt;"/>Events &gt; Logs<x id="3" equiv-text="&lt;/a&gt;"/>.</source>
 <target>Untuk membuat ekspor data, navigasikan ke
-                            <x id="0" equiv-text="&lt;a href=&quot;#/identity/users&quot;&gt;" />Direktori &gt; Pengguna<x id="1" equiv-text="&lt;/a&gt;" /> atau ke
-                            <x id="2" equiv-text="&lt;a href=&quot;#/events/log&quot;&gt;" />Acara &gt; Log<x id="3" equiv-text="&lt;/a&gt;" />.</target>
+                            <x id="0" equiv-text="&lt;a href=&quot;#/identity/users&quot;&gt;"/>Direktori &gt; Pengguna<x id="1" equiv-text="&lt;/a&gt;"/> atau ke
+                            <x id="2" equiv-text="&lt;a href=&quot;#/events/log&quot;&gt;"/>Acara &gt; Log<x id="3" equiv-text="&lt;/a&gt;"/>.</target>
 </trans-unit>
 <trans-unit id="sc1a1ff47c058bb09">
   <source>Event Log</source>
@@ -2304,8 +2304,8 @@
 <target>Info acara mentah</target>
 </trans-unit>
 <trans-unit id="s65d67612999165e9">
-  <source>Event <x id="0" equiv-text="${this.event.pk}" /></source>
-<target>Acara <x id="0" equiv-text="${this.event.pk}" /></target>
+  <source>Event <x id="0" equiv-text="${this.event.pk}"/></source>
+<target>Acara <x id="0" equiv-text="${this.event.pk}"/></target>
 </trans-unit>
 <trans-unit id="sa1c74b747fb31ef4">
   <source>Notification Rule</source>
@@ -2498,16 +2498,16 @@ Pengikatan ke grup/pengguna diperiksa terhadap pengguna acara.</target>
 <target>Pengguna anonim</target>
 </trans-unit>
 <trans-unit id="sc35581d9c1cd67ff">
-  <source>On behalf of <x id="0" equiv-text="${renderUsername(event.user.on_behalf_of)}" /></source>
-<target>Atas nama <x id="0" equiv-text="${renderUsername(event.user.on_behalf_of)}" /></target>
+  <source>On behalf of <x id="0" equiv-text="${renderUsername(event.user.on_behalf_of)}"/></source>
+<target>Atas nama <x id="0" equiv-text="${renderUsername(event.user.on_behalf_of)}"/></target>
 </trans-unit>
 <trans-unit id="s7225aacf0eee94d2">
-  <source>Authenticated as <x id="0" equiv-text="${renderUsername(event.user.authenticated_as)}" /></source>
-<target>Diautentikasi sebagai <x id="0" equiv-text="${renderUsername(event.user.authenticated_as)}" /></target>
+  <source>Authenticated as <x id="0" equiv-text="${renderUsername(event.user.authenticated_as)}"/></source>
+<target>Diautentikasi sebagai <x id="0" equiv-text="${renderUsername(event.user.authenticated_as)}"/></target>
 </trans-unit>
 <trans-unit id="s6cd96061d397f7b5">
-  <source>Via <x id="0" equiv-text="${event.context.device.name}" /></source>
-<target>Melalui <x id="0" equiv-text="${event.context.device.name}" /></target>
+  <source>Via <x id="0" equiv-text="${event.context.device.name}"/></source>
+<target>Melalui <x id="0" equiv-text="${event.context.device.name}"/></target>
 </trans-unit>
 <trans-unit id="s803ce7e1a2294d50">
   <source>Files</source>
@@ -2718,16 +2718,16 @@ Pengikatan ke grup/pengguna diperiksa terhadap pengguna acara.</target>
 <target>Aliran</target>
 </trans-unit>
 <trans-unit id="s5d90aeadfcb34286">
-  <source>Execute "<x id="0" equiv-text="${item.name}" />"</source>
-<target>Jalankan "<x id="0" equiv-text="${item.name}" />"</target>
+  <source>Execute "<x id="0" equiv-text="${item.name}"/>"</source>
+<target>Jalankan "<x id="0" equiv-text="${item.name}"/>"</target>
 </trans-unit>
 <trans-unit id="sc4fdeccf14be5378">
   <source>Execute</source>
 <target>Menjalankan</target>
 </trans-unit>
 <trans-unit id="saa25eac2952d918d">
-  <source>Export "<x id="0" equiv-text="${item.name}" />"</source>
-<target>Ekspor "<x id="0" equiv-text="${item.name}" />"</target>
+  <source>Export "<x id="0" equiv-text="${item.name}"/>"</source>
+<target>Ekspor "<x id="0" equiv-text="${item.name}"/>"</target>
 </trans-unit>
 <trans-unit id="s8d94e51441d0ce0c">
   <source>Flow Examples</source>
@@ -2772,24 +2772,24 @@ Pengikatan ke grup/pengguna diperiksa terhadap pengguna acara.</target>
 <target>Jalankan aliran</target>
 </trans-unit>
 <trans-unit id="s61e5043203e94d0a">
-  <source>Execute "<x id="0" equiv-text="${this.flow.name}" />" normally</source>
-<target>Jalankan "<x id="0" equiv-text="${this.flow.name}" />" secara normal</target>
+  <source>Execute "<x id="0" equiv-text="${this.flow.name}"/>" normally</source>
+<target>Jalankan "<x id="0" equiv-text="${this.flow.name}"/>" secara normal</target>
 </trans-unit>
 <trans-unit id="s9ff3121d30f88d52">
   <source>Normal</source>
 <target>Normal</target>
 </trans-unit>
 <trans-unit id="s02eb960c270a837e">
-  <source>Execute "<x id="0" equiv-text="${this.flow.name}" />" as current user</source>
-<target>Jalankan "<x id="0" equiv-text="${this.flow.name}" />" sebagai pengguna saat ini</target>
+  <source>Execute "<x id="0" equiv-text="${this.flow.name}"/>" as current user</source>
+<target>Jalankan "<x id="0" equiv-text="${this.flow.name}"/>" sebagai pengguna saat ini</target>
 </trans-unit>
 <trans-unit id="saf579a36a54c92e1">
   <source>Current user</source>
 <target>Pengguna saat ini</target>
 </trans-unit>
 <trans-unit id="sd149e44e50455923">
-  <source>Execute "<x id="0" equiv-text="${this.flow.name}" />" with inspector</source>
-<target>Jalankan "<x id="0" equiv-text="${this.flow.name}" />" dengan inspektur</target>
+  <source>Execute "<x id="0" equiv-text="${this.flow.name}"/>" with inspector</source>
+<target>Jalankan "<x id="0" equiv-text="${this.flow.name}"/>" dengan inspektur</target>
 </trans-unit>
 <trans-unit id="s45c530a48bcf74ad">
   <source>Use inspector</source>
@@ -3012,8 +3012,8 @@ Pengikatan ke grup/pengguna diperiksa terhadap pengguna acara.</target>
 <target>Grup</target>
 </trans-unit>
 <trans-unit id="s79683026e49e4866">
-  <source>View details of group "<x id="0" equiv-text="${item.name}" />"</source>
-<target>Lihat detail grup "<x id="0" equiv-text="${item.name}" />"</target>
+  <source>View details of group "<x id="0" equiv-text="${item.name}"/>"</source>
+<target>Lihat detail grup "<x id="0" equiv-text="${item.name}"/>"</target>
 </trans-unit>
 <trans-unit id="secdb4b4c4e66aa38">
   <source>Group Info</source>
@@ -3060,8 +3060,8 @@ Pengikatan ke grup/pengguna diperiksa terhadap pengguna acara.</target>
 <target>Hapus dari Grup</target>
 </trans-unit>
 <trans-unit id="sb4c9ed2a487b238f">
-  <source>Are you sure you want to remove user <x id="0" equiv-text="${this.targetUser?.username}" /> from the following groups?</source>
-<target>Apakah Anda yakin ingin menghapus pengguna <x id="0" equiv-text="${this.targetUser?.username}" /> dari grup berikut?</target>
+  <source>Are you sure you want to remove user <x id="0" equiv-text="${this.targetUser?.username}"/> from the following groups?</source>
+<target>Apakah Anda yakin ingin menghapus pengguna <x id="0" equiv-text="${this.targetUser?.username}"/> dari grup berikut?</target>
 </trans-unit>
 <trans-unit id="s65ca2f256ea09c11">
   <source>Add to existing group</source>
@@ -3112,8 +3112,8 @@ Pengikatan ke grup/pengguna diperiksa terhadap pengguna acara.</target>
 <target>DIHAPUS</target>
 </trans-unit>
 <trans-unit id="s76e10cbcb80c3a64">
-  <source>Are you sure you want to remove the selected users from <x id="0" equiv-text="${targetLabel}" />?</source>
-<target>Apakah Anda yakin ingin menghapus pengguna yang dipilih dari <x id="0" equiv-text="${targetLabel}" />?</target>
+  <source>Are you sure you want to remove the selected users from <x id="0" equiv-text="${targetLabel}"/>?</source>
+<target>Apakah Anda yakin ingin menghapus pengguna yang dipilih dari <x id="0" equiv-text="${targetLabel}"/>?</target>
 </trans-unit>
 <trans-unit id="s85835da8c3bd6198">
   <source>Are you sure you want to remove the selected users?</source>
@@ -3144,16 +3144,16 @@ Pengikatan ke grup/pengguna diperiksa terhadap pengguna acara.</target>
 <target>Peringatan: Grup ini dikonfigurasi dengan akses pengguna super. Pengguna yang ditambahkan akan memiliki akses pengguna super.</target>
 </trans-unit>
 <trans-unit id="s824e0943a7104668">
-  <source>This user will be added to the group "<x id="0" equiv-text="${this.targetGroup.name}" />".</source>
-<target>Pengguna ini akan ditambahkan ke grup "<x id="0" equiv-text="${this.targetGroup.name}" />".</target>
+  <source>This user will be added to the group "<x id="0" equiv-text="${this.targetGroup.name}"/>".</source>
+<target>Pengguna ini akan ditambahkan ke grup "<x id="0" equiv-text="${this.targetGroup.name}"/>".</target>
 </trans-unit>
 <trans-unit id="seb21141e9ea652e1">
   <source>New Group User</source>
 <target>Pengguna Grup Baru</target>
 </trans-unit>
 <trans-unit id="s86f283ed16448157">
-  <source>This user will be added to the role "<x id="0" equiv-text="${this.targetRole.name}" />".</source>
-<target>Pengguna ini akan ditambahkan ke peran "<x id="0" equiv-text="${this.targetRole.name}" />".</target>
+  <source>This user will be added to the role "<x id="0" equiv-text="${this.targetRole.name}"/>".</source>
+<target>Pengguna ini akan ditambahkan ke peran "<x id="0" equiv-text="${this.targetRole.name}"/>".</target>
 </trans-unit>
 <trans-unit id="s5e57c4018429afd2">
   <source>New Role User</source>
@@ -3245,10 +3245,10 @@ Pengikatan ke grup/pengguna diperiksa terhadap pengguna acara.</target>
 </trans-unit>
 <trans-unit id="h903c2b1c21bb9fc7">
   <source>If checked, approving a review will require at least that many users from
-                        <x id="0" equiv-text="&lt;em&gt;" />each<x id="1" equiv-text="&lt;/em&gt;" /> of the selected groups. When disabled, the value is a total
+                        <x id="0" equiv-text="&lt;em&gt;"/>each<x id="1" equiv-text="&lt;/em&gt;"/> of the selected groups. When disabled, the value is a total
                         across all groups.</source>
 <target>Jika dicentang, menyetujui ulasan akan memerlukan setidaknya banyak pengguna
-                        <x id="0" equiv-text="&lt;em&gt;" />setiap<x id="1" equiv-text="&lt;/em&gt;" /> grup yang dipilih. Jika dinonaktifkan, nilainya adalah total
+                        <x id="0" equiv-text="&lt;em&gt;"/>setiap<x id="1" equiv-text="&lt;/em&gt;"/> grup yang dipilih. Jika dinonaktifkan, nilainya adalah total
                         di semua kelompok.</target>
 </trans-unit>
 <trans-unit id="s74906f78877111cb">
@@ -3344,20 +3344,20 @@ Pengikatan ke grup/pengguna diperiksa terhadap pengguna acara.</target>
 <target>Tidak ditemukan iterasi tinjauan untuk objek ini.</target>
 </trans-unit>
 <trans-unit id="s68ea8ed25680242f">
-  <source>At least <x id="0" equiv-text="${minReviewers}" /> user from this group: <x id="1" equiv-text="${groupList}" />.</source>
-<target>Setidaknya <x id="0" equiv-text="${minReviewers}" /> pengguna dari grup ini: <x id="1" equiv-text="${groupList}" />.</target>
+  <source>At least <x id="0" equiv-text="${minReviewers}"/> user from this group: <x id="1" equiv-text="${groupList}"/>.</source>
+<target>Setidaknya <x id="0" equiv-text="${minReviewers}"/> pengguna dari grup ini: <x id="1" equiv-text="${groupList}"/>.</target>
 </trans-unit>
 <trans-unit id="sd9e03fcf99724085">
-  <source>At least <x id="0" equiv-text="${minReviewers}" /> user from these groups: <x id="1" equiv-text="${groupList}" />.</source>
-<target>Setidaknya <x id="0" equiv-text="${minReviewers}" /> pengguna dari grup ini: <x id="1" equiv-text="${groupList}" />.</target>
+  <source>At least <x id="0" equiv-text="${minReviewers}"/> user from these groups: <x id="1" equiv-text="${groupList}"/>.</source>
+<target>Setidaknya <x id="0" equiv-text="${minReviewers}"/> pengguna dari grup ini: <x id="1" equiv-text="${groupList}"/>.</target>
 </trans-unit>
 <trans-unit id="sbbaa87f8826a0756">
-  <source>At least <x id="0" equiv-text="${minReviewers}" /> users from this group: <x id="1" equiv-text="${groupList}" />.</source>
-<target>Setidaknya <x id="0" equiv-text="${minReviewers}" /> pengguna dari grup ini: <x id="1" equiv-text="${groupList}" />.</target>
+  <source>At least <x id="0" equiv-text="${minReviewers}"/> users from this group: <x id="1" equiv-text="${groupList}"/>.</source>
+<target>Setidaknya <x id="0" equiv-text="${minReviewers}"/> pengguna dari grup ini: <x id="1" equiv-text="${groupList}"/>.</target>
 </trans-unit>
 <trans-unit id="s79ef398b6e3e2c44">
-  <source>At least <x id="0" equiv-text="${minReviewers}" /> users from these groups: <x id="1" equiv-text="${groupList}" />.</source>
-<target>Setidaknya <x id="0" equiv-text="${minReviewers}" /> pengguna dari grup ini: <x id="1" equiv-text="${groupList}" />.</target>
+  <source>At least <x id="0" equiv-text="${minReviewers}"/> users from these groups: <x id="1" equiv-text="${groupList}"/>.</source>
+<target>Setidaknya <x id="0" equiv-text="${minReviewers}"/> pengguna dari grup ini: <x id="1" equiv-text="${groupList}"/>.</target>
 </trans-unit>
 <trans-unit id="s33d20c1a2e0bf773">
   <source>Review opened on</source>
@@ -3540,24 +3540,24 @@ Pengikatan ke grup/pengguna diperiksa terhadap pengguna acara.</target>
 <target>Terakhir terlihat</target>
 </trans-unit>
 <trans-unit id="s1da3499258024860">
-  <source><x id="0" equiv-text="${versionString}" /> (build <x id="1" equiv-text="${item.buildHash.substring(0, 8)}" />)</source>
-<target><x id="0" equiv-text="${versionString}" /> (membangun <x id="1" equiv-text="${item.buildHash.substring(0, 8)}" />)</target>
+  <source><x id="0" equiv-text="${versionString}"/> (build <x id="1" equiv-text="${item.buildHash.substring(0, 8)}"/>)</source>
+<target><x id="0" equiv-text="${versionString}"/> (membangun <x id="1" equiv-text="${item.buildHash.substring(0, 8)}"/>)</target>
 </trans-unit>
 <trans-unit id="s001fd928369d4ddc">
-  <source><x id="0" equiv-text="${versionString}" /> (FIPS)</source>
-<target><x id="0" equiv-text="${versionString}" /> (FIPS)</target>
+  <source><x id="0" equiv-text="${versionString}"/> (FIPS)</source>
+<target><x id="0" equiv-text="${versionString}"/> (FIPS)</target>
 </trans-unit>
 <trans-unit id="s322e34cfcba47155">
   <source>Not available</source>
 <target>Tidak tersedia</target>
 </trans-unit>
 <trans-unit id="s1ac2653a6492b435">
-  <source><x id="0" equiv-text="${outdatedOutposts[0].version}" />, should be <x id="1" equiv-text="${outdatedOutposts[0].versionShould}" /></source>
-<target><x id="0" equiv-text="${outdatedOutposts[0].version}" />, seharusnya <x id="1" equiv-text="${outdatedOutposts[0].versionShould}" /></target>
+  <source><x id="0" equiv-text="${outdatedOutposts[0].version}"/>, should be <x id="1" equiv-text="${outdatedOutposts[0].versionShould}"/></source>
+<target><x id="0" equiv-text="${outdatedOutposts[0].version}"/>, seharusnya <x id="1" equiv-text="${outdatedOutposts[0].versionShould}"/></target>
 </trans-unit>
 <trans-unit id="s354405ae02cb262d">
-  <source>Last seen: <x id="0" equiv-text="${formatElapsedTime(lastSeen)}" /> (<x id="1" equiv-text="${lastSeen.toLocaleTimeString()}" />)</source>
-<target>Terakhir terlihat: <x id="0" equiv-text="${formatElapsedTime(lastSeen)}" /> (<x id="1" equiv-text="${lastSeen.toLocaleTimeString()}" />)</target>
+  <source>Last seen: <x id="0" equiv-text="${formatElapsedTime(lastSeen)}"/> (<x id="1" equiv-text="${lastSeen.toLocaleTimeString()}"/>)</source>
+<target>Terakhir terlihat: <x id="0" equiv-text="${formatElapsedTime(lastSeen)}"/> (<x id="1" equiv-text="${lastSeen.toLocaleTimeString()}"/>)</target>
 </trans-unit>
 <trans-unit id="seeaf3a5c5dda2b0d">
   <source>Search outposts by name, type or assigned integration...</source>
@@ -3576,8 +3576,8 @@ Pengikatan ke grup/pengguna diperiksa terhadap pengguna acara.</target>
 <target>Peringatan: Domain authentik tidak dikonfigurasi, otentikasi tidak akan berfungsi.</target>
 </trans-unit>
 <trans-unit id="sbf5f4c5ba679e847">
-  <source>Logging in via <x id="0" equiv-text="${item.config.authentik_host}" />.</source>
-<target>Masuk melalui <x id="0" equiv-text="${item.config.authentik_host}" />.</target>
+  <source>Logging in via <x id="0" equiv-text="${item.config.authentik_host}"/>.</source>
+<target>Masuk melalui <x id="0" equiv-text="${item.config.authentik_host}"/>.</target>
 </trans-unit>
 <trans-unit id="s59b6028f19d15cda">
   <source>No integration active</source>
@@ -3596,8 +3596,8 @@ Pengikatan ke grup/pengguna diperiksa terhadap pengguna acara.</target>
 <target>Tidak ada penyedia yang dikonfigurasi.</target>
 </trans-unit>
 <trans-unit id="sd70c33ce20f4221f">
-  <source><x id="0" equiv-text="${healthyCount}" />/<x id="1" equiv-text="${totalCount}" /> instances are healthy.</source>
-<target><x id="0" equiv-text="${healthyCount}" />/<x id="1" equiv-text="${totalCount}" /> instance berfungsi dengan baik.</target>
+  <source><x id="0" equiv-text="${healthyCount}"/>/<x id="1" equiv-text="${totalCount}"/> instances are healthy.</source>
+<target><x id="0" equiv-text="${healthyCount}"/>/<x id="1" equiv-text="${totalCount}"/> instance berfungsi dengan baik.</target>
 </trans-unit>
 <trans-unit id="s3397d8bb9edb5637">
   <source>Outpost Info</source>
@@ -3608,8 +3608,8 @@ Pengikatan ke grup/pengguna diperiksa terhadap pengguna acara.</target>
 <target>Kesehatan</target>
 </trans-unit>
 <trans-unit id="s037f22187581bf8f">
-  <source>Edit "<x id="0" equiv-text="${this.outpost?.name || &quot;outpost&quot;}" />"</source>
-<target>Sunting "<x id="0" equiv-text="${this.outpost?.name || &quot;outpost&quot;}" />"</target>
+  <source>Edit "<x id="0" equiv-text="${this.outpost?.name || &quot;outpost&quot;}"/>"</source>
+<target>Sunting "<x id="0" equiv-text="${this.outpost?.name || &quot;outpost&quot;}"/>"</target>
 </trans-unit>
 <trans-unit id="sa721e91eca44711f">
   <source>Configured providers</source>
@@ -3656,12 +3656,12 @@ Pengikatan ke grup/pengguna diperiksa terhadap pengguna acara.</target>
 <target>URL buruh pelabuhan</target>
 </trans-unit>
 <trans-unit id="h8c1aa2d523f94f36">
-  <source>Can be in the format of <x id="0" equiv-text="&lt;code&gt;" />unix://<x id="1" equiv-text="&lt;/code&gt;" /> when connecting to a local
-                            docker daemon, using <x id="2" equiv-text="&lt;code&gt;" />ssh://<x id="3" equiv-text="&lt;/code&gt;" /> to connect via SSH, or
-                            <x id="4" equiv-text="&lt;code&gt;" />https://:2376<x id="5" equiv-text="&lt;/code&gt;" /> when connecting to a remote system.</source>
-<target>Dapat dalam format <x id="0" equiv-text="&lt;code&gt;" />unix://<x id="1" equiv-text="&lt;/code&gt;" /> saat terhubung ke lokal
-                            daemon buruh pelabuhan, menggunakan <x id="2" equiv-text="&lt;code&gt;" />ssh://<x id="3" equiv-text="&lt;/code&gt;" /> untuk terhubung melalui SSH, atau
-                            <x id="4" equiv-text="&lt;code&gt;" />https://:2376<x id="5" equiv-text="&lt;/code&gt;" /> saat menghubungkan ke sistem jarak jauh.</target>
+  <source>Can be in the format of <x id="0" equiv-text="&lt;code&gt;"/>unix://<x id="1" equiv-text="&lt;/code&gt;"/> when connecting to a local
+                            docker daemon, using <x id="2" equiv-text="&lt;code&gt;"/>ssh://<x id="3" equiv-text="&lt;/code&gt;"/> to connect via SSH, or
+                            <x id="4" equiv-text="&lt;code&gt;"/>https://:2376<x id="5" equiv-text="&lt;/code&gt;"/> when connecting to a remote system.</source>
+<target>Dapat dalam format <x id="0" equiv-text="&lt;code&gt;"/>unix://<x id="1" equiv-text="&lt;/code&gt;"/> saat terhubung ke lokal
+                            daemon buruh pelabuhan, menggunakan <x id="2" equiv-text="&lt;code&gt;"/>ssh://<x id="3" equiv-text="&lt;/code&gt;"/> untuk terhubung melalui SSH, atau
+                            <x id="4" equiv-text="&lt;code&gt;"/>https://:2376<x id="5" equiv-text="&lt;/code&gt;"/> saat menghubungkan ke sistem jarak jauh.</target>
 </trans-unit>
 <trans-unit id="saf1d289e3137c2ea">
   <source>CA which the endpoint's Certificate is verified against. Can be left empty for no validation.</source>
@@ -3776,16 +3776,16 @@ Pengikatan ke grup/pengguna diperiksa terhadap pengguna acara.</target>
 <target>Kebijakan berhasil dibuat.</target>
 </trans-unit>
 <trans-unit id="s030ac0829bb50a49">
-  <source>Policy <x id="0" equiv-text="${item.policyObj?.name}" /></source>
-<target>Kebijakan <x id="0" equiv-text="${item.policyObj?.name}" /></target>
+  <source>Policy <x id="0" equiv-text="${item.policyObj?.name}"/></source>
+<target>Kebijakan <x id="0" equiv-text="${item.policyObj?.name}"/></target>
 </trans-unit>
 <trans-unit id="s2a64d2dca3da9b0e">
-  <source>Group <x id="0" equiv-text="${item.groupObj?.name}" /></source>
-<target>Grup <x id="0" equiv-text="${item.groupObj?.name}" /></target>
+  <source>Group <x id="0" equiv-text="${item.groupObj?.name}"/></source>
+<target>Grup <x id="0" equiv-text="${item.groupObj?.name}"/></target>
 </trans-unit>
 <trans-unit id="se5dc026819a32ff8">
-  <source>User <x id="0" equiv-text="${item.userObj?.name || item.userObj?.username}" /></source>
-<target>Pengguna <x id="0" equiv-text="${item.userObj?.name || item.userObj?.username}" /></target>
+  <source>User <x id="0" equiv-text="${item.userObj?.name || item.userObj?.username}"/></source>
+<target>Pengguna <x id="0" equiv-text="${item.userObj?.name || item.userObj?.username}"/></target>
 </trans-unit>
 <trans-unit id="s50c312bea93b6925">
   <source>Edit Policy</source>
@@ -3832,8 +3832,8 @@ Pengikatan ke grup/pengguna diperiksa terhadap pengguna acara.</target>
 <target>Tindakan kebijakan</target>
 </trans-unit>
 <trans-unit id="sb7af25ce6e30d61a">
-  <source>The currently selected policy engine mode is <x id="0" equiv-text="${policyEngineMode.label}" />:</source>
-<target>Mode mesin kebijakan yang dipilih saat ini adalah <x id="0" equiv-text="${policyEngineMode.label}" />:</target>
+  <source>The currently selected policy engine mode is <x id="0" equiv-text="${policyEngineMode.label}"/>:</source>
+<target>Mode mesin kebijakan yang dipilih saat ini adalah <x id="0" equiv-text="${policyEngineMode.label}"/>:</target>
 </trans-unit>
 <trans-unit id="safc0e0656d572f4e">
   <source>A policy used for testing. Always returns the same result as specified below after waiting a random duration.</source>
@@ -4176,8 +4176,8 @@ Pengikatan ke grup/pengguna diperiksa terhadap pengguna acara.</target>
 <target>Cari kebijakan berdasarkan nama atau jenis...</target>
 </trans-unit>
 <trans-unit id="se16ac750b81fa93d">
-  <source>Assigned to <x id="0" equiv-text="${item.boundTo}" /> object(s).</source>
-<target>Ditugaskan ke <x id="0" equiv-text="${item.boundTo}" /> objek.</target>
+  <source>Assigned to <x id="0" equiv-text="${item.boundTo}"/> object(s).</source>
+<target>Ditugaskan ke <x id="0" equiv-text="${item.boundTo}"/> objek.</target>
 </trans-unit>
 <trans-unit id="s5a48d5171e1a1522">
   <source>Warning: Policy is not assigned.</source>
@@ -6332,8 +6332,8 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Pelajari lebih lanjut</target>
 </trans-unit>
 <trans-unit id="s7afef158aada7389">
-  <source><x id="0" equiv-text="${this.brand.brandingTitle}" /> will collect all objects with the specified parameters:</source>
-<target><x id="0" equiv-text="${this.brand.brandingTitle}" /> akan mengumpulkan semua objek dengan parameter yang ditentukan:</target>
+  <source><x id="0" equiv-text="${this.brand.brandingTitle}"/> will collect all objects with the specified parameters:</source>
+<target><x id="0" equiv-text="${this.brand.brandingTitle}"/> akan mengumpulkan semua objek dengan parameter yang ditentukan:</target>
 </trans-unit>
 <trans-unit id="sa8d2689c8fdfea22">
   <source>Successfully requested data export</source>
@@ -6384,8 +6384,8 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Hapus dari Peran</target>
 </trans-unit>
 <trans-unit id="s5fcb76c89d17698c">
-  <source>Are you sure you want to remove user <x id="0" equiv-text="${this.targetUser?.username}" /> from the following roles?</source>
-<target>Apakah Anda yakin ingin menghapus pengguna <x id="0" equiv-text="${this.targetUser?.username}" /> dari peran berikut?</target>
+  <source>Are you sure you want to remove user <x id="0" equiv-text="${this.targetUser?.username}"/> from the following roles?</source>
+<target>Apakah Anda yakin ingin menghapus pengguna <x id="0" equiv-text="${this.targetUser?.username}"/> dari peran berikut?</target>
 </trans-unit>
 <trans-unit id="s6a850cd00064d6e6">
   <source>Inherited from parent group</source>
@@ -6452,8 +6452,8 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Kelola peran yang memberikan izin ke objek dalam autentik.</target>
 </trans-unit>
 <trans-unit id="s633e3919f46a8cd3">
-  <source>View details of role "<x id="0" equiv-text="${item.name}" />"</source>
-<target>Lihat detail peran "<x id="0" equiv-text="${item.name}" />"</target>
+  <source>View details of role "<x id="0" equiv-text="${item.name}"/>"</source>
+<target>Lihat detail peran "<x id="0" equiv-text="${item.name}"/>"</target>
 </trans-unit>
 <trans-unit id="s3b4ad8abf4f08c35">
   <source>Hide managed roles</source>
@@ -6484,8 +6484,8 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Info Peran</target>
 </trans-unit>
 <trans-unit id="s7e796fe83982863f">
-  <source>Role <x id="0" equiv-text="${this.targetRole.name}" /></source>
-<target>Peran <x id="0" equiv-text="${this.targetRole.name}" /></target>
+  <source>Role <x id="0" equiv-text="${this.targetRole.name}"/></source>
+<target>Peran <x id="0" equiv-text="${this.targetRole.name}"/></target>
 </trans-unit>
 <trans-unit id="s91e3a47599412f51">
   <source>Sources</source>
@@ -6872,8 +6872,8 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Pengidentifikasi</target>
 </trans-unit>
 <trans-unit id="sf5c3def20e22e0ac">
-  <source>The unique identifier of this object in LDAP, the value of the '<x id="0" equiv-text="${this.source?.objectUniquenessField}" />' attribute.</source>
-<target>Pengidentifikasi unik objek ini di LDAP, nilai atribut '<x id="0" equiv-text="${this.source?.objectUniquenessField}" />'.</target>
+  <source>The unique identifier of this object in LDAP, the value of the '<x id="0" equiv-text="${this.source?.objectUniquenessField}"/>' attribute.</source>
+<target>Pengidentifikasi unik objek ini di LDAP, nilai atribut '<x id="0" equiv-text="${this.source?.objectUniquenessField}"/>'.</target>
 </trans-unit>
 <trans-unit id="s6e982a7b2b65c859">
   <source>LDAP User(s)</source>
@@ -6888,8 +6888,8 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Hubungkan Pengguna</target>
 </trans-unit>
 <trans-unit id="s21c15246d76b2910">
-  <source>Object Identifier (<x id="0" equiv-text="${this.source?.objectUniquenessField}" />)</source>
-<target>Pengidentifikasi Objek (<x id="0" equiv-text="${this.source?.objectUniquenessField}" />)</target>
+  <source>Object Identifier (<x id="0" equiv-text="${this.source?.objectUniquenessField}"/>)</source>
+<target>Pengidentifikasi Objek (<x id="0" equiv-text="${this.source?.objectUniquenessField}"/>)</target>
 </trans-unit>
 <trans-unit id="sa0e1c48bdd7086f7">
   <source>Synced Users</source>
@@ -6900,8 +6900,8 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Grup yang Disinkronkan</target>
 </trans-unit>
 <trans-unit id="sf3fec8353106ac2f">
-  <source>OAuth Source <x id="0" equiv-text="${this.source.name}" /></source>
-<target>Sumber OAuth <x id="0" equiv-text="${this.source.name}" /></target>
+  <source>OAuth Source <x id="0" equiv-text="${this.source.name}"/></source>
+<target>Sumber OAuth <x id="0" equiv-text="${this.source.name}"/></target>
 </trans-unit>
 <trans-unit id="s4d5cb134999b50df">
   <source>HTTP Basic Auth</source>
@@ -7466,8 +7466,8 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Impor otomatis</target>
 </trans-unit>
 <trans-unit id="s77299a9d3dd932cd">
-  <source>Successfully imported <x id="0" equiv-text="${res.count}" /> devices.</source>
-<target>Berhasil mengimpor <x id="0" equiv-text="${res.count}" /> perangkat.</target>
+  <source>Successfully imported <x id="0" equiv-text="${res.count}"/> devices.</source>
+<target>Berhasil mengimpor <x id="0" equiv-text="${res.count}"/> perangkat.</target>
 </trans-unit>
 <trans-unit id="s6a615f6165ef01c9">
   <source>Start automatic import</source>
@@ -8330,8 +8330,8 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Validasi cetak biru gagal</target>
 </trans-unit>
 <trans-unit id="sa04b7204708f4f74">
-  <source>Flow with slug "<x id="0" equiv-text="${data.slug}" />" not found after import</source>
-<target>Aliran dengan slug "<x id="0" equiv-text="${data.slug}" />" tidak ditemukan setelah impor</target>
+  <source>Flow with slug "<x id="0" equiv-text="${data.slug}"/>" not found after import</source>
+<target>Aliran dengan slug "<x id="0" equiv-text="${data.slug}"/>" tidak ditemukan setelah impor</target>
 </trans-unit>
 <trans-unit id="s8262b0e4fe70ebcc">
   <source>Flow Name</source>
@@ -8490,12 +8490,12 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Silakan masukkan setidaknya satu alamat email</target>
 </trans-unit>
 <trans-unit id="s0f957a7b0725a6dd">
-  <source>Invitation emails queued for sending to <x id="0" equiv-text="${addresses.length}" /> recipient(s). Check the System Tasks for more information.</source>
-<target>Email undangan masuk antrean untuk dikirim ke <x id="0" equiv-text="${addresses.length}" /> penerima. Periksa Tugas Sistem untuk informasi lebih lanjut.</target>
+  <source>Invitation emails queued for sending to <x id="0" equiv-text="${addresses.length}"/> recipient(s). Check the System Tasks for more information.</source>
+<target>Email undangan masuk antrean untuk dikirim ke <x id="0" equiv-text="${addresses.length}"/> penerima. Periksa Tugas Sistem untuk informasi lebih lanjut.</target>
 </trans-unit>
 <trans-unit id="s27c34847aec88ec6">
-  <source>Failed to queue invitation emails: <x id="0" equiv-text="${error}" /></source>
-<target>Gagal mengantri email undangan: <x id="0" equiv-text="${error}" /></target>
+  <source>Failed to queue invitation emails: <x id="0" equiv-text="${error}"/></source>
+<target>Gagal mengantri email undangan: <x id="0" equiv-text="${error}"/></target>
 </trans-unit>
 <trans-unit id="s8b97ea84af17c029">
   <source>Never</source>
@@ -8894,8 +8894,8 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Kebijakan yang dipilih dijalankan ketika tahapan diserahkan untuk memvalidasi data.</target>
 </trans-unit>
 <trans-unit id="s2d5f69929bb7221d">
-  <source><x id="0" equiv-text="${p.name}" /> ("<x id="1" equiv-text="${p.fieldKey}" />", of type <x id="2" equiv-text="${p.type}" />)</source>
-<target><x id="0" equiv-text="${p.name}" /> ("<x id="1" equiv-text="${p.fieldKey}" />", dari tipe <x id="2" equiv-text="${p.type}" />)</target>
+  <source><x id="0" equiv-text="${p.name}"/> ("<x id="1" equiv-text="${p.fieldKey}"/>", of type <x id="2" equiv-text="${p.type}"/>)</source>
+<target><x id="0" equiv-text="${p.name}"/> ("<x id="1" equiv-text="${p.fieldKey}"/>", dari tipe <x id="2" equiv-text="${p.type}"/>)</target>
 </trans-unit>
 <trans-unit id="s00febd85a4889bb1">
   <source>Redirect the user to a static URL or another flow, optionally with all gathered context.</source>
@@ -9244,16 +9244,16 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Merek ini tidak memiliki alur pemulihan, sehingga tautan pemulihan tidak dapat dibuat. Konfigurasikan alur pemulihan di pengaturan merek untuk mengaktifkan pemulihan.</target>
 </trans-unit>
 <trans-unit id="s547b687213f48489">
-  <source>Update <x id="0" equiv-text="${formatUserDisplayName(user)}" />'s password</source>
-<target>Perbarui sandi <x id="0" equiv-text="${formatUserDisplayName(user)}" /></target>
+  <source>Update <x id="0" equiv-text="${formatUserDisplayName(user)}"/>'s password</source>
+<target>Perbarui sandi <x id="0" equiv-text="${formatUserDisplayName(user)}"/></target>
 </trans-unit>
 <trans-unit id="sce8d867ca5f35304">
   <source>Set password</source>
 <target>Tetapkan kata sandi</target>
 </trans-unit>
 <trans-unit id="s3d2a8b86a4f5a810">
-  <source>Successfully created user and added to group <x id="0" equiv-text="${this.targetGroup.name}" /></source>
-<target>Berhasil membuat pengguna dan ditambahkan ke grup <x id="0" equiv-text="${this.targetGroup.name}" /></target>
+  <source>Successfully created user and added to group <x id="0" equiv-text="${this.targetGroup.name}"/></source>
+<target>Berhasil membuat pengguna dan ditambahkan ke grup <x id="0" equiv-text="${this.targetGroup.name}"/></target>
 </trans-unit>
 <trans-unit id="s9c3c272944dcfca3">
   <source>Successfully created user.</source>
@@ -9300,12 +9300,12 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Pengguna tidak dikenal</target>
 </trans-unit>
 <trans-unit id="form.headline.deactivation">
-  <source>Review <x id="0" equiv-text="${this.verboseName}" /> Deactivation</source>
-<target>Tinjau <x id="0" equiv-text="${this.verboseName}" /> Penonaktifan</target>
+  <source>Review <x id="0" equiv-text="${this.verboseName}"/> Deactivation</source>
+<target>Tinjau <x id="0" equiv-text="${this.verboseName}"/> Penonaktifan</target>
 </trans-unit>
 <trans-unit id="form.headline.activation">
-  <source>Review <x id="0" equiv-text="${this.verboseName}" /> Activation</source>
-<target>Tinjau <x id="0" equiv-text="${this.verboseName}" /> Aktivasi</target>
+  <source>Review <x id="0" equiv-text="${this.verboseName}"/> Activation</source>
+<target>Tinjau <x id="0" equiv-text="${this.verboseName}"/> Aktivasi</target>
 </trans-unit>
 <trans-unit id="s028d385389b5aac0">
   <source>Lock the user out of this system</source>
@@ -9328,20 +9328,20 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Tidak ada nama yang ditetapkan</target>
 </trans-unit>
 <trans-unit id="s83991563e9d607ac">
-  <source>Successfully revoked <x id="0" equiv-text="${this.revokedCount}" /> session(s) for <x id="1" equiv-text="${this.users.length}" /> user(s)</source>
-<target>Berhasil mencabut <x id="0" equiv-text="${this.revokedCount}" /> sesi untuk <x id="1" equiv-text="${this.users.length}" /> pengguna</target>
+  <source>Successfully revoked <x id="0" equiv-text="${this.revokedCount}"/> session(s) for <x id="1" equiv-text="${this.users.length}"/> user(s)</source>
+<target>Berhasil mencabut <x id="0" equiv-text="${this.revokedCount}"/> sesi untuk <x id="1" equiv-text="${this.users.length}"/> pengguna</target>
 </trans-unit>
 <trans-unit id="s4b004192e4d6ab2e">
-  <source>Failed to revoke sessions: <x id="0" equiv-text="${e.toString()}" /></source>
-<target>Gagal mencabut sesi: <x id="0" equiv-text="${e.toString()}" /></target>
+  <source>Failed to revoke sessions: <x id="0" equiv-text="${e.toString()}"/></source>
+<target>Gagal mencabut sesi: <x id="0" equiv-text="${e.toString()}"/></target>
 </trans-unit>
 <trans-unit id="sb458ffb37cbde768">
   <source>Revoke Sessions</source>
 <target>Cabut Sesi</target>
 </trans-unit>
 <trans-unit id="s1bd2d0f088b75b92">
-  <source>Are you sure you want to revoke all sessions for <x id="0" equiv-text="${this.users.length}" /> user(s)?</source>
-<target>Apakah Anda yakin ingin mencabut semua sesi untuk <x id="0" equiv-text="${this.users.length}" /> pengguna?</target>
+  <source>Are you sure you want to revoke all sessions for <x id="0" equiv-text="${this.users.length}"/> user(s)?</source>
+<target>Apakah Anda yakin ingin mencabut semua sesi untuk <x id="0" equiv-text="${this.users.length}"/> pengguna?</target>
 </trans-unit>
 <trans-unit id="s5c5e74eabcb9eba1">
   <source>This will force the selected users to re-authenticate on all their devices.</source>
@@ -9384,32 +9384,28 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Kesalahan tidak diketahui</target>
 </trans-unit>
 <trans-unit id="s499bbb3f424cabcf">
-  <source>Successfully imported <x id="0" equiv-text="${summary.created}" /> user(s).</source>
-<target>Berhasil mengimpor <x id="0" equiv-text="${summary.created}" /> pengguna.</target>
-</trans-unit>
-<trans-unit id="s39b264e9e23ecd39">
-  <source>Imported <x id="0" equiv-text="${summary.created}" /> user(s), <x id="1" equiv-text="${summary.failed.length}" /> row(s) failed.</source>
-<target>Gagal mengimpor <x id="0" equiv-text="${summary.created}" /> pengguna, <x id="1" equiv-text="${summary.failed.length}" /> baris.</target>
+  <source>Successfully imported <x id="0" equiv-text="${summary.created}"/> user(s).</source>
+<target>Berhasil mengimpor <x id="0" equiv-text="${summary.created}"/> pengguna.</target>
 </trans-unit>
 <trans-unit id="s0cf4b316d1ccdd17">
-  <source>Line <x id="0" equiv-text="${error.line}" />: <x id="1" equiv-text="${error.message}" /></source>
-<target>Baris <x id="0" equiv-text="${error.line}" />: <x id="1" equiv-text="${error.message}" /></target>
+  <source>Line <x id="0" equiv-text="${error.line}"/>: <x id="1" equiv-text="${error.message}"/></source>
+<target>Baris <x id="0" equiv-text="${error.line}"/>: <x id="1" equiv-text="${error.message}"/></target>
 </trans-unit>
 <trans-unit id="s6421462baadc558e">
-  <source>Created <x id="0" equiv-text="${this.summary.created}" /> user(s).</source>
-<target>Membuat <x id="0" equiv-text="${this.summary.created}" /> pengguna.</target>
+  <source>Created <x id="0" equiv-text="${this.summary.created}"/> user(s).</source>
+<target>Membuat <x id="0" equiv-text="${this.summary.created}"/> pengguna.</target>
 </trans-unit>
 <trans-unit id="sea1a00fcb00af42e">
-  <source><x id="0" equiv-text="${this.summary.failed.length}" /> row(s) could not be imported:</source>
-<target><x id="0" equiv-text="${this.summary.failed.length}" /> baris tidak dapat diimpor:</target>
+  <source><x id="0" equiv-text="${this.summary.failed.length}"/> row(s) could not be imported:</source>
+<target><x id="0" equiv-text="${this.summary.failed.length}"/> baris tidak dapat diimpor:</target>
 </trans-unit>
 <trans-unit id="s0a0d5830d1120fc7">
-  <source><x id="0" equiv-text="${users.length}" /> valid user(s) ready to import.</source>
-<target><x id="0" equiv-text="${users.length}" /> pengguna valid yang siap diimpor.</target>
+  <source><x id="0" equiv-text="${users.length}"/> valid user(s) ready to import.</source>
+<target><x id="0" equiv-text="${users.length}"/> pengguna valid yang siap diimpor.</target>
 </trans-unit>
 <trans-unit id="s3f04204fdf24d9a4">
-  <source><x id="0" equiv-text="${errors.length}" /> row(s) will be skipped:</source>
-<target><x id="0" equiv-text="${errors.length}" /> baris akan dilewati:</target>
+  <source><x id="0" equiv-text="${errors.length}"/> row(s) will be skipped:</source>
+<target><x id="0" equiv-text="${errors.length}"/> baris akan dilewati:</target>
 </trans-unit>
 <trans-unit id="s965b949bd40d9b44">
   <source>Import users from CSV</source>
@@ -9452,8 +9448,8 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Terakhir digunakan pada</target>
 </trans-unit>
 <trans-unit id="sbfee780fa0a2c83e">
-  <source>Device type <x id="0" equiv-text="${device.verboseName}" /> cannot be deleted</source>
-<target>Jenis perangkat <x id="0" equiv-text="${device.verboseName}" /> tidak dapat dihapus</target>
+  <source>Device type <x id="0" equiv-text="${device.verboseName}"/> cannot be deleted</source>
+<target>Jenis perangkat <x id="0" equiv-text="${device.verboseName}"/> tidak dapat dihapus</target>
 </trans-unit>
 <trans-unit id="sa0b01f479f40c52d">
   <source>Device(s)</source>
@@ -9504,12 +9500,12 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Pengguna diperbarui.</target>
 </trans-unit>
 <trans-unit id="s13625030f6501a5f">
-  <source>User created and added to group <x id="0" equiv-text="${this.targetGroup.name}" /></source>
-<target>Pengguna dibuat dan ditambahkan ke grup <x id="0" equiv-text="${this.targetGroup.name}" /></target>
+  <source>User created and added to group <x id="0" equiv-text="${this.targetGroup.name}"/></source>
+<target>Pengguna dibuat dan ditambahkan ke grup <x id="0" equiv-text="${this.targetGroup.name}"/></target>
 </trans-unit>
 <trans-unit id="s31dc80daa773a5dc">
-  <source>User created and added to role <x id="0" equiv-text="${this.targetRole.name}" /></source>
-<target>Pengguna dibuat dan ditambahkan ke peran <x id="0" equiv-text="${this.targetRole.name}" /></target>
+  <source>User created and added to role <x id="0" equiv-text="${this.targetRole.name}"/></source>
+<target>Pengguna dibuat dan ditambahkan ke peran <x id="0" equiv-text="${this.targetRole.name}"/></target>
 </trans-unit>
 <trans-unit id="sd1d84a93a9a8dd44">
   <source>User created.</source>
@@ -9628,35 +9624,35 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Cari berdasarkan nama pengguna, email, dll...</target>
 </trans-unit>
 <trans-unit id="s55fa598b754cc3cc">
-  <source><x id="0" equiv-text="${item.username}" /> (<x id="1" equiv-text="${item.name}" />)</source>
+  <source><x id="0" equiv-text="${item.username}"/> (<x id="1" equiv-text="${item.name}"/>)</source>
 </trans-unit>
 <trans-unit id="s1967faf9ed8d3504">
   <source>Avatar</source>
 <target>Avatar</target>
 </trans-unit>
 <trans-unit id="s1c23a9eed1a415df">
-  <source>Warning: You are about to delete user <x id="0" equiv-text="${shouldShowWarning.username}" />, but you are currently logged in as this user. Proceed at your own risk.</source>
-<target>Peringatan: Anda akan menghapus pengguna <x id="0" equiv-text="${shouldShowWarning.username}" />, namun saat ini Anda masuk sebagai pengguna ini. Lanjutkan dengan risiko Anda sendiri.</target>
+  <source>Warning: You are about to delete user <x id="0" equiv-text="${shouldShowWarning.username}"/>, but you are currently logged in as this user. Proceed at your own risk.</source>
+<target>Peringatan: Anda akan menghapus pengguna <x id="0" equiv-text="${shouldShowWarning.username}"/>, namun saat ini Anda masuk sebagai pengguna ini. Lanjutkan dengan risiko Anda sendiri.</target>
 </trans-unit>
 <trans-unit id="s7c6c86d9a97ed706">
   <source>Show deactivated users</source>
 <target>Tampilkan pengguna yang dinonaktifkan</target>
 </trans-unit>
 <trans-unit id="s4607a8246d0d6265">
-  <source>Avatar for <x id="0" equiv-text="${displayName}" /></source>
-<target>Avatar untuk <x id="0" equiv-text="${displayName}" /></target>
+  <source>Avatar for <x id="0" equiv-text="${displayName}"/></source>
+<target>Avatar untuk <x id="0" equiv-text="${displayName}"/></target>
 </trans-unit>
 <trans-unit id="sae2df5261700b49f">
-  <source>Username: <x id="0" equiv-text="${item.username}" /></source>
-<target>Nama pengguna: <x id="0" equiv-text="${item.username}" /></target>
+  <source>Username: <x id="0" equiv-text="${item.username}"/></source>
+<target>Nama pengguna: <x id="0" equiv-text="${item.username}"/></target>
 </trans-unit>
 <trans-unit id="s889d1719c28a4328">
-  <source>Display name: <x id="0" equiv-text="${displayName || msg(&quot;No name set&quot;)}" /></source>
-<target>Nama tampilan: <x id="0" equiv-text="${displayName || msg(&quot;No name set&quot;)}" /></target>
+  <source>Display name: <x id="0" equiv-text="${displayName || msg(&quot;No name set&quot;)}"/></source>
+<target>Nama tampilan: <x id="0" equiv-text="${displayName || msg(&quot;No name set&quot;)}"/></target>
 </trans-unit>
 <trans-unit id="s05fc6161cadbe078">
-  <source>Impersonate <x id="0" equiv-text="${displayName}" /></source>
-<target>Meniru identitas <x id="0" equiv-text="${displayName}" /></target>
+  <source>Impersonate <x id="0" equiv-text="${displayName}"/></source>
+<target>Meniru identitas <x id="0" equiv-text="${displayName}"/></target>
 </trans-unit>
 <trans-unit id="s32f0badba04157d2">
   <source>Open the new user wizard</source>
@@ -9759,16 +9755,16 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Kredensial / Token</target>
 </trans-unit>
 <trans-unit id="clipboard.progress.message.entity">
-  <source>Copying <x id="0" equiv-text="${entityLabel}" />...</source>
-<target>Menyalin <x id="0" equiv-text="${entityLabel}" />...</target>
+  <source>Copying <x id="0" equiv-text="${entityLabel}"/>...</source>
+<target>Menyalin <x id="0" equiv-text="${entityLabel}"/>...</target>
 </trans-unit>
 <trans-unit id="clipboard.progress.generic">
   <source>Copying to clipboard...</source>
 <target>Menyalin ke papan klip...</target>
 </trans-unit>
 <trans-unit id="clipboard.write.success.message.entity">
-  <source><x id="0" equiv-text="${entityLabel}" /> copied to clipboard.</source>
-<target><x id="0" equiv-text="${entityLabel}" /> disalin ke papan klip.</target>
+  <source><x id="0" equiv-text="${entityLabel}"/> copied to clipboard.</source>
+<target><x id="0" equiv-text="${entityLabel}"/> disalin ke papan klip.</target>
 </trans-unit>
 <trans-unit id="clipboard.write.success.generic">
   <source>Copied to clipboard.</source>
@@ -9967,8 +9963,8 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Perangkat TOTP</target>
 </trans-unit>
 <trans-unit id="s482bc55a78891ef7">
-  <source>A code has been sent to your address: <x id="0" equiv-text="${email}" /></source>
-<target>Kode telah dikirimkan ke alamat Anda: <x id="0" equiv-text="${email}" /></target>
+  <source>A code has been sent to your address: <x id="0" equiv-text="${email}"/></source>
+<target>Kode telah dikirimkan ke alamat Anda: <x id="0" equiv-text="${email}"/></target>
 </trans-unit>
 <trans-unit id="s5afa3fc77ce8d94d">
   <source>A code has been sent to your email address.</source>
@@ -10110,12 +10106,12 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
   <source>-</source>
 </trans-unit>
 <trans-unit id="s21e38ec6ffa2b918">
-  <source>Added ID <x id="0" equiv-text="${item}" /></source>
-<target>ID yang ditambahkan <x id="0" equiv-text="${item}" /></target>
+  <source>Added ID <x id="0" equiv-text="${item}"/></source>
+<target>ID yang ditambahkan <x id="0" equiv-text="${item}"/></target>
 </trans-unit>
 <trans-unit id="s74918a09ef39ed26">
-  <source>Removed ID <x id="0" equiv-text="${item}" /></source>
-<target>ID yang dihapus <x id="0" equiv-text="${item}" /></target>
+  <source>Removed ID <x id="0" equiv-text="${item}"/></source>
+<target>ID yang dihapus <x id="0" equiv-text="${item}"/></target>
 </trans-unit>
 <trans-unit id="s3a20e5d7dd70dcd3">
   <source>Cleared</source>
@@ -10186,15 +10182,15 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Menggunakan sumber</target>
 </trans-unit>
 <trans-unit id="s14622ee6de586485">
-  <source>Attempted to log in as <x id="0" equiv-text="${this.event.context.username}" /></source>
-<target>Mencoba masuk sebagai <x id="0" equiv-text="${this.event.context.username}" /></target>
+  <source>Attempted to log in as <x id="0" equiv-text="${this.event.context.username}"/></source>
+<target>Mencoba masuk sebagai <x id="0" equiv-text="${this.event.context.username}"/></target>
 </trans-unit>
 <trans-unit id="sb07bf992e3d00664">
   <source>No additional data available.</source>
 <target>Tidak ada data tambahan yang tersedia.</target>
 </trans-unit>
 <trans-unit id="s0382d73823585617">
-  <source><x id="0" equiv-text="${fieldName}" />: <x id="1" equiv-text="${detail}" /></source>
+  <source><x id="0" equiv-text="${fieldName}"/>: <x id="1" equiv-text="${detail}"/></source>
 </trans-unit>
 <trans-unit id="s0b7ddc0168e79ea2">
   <source>Failed to fetch files</source>
@@ -10313,8 +10309,8 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Berikutnya</target>
 </trans-unit>
 <trans-unit id="form.create-submit">
-  <source>Create <x id="0" equiv-text="${verboseName}" /></source>
-<target>Buat <x id="0" equiv-text="${verboseName}" /></target>
+  <source>Create <x id="0" equiv-text="${verboseName}"/></source>
+<target>Buat <x id="0" equiv-text="${verboseName}"/></target>
 </trans-unit>
 <trans-unit id="form.create-submit-no-entity">
   <source>Create</source>
@@ -10345,8 +10341,8 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Tutup laci API</target>
 </trans-unit>
 <trans-unit id="sfa991acd65f738bf">
-  <source>View details for <x id="0" equiv-text="${label}" /></source>
-<target>Lihat detail untuk <x id="0" equiv-text="${label}" /></target>
+  <source>View details for <x id="0" equiv-text="${label}"/></source>
+<target>Lihat detail untuk <x id="0" equiv-text="${label}"/></target>
 </trans-unit>
 <trans-unit id="s3b3c333481944862">
   <source>Show details</source>
@@ -10593,32 +10589,32 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Opsi yang dipilih</target>
 </trans-unit>
 <trans-unit id="s3934affe32f6a454">
-  <source><x id="0" equiv-text="${availableCount}" /> item marked to add.</source>
-<target><x id="0" equiv-text="${availableCount}" /> item ditandai untuk ditambahkan.</target>
+  <source><x id="0" equiv-text="${availableCount}"/> item marked to add.</source>
+<target><x id="0" equiv-text="${availableCount}"/> item ditandai untuk ditambahkan.</target>
 </trans-unit>
 <trans-unit id="s8b68948382758d57">
-  <source><x id="0" equiv-text="${availableCount}" /> items marked to add.</source>
-<target><x id="0" equiv-text="${availableCount}" /> item ditandai untuk ditambahkan.</target>
+  <source><x id="0" equiv-text="${availableCount}"/> items marked to add.</source>
+<target><x id="0" equiv-text="${availableCount}"/> item ditandai untuk ditambahkan.</target>
 </trans-unit>
 <trans-unit id="s3a482e34c3713e41">
-  <source><x id="0" equiv-text="${selectedTotal}" /> item selected.</source>
-<target><x id="0" equiv-text="${selectedTotal}" /> item dipilih.</target>
+  <source><x id="0" equiv-text="${selectedTotal}"/> item selected.</source>
+<target><x id="0" equiv-text="${selectedTotal}"/> item dipilih.</target>
 </trans-unit>
 <trans-unit id="s726a7342e18dc660">
-  <source><x id="0" equiv-text="${selectedTotal}" /> items selected.</source>
-<target><x id="0" equiv-text="${selectedTotal}" /> item dipilih.</target>
+  <source><x id="0" equiv-text="${selectedTotal}"/> items selected.</source>
+<target><x id="0" equiv-text="${selectedTotal}"/> item dipilih.</target>
 </trans-unit>
 <trans-unit id="s403a360d48a11d5f">
-  <source><x id="0" equiv-text="${selectedCount}" /> item marked to remove.</source>
-<target><x id="0" equiv-text="${selectedCount}" /> item ditandai untuk dihapus.</target>
+  <source><x id="0" equiv-text="${selectedCount}"/> item marked to remove.</source>
+<target><x id="0" equiv-text="${selectedCount}"/> item ditandai untuk dihapus.</target>
 </trans-unit>
 <trans-unit id="s2e92b61847f32e72">
-  <source><x id="0" equiv-text="${selectedCount}" /> items marked to remove.</source>
-<target><x id="0" equiv-text="${selectedCount}" /> item ditandai untuk dihapus.</target>
+  <source><x id="0" equiv-text="${selectedCount}"/> items marked to remove.</source>
+<target><x id="0" equiv-text="${selectedCount}"/> item ditandai untuk dihapus.</target>
 </trans-unit>
 <trans-unit id="s4127b943d6826b8b">
-  <source>Search <x id="0" equiv-text="${this.availableLabel}" />...</source>
-<target>Telusuri <x id="0" equiv-text="${this.availableLabel}" />...</target>
+  <source>Search <x id="0" equiv-text="${this.availableLabel}"/>...</source>
+<target>Telusuri <x id="0" equiv-text="${this.availableLabel}"/>...</target>
 </trans-unit>
 <trans-unit id="sf9aee319a006c9b4">
   <source>Add</source>
@@ -10677,8 +10673,8 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Mesin virtual autentik ini menggunakan lisensi Non-produksi.</target>
 </trans-unit>
 <trans-unit id="s1381314790b50b1f">
-  <source>A newer version (<x id="0" equiv-text="${this.version.versionCurrent}" />) of the UI is available.</source>
-<target>Versi UI yang lebih baru (<x id="0" equiv-text="${this.version.versionCurrent}" />) telah tersedia.</target>
+  <source>A newer version (<x id="0" equiv-text="${this.version.versionCurrent}"/>) of the UI is available.</source>
+<target>Versi UI yang lebih baru (<x id="0" equiv-text="${this.version.versionCurrent}"/>) telah tersedia.</target>
 </trans-unit>
 <trans-unit id="sdccd8f78d52d3a87">
   <source>Copy to clipboard</source>
@@ -10717,8 +10713,8 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Hapus barang</target>
 </trans-unit>
 <trans-unit id="sd29ddaadcc30d22c">
-  <source>User "<x id="0" equiv-text="${query}" />"</source>
-<target>Pengguna "<x id="0" equiv-text="${query}" />"</target>
+  <source>User "<x id="0" equiv-text="${query}"/>"</source>
+<target>Pengguna "<x id="0" equiv-text="${query}"/>"</target>
 </trans-unit>
 <trans-unit id="s220bcce27242e1e9">
   <source>search</source>
@@ -10729,8 +10725,8 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>menemukan</target>
 </trans-unit>
 <trans-unit id="s1809b50e79923494">
-  <source>Search the docs for "<x id="0" equiv-text="${query}" />"</source>
-<target>Telusuri dokumen untuk "<x id="0" equiv-text="${query}" />"</target>
+  <source>Search the docs for "<x id="0" equiv-text="${query}"/>"</source>
+<target>Telusuri dokumen untuk "<x id="0" equiv-text="${query}"/>"</target>
 </trans-unit>
 <trans-unit id="command-palette.suffix.view-docs">
   <source>New Tab</source>
@@ -10805,8 +10801,8 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Catatan rilis</target>
 </trans-unit>
 <trans-unit id="command-palette.suffix.new-in">
-  <source>New in <x id="0" equiv-text="${import.meta.env.AK_VERSION}" /></source>
-<target>Baru di <x id="0" equiv-text="${import.meta.env.AK_VERSION}" /></target>
+  <source>New in <x id="0" equiv-text="${import.meta.env.AK_VERSION}"/></source>
+<target>Baru di <x id="0" equiv-text="${import.meta.env.AK_VERSION}"/></target>
 </trans-unit>
 <trans-unit id="sc55abaab70a70bfc">
   <source>authentik</source>
@@ -10873,20 +10869,20 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Kesatuan</target>
 </trans-unit>
 <trans-unit id="entity.edit.named">
-  <source>Edit "<x id="0" equiv-text="${itemName}" />" <x id="1" equiv-text="${noun}" /></source>
-<target>Sunting "<x id="0" equiv-text="${itemName}" />" <x id="1" equiv-text="${noun}" /></target>
+  <source>Edit "<x id="0" equiv-text="${itemName}"/>" <x id="1" equiv-text="${noun}"/></source>
+<target>Sunting "<x id="0" equiv-text="${itemName}"/>" <x id="1" equiv-text="${noun}"/></target>
 </trans-unit>
 <trans-unit id="entity.edit">
-  <source>Edit <x id="0" equiv-text="${noun}" /></source>
-<target>Sunting <x id="0" equiv-text="${noun}" /></target>
+  <source>Edit <x id="0" equiv-text="${noun}"/></source>
+<target>Sunting <x id="0" equiv-text="${noun}"/></target>
 </trans-unit>
 <trans-unit id="s64ef2a6c2dd1d3d1">
   <source>Edit</source>
 <target>Sunting</target>
 </trans-unit>
 <trans-unit id="permissions.modal-invoker.named">
-  <source>Open "<x id="0" equiv-text="${itemName}" />" permissions</source>
-<target>Buka izin "<x id="0" equiv-text="${itemName}" />".</target>
+  <source>Open "<x id="0" equiv-text="${itemName}"/>" permissions</source>
+<target>Buka izin "<x id="0" equiv-text="${itemName}"/>".</target>
 </trans-unit>
 <trans-unit id="permissions.modal-invoker">
   <source>Open permissions</source>
@@ -10901,7 +10897,7 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Baru</target>
 </trans-unit>
 <trans-unit id="invoker.label.modifier-noun">
-  <source><x id="0" equiv-text="${createLabel} ${verboseName}" /></source>
+  <source><x id="0" equiv-text="${createLabel} ${verboseName}"/></source>
 </trans-unit>
 <trans-unit id="sb59d68ed12d46377">
   <source>Loading</source>
@@ -10924,16 +10920,16 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Referensi akan disetel ke nilai kosong</target>
 </trans-unit>
 <trans-unit id="used-by.consequence.left-dangling">
-  <source><x id="0" equiv-text="${verboseName}" /> will be left dangling (may cause errors)</source>
-<target><x id="0" equiv-text="${verboseName}" /> akan dibiarkan menggantung (dapat menyebabkan kesalahan)</target>
+  <source><x id="0" equiv-text="${verboseName}"/> will be left dangling (may cause errors)</source>
+<target><x id="0" equiv-text="${verboseName}"/> akan dibiarkan menggantung (dapat menyebabkan kesalahan)</target>
 </trans-unit>
 <trans-unit id="used-by.consequence.unknown-default-open-api">
-  <source><x id="0" equiv-text="${verboseName}" /> has an unknown relationship (check logs)</source>
-<target><x id="0" equiv-text="${verboseName}" /> memiliki hubungan yang tidak diketahui (periksa log)</target>
+  <source><x id="0" equiv-text="${verboseName}"/> has an unknown relationship (check logs)</source>
+<target><x id="0" equiv-text="${verboseName}"/> memiliki hubungan yang tidak diketahui (periksa log)</target>
 </trans-unit>
 <trans-unit id="used-by.consequence.unrecognized">
-  <source><x id="0" equiv-text="${verboseName}" /> has an unrecognized relationship (check logs)</source>
-<target><x id="0" equiv-text="${verboseName}" /> memiliki hubungan yang tidak dikenal (periksa log)</target>
+  <source><x id="0" equiv-text="${verboseName}"/> has an unrecognized relationship (check logs)</source>
+<target><x id="0" equiv-text="${verboseName}"/> memiliki hubungan yang tidak dikenal (periksa log)</target>
 </trans-unit>
 <trans-unit id="sb26035b596566abf">
   <source>Unnamed</source>
@@ -11004,20 +11000,20 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>PENGENAL</target>
 </trans-unit>
 <trans-unit id="se33b158a1ec02a09">
-  <source>Successfully deleted <x id="0" equiv-text="${this.objects.length} ${this.objectLabel}" /></source>
-<target>Berhasil dihapus <x id="0" equiv-text="${this.objects.length} ${this.objectLabel}" /></target>
+  <source>Successfully deleted <x id="0" equiv-text="${this.objects.length} ${this.objectLabel}"/></source>
+<target>Berhasil dihapus <x id="0" equiv-text="${this.objects.length} ${this.objectLabel}"/></target>
 </trans-unit>
 <trans-unit id="s539942ab7cc7210e">
-  <source>Failed to delete <x id="0" equiv-text="${this.objectLabel}" /></source>
-<target>Gagal menghapus <x id="0" equiv-text="${this.objectLabel}" /></target>
+  <source>Failed to delete <x id="0" equiv-text="${this.objectLabel}"/></source>
+<target>Gagal menghapus <x id="0" equiv-text="${this.objectLabel}"/></target>
 </trans-unit>
 <trans-unit id="s039b6434e8a75560">
-  <source>Delete <x id="0" equiv-text="${this.objectLabel}" /></source>
-<target>Hapus <x id="0" equiv-text="${this.objectLabel}" /></target>
+  <source>Delete <x id="0" equiv-text="${this.objectLabel}"/></source>
+<target>Hapus <x id="0" equiv-text="${this.objectLabel}"/></target>
 </trans-unit>
 <trans-unit id="s5819a49638f6d7cb">
-  <source>Are you sure you want to delete <x id="0" equiv-text="${this.objects.length} ${this.objectLabel}" />?</source>
-<target>Apakah Anda yakin ingin menghapus <x id="0" equiv-text="${this.objects.length} ${this.objectLabel}" />?</target>
+  <source>Are you sure you want to delete <x id="0" equiv-text="${this.objects.length} ${this.objectLabel}"/>?</source>
+<target>Apakah Anda yakin ingin menghapus <x id="0" equiv-text="${this.objects.length} ${this.objectLabel}"/>?</target>
 </trans-unit>
 <trans-unit id="sc420894701de5ea3">
   <source>Modify</source>
@@ -11032,8 +11028,8 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Objek tanpa nama</target>
 </trans-unit>
 <trans-unit id="usedBy.description">
-  <source>List of objects that are associated with this <x id="0" equiv-text="${verboseName}" />.</source>
-<target>Daftar objek yang berhubungan dengan <x id="0" equiv-text="${verboseName}" /> ini.</target>
+  <source>List of objects that are associated with this <x id="0" equiv-text="${verboseName}"/>.</source>
+<target>Daftar objek yang berhubungan dengan <x id="0" equiv-text="${verboseName}"/> ini.</target>
 </trans-unit>
 <trans-unit id="s2f93abbfddb3830d">
   <source>Object Name</source>
@@ -11068,7 +11064,7 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Terjadi kesalahan saat mengirimkan formulir.</target>
 </trans-unit>
 <trans-unit id="form.submit.verb-entity">
-  <source><x id="0" equiv-text="${verb} ${noun}" /></source>
+  <source><x id="0" equiv-text="${verb} ${noun}"/></source>
 </trans-unit>
 <trans-unit id="s804ab712b1add3d3">
   <source>An unknown error occurred while submitting the form.</source>
@@ -11107,16 +11103,16 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Perubahan Disimpan</target>
 </trans-unit>
 <trans-unit id="s02e9603605609ae6">
-  <source>Successfully created <x id="0" equiv-text="${this.verboseName}" /></source>
-<target>Berhasil membuat <x id="0" equiv-text="${this.verboseName}" /></target>
+  <source>Successfully created <x id="0" equiv-text="${this.verboseName}"/></source>
+<target>Berhasil membuat <x id="0" equiv-text="${this.verboseName}"/></target>
 </trans-unit>
 <trans-unit id="s58273fbf883b497d">
-  <source>Successfully updated <x id="0" equiv-text="${this.verboseName}" /></source>
-<target>Berhasil memperbarui <x id="0" equiv-text="${this.verboseName}" /></target>
+  <source>Successfully updated <x id="0" equiv-text="${this.verboseName}"/></source>
+<target>Berhasil memperbarui <x id="0" equiv-text="${this.verboseName}"/></target>
 </trans-unit>
 <trans-unit id="se0bf7f662ec09302">
-  <source>An error occurred while loading <x id="0" equiv-text="${this.verboseName}" />.</source>
-<target>Terjadi kesalahan saat memuat <x id="0" equiv-text="${this.verboseName}" />.</target>
+  <source>An error occurred while loading <x id="0" equiv-text="${this.verboseName}"/>.</source>
+<target>Terjadi kesalahan saat memuat <x id="0" equiv-text="${this.verboseName}"/>.</target>
 </trans-unit>
 <trans-unit id="s2c8189544e3ea679">
   <source>Retry</source>
@@ -11171,8 +11167,8 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Tidak ditemukan</target>
 </trans-unit>
 <trans-unit id="saa0e2675da69651b">
-  <source>The URL "<x id="0" equiv-text="${this.url}" />" was not found.</source>
-<target>URL "<x id="0" equiv-text="${this.url}" />" tidak ditemukan.</target>
+  <source>The URL "<x id="0" equiv-text="${this.url}"/>" was not found.</source>
+<target>URL "<x id="0" equiv-text="${this.url}"/>" tidak ditemukan.</target>
 </trans-unit>
 <trans-unit id="s58cd9c2fe836d9c6">
   <source>Return home</source>
@@ -11183,16 +11179,16 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Navigasi global</target>
 </trans-unit>
 <trans-unit id="sd51d6a39208696cc">
-  <source>Collapse <x id="0" equiv-text="${this.label}" /></source>
-<target>Ciutkan <x id="0" equiv-text="${this.label}" /></target>
+  <source>Collapse <x id="0" equiv-text="${this.label}"/></source>
+<target>Ciutkan <x id="0" equiv-text="${this.label}"/></target>
 </trans-unit>
 <trans-unit id="scce64bcfb0a73ad7">
-  <source>Expand <x id="0" equiv-text="${this.label}" /></source>
-<target>Perluas <x id="0" equiv-text="${this.label}" /></target>
+  <source>Expand <x id="0" equiv-text="${this.label}"/></source>
+<target>Perluas <x id="0" equiv-text="${this.label}"/></target>
 </trans-unit>
 <trans-unit id="sfe1fb536cab6c0f5">
-  <source><x id="0" equiv-text="${this.label}" /> navigation</source>
-<target><x id="0" equiv-text="${this.label}" /> navigasi</target>
+  <source><x id="0" equiv-text="${this.label}"/> navigation</source>
+<target><x id="0" equiv-text="${this.label}"/> navigasi</target>
 </trans-unit>
 <trans-unit id="s35ed5cf95b0c7262">
   <source>authentik information</source>
@@ -11211,8 +11207,8 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Versi produk</target>
 </trans-unit>
 <trans-unit id="s358e08de4fbebf51">
-  <source>Version <x id="0" equiv-text="${this.version?.versionCurrent || &quot;&quot;}" /></source>
-<target>Versi <x id="0" equiv-text="${this.version?.versionCurrent || &quot;&quot;}" /></target>
+  <source>Version <x id="0" equiv-text="${this.version?.versionCurrent || &quot;&quot;}"/></source>
+<target>Versi <x id="0" equiv-text="${this.version?.versionCurrent || &quot;&quot;}"/></target>
 </trans-unit>
 <trans-unit id="s5f5bf4ef2bd93c04">
   <source>Group mappings can only be checked if a user is already logged in when trying to access this source.</source>
@@ -11243,8 +11239,8 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Gagal mengambil objek.</target>
 </trans-unit>
 <trans-unit id="s7dd64bb0c1fa8e87">
-  <source>Select "<x id="0" equiv-text="${rowLabel}" />" row</source>
-<target>Pilih baris "<x id="0" equiv-text="${rowLabel}" />".</target>
+  <source>Select "<x id="0" equiv-text="${rowLabel}"/>" row</source>
+<target>Pilih baris "<x id="0" equiv-text="${rowLabel}"/>".</target>
 </trans-unit>
 <trans-unit id="sd26f670ca5d5b0c6">
   <source>Collapse row</source>
@@ -11259,20 +11255,20 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Menyegarkan</target>
 </trans-unit>
 <trans-unit id="sda170fd79bca1616">
-  <source><x id="0" equiv-text="${this.label ?? &quot;Table&quot;}" /> actions</source>
-<target><x id="0" equiv-text="${this.label ?? &quot;Table&quot;}" /> tindakan</target>
+  <source><x id="0" equiv-text="${this.label ?? &quot;Table&quot;}"/> actions</source>
+<target><x id="0" equiv-text="${this.label ?? &quot;Table&quot;}"/> tindakan</target>
 </trans-unit>
 <trans-unit id="sd09354b0220a13ce">
-  <source>Select all rows on page (<x id="0" equiv-text="${selectedCount}" /> of <x id="1" equiv-text="${pageItemCount}" /> selected)</source>
-<target>Pilih semua baris pada halaman (<x id="0" equiv-text="${selectedCount}" /> dari <x id="1" equiv-text="${pageItemCount}" /> dipilih)</target>
+  <source>Select all rows on page (<x id="0" equiv-text="${selectedCount}"/> of <x id="1" equiv-text="${pageItemCount}"/> selected)</source>
+<target>Pilih semua baris pada halaman (<x id="0" equiv-text="${selectedCount}"/> dari <x id="1" equiv-text="${pageItemCount}"/> dipilih)</target>
 </trans-unit>
 <trans-unit id="s76ef34813bff563f">
   <source>Last refreshed</source>
 <target>Terakhir disegarkan</target>
 </trans-unit>
 <trans-unit id="s59c9e8f57e3a0075">
-  <source><x id="0" equiv-text="${this.label}" /> table</source>
-<target><x id="0" equiv-text="${this.label}" /> tabel</target>
+  <source><x id="0" equiv-text="${this.label}"/> table</source>
+<target><x id="0" equiv-text="${this.label}"/> tabel</target>
 </trans-unit>
 <trans-unit id="sa25b60b4fac481aa">
   <source>Table content</source>
@@ -11283,16 +11279,16 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Tindakan kolom</target>
 </trans-unit>
 <trans-unit id="sd9b15395dd103f80">
-  <source>Sort by "<x id="0" equiv-text="${label}" />"</source>
-<target>Urutkan berdasarkan "<x id="0" equiv-text="${label}" />"</target>
+  <source>Sort by "<x id="0" equiv-text="${label}"/>"</source>
+<target>Urutkan berdasarkan "<x id="0" equiv-text="${label}"/>"</target>
 </trans-unit>
 <trans-unit id="s3633ffed92acaecb">
-  <source><x id="0" equiv-text="${this.label || &quot;&quot;}" /> table pagination</source>
-<target><x id="0" equiv-text="${this.label || &quot;&quot;}" /> penomoran halaman tabel</target>
+  <source><x id="0" equiv-text="${this.label || &quot;&quot;}"/> table pagination</source>
+<target><x id="0" equiv-text="${this.label || &quot;&quot;}"/> penomoran halaman tabel</target>
 </trans-unit>
 <trans-unit id="s04c5a637328c9b67">
-  <source><x id="0" equiv-text="${startIndex}" /> - <x id="1" equiv-text="${endIndex}" /> of <x id="2" equiv-text="${pageCount}" /></source>
-<target><x id="0" equiv-text="${startIndex}" /> - <x id="1" equiv-text="${endIndex}" /> dari <x id="2" equiv-text="${pageCount}" /></target>
+  <source><x id="0" equiv-text="${startIndex}"/> - <x id="1" equiv-text="${endIndex}"/> of <x id="2" equiv-text="${pageCount}"/></source>
+<target><x id="0" equiv-text="${startIndex}"/> - <x id="1" equiv-text="${endIndex}"/> dari <x id="2" equiv-text="${pageCount}"/></target>
 </trans-unit>
 <trans-unit id="s6a89bb10338369b4">
   <source>Go to previous page</source>
@@ -11311,8 +11307,8 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Hapus pencarian</target>
 </trans-unit>
 <trans-unit id="s55402a876309f95b">
-  <source>Landmark: <x id="0" equiv-text="${capitalCase(this.pageIdentifier)}" /></source>
-<target>Tengara: <x id="0" equiv-text="${capitalCase(this.pageIdentifier)}" /></target>
+  <source>Landmark: <x id="0" equiv-text="${capitalCase(this.pageIdentifier)}"/></source>
+<target>Tengara: <x id="0" equiv-text="${capitalCase(this.pageIdentifier)}"/></target>
 </trans-unit>
 <trans-unit id="command-palette.switch-to-tab">
   <source>Switch to tab</source>
@@ -11323,20 +11319,20 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>tidak ada tab yang ditentukan</target>
 </trans-unit>
 <trans-unit id="s326ee20bba2564a0">
-  <source>Collapse "<x id="0" equiv-text="${itemLabel}" />"</source>
-<target>Ciutkan "<x id="0" equiv-text="${itemLabel}" />"</target>
+  <source>Collapse "<x id="0" equiv-text="${itemLabel}"/>"</source>
+<target>Ciutkan "<x id="0" equiv-text="${itemLabel}"/>"</target>
 </trans-unit>
 <trans-unit id="s27df1f36ba8e269f">
-  <source>Expand "<x id="0" equiv-text="${itemLabel}" />"</source>
-<target>Luaskan "<x id="0" equiv-text="${itemLabel}" />"</target>
+  <source>Expand "<x id="0" equiv-text="${itemLabel}"/>"</source>
+<target>Luaskan "<x id="0" equiv-text="${itemLabel}"/>"</target>
 </trans-unit>
 <trans-unit id="sf2b5d3236e6f1ab3">
-  <source>Select "<x id="0" equiv-text="${itemLabel}" />"</source>
-<target>Pilih "<x id="0" equiv-text="${itemLabel}" />"</target>
+  <source>Select "<x id="0" equiv-text="${itemLabel}"/>"</source>
+<target>Pilih "<x id="0" equiv-text="${itemLabel}"/>"</target>
 </trans-unit>
 <trans-unit id="sb7c2715df863a6ce">
-  <source>Items of "<x id="0" equiv-text="${itemLabel}" />"</source>
-<target>Item dari "<x id="0" equiv-text="${itemLabel}" />"</target>
+  <source>Items of "<x id="0" equiv-text="${itemLabel}"/>"</source>
+<target>Item dari "<x id="0" equiv-text="${itemLabel}"/>"</target>
 </trans-unit>
 <trans-unit id="sca7cfe2bef51b2a5">
   <source>Root</source>
@@ -11375,12 +11371,12 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Memutuskan</target>
 </trans-unit>
 <trans-unit id="sababff57115130a0">
-  <source>Error: unsupported source settings: <x id="0" equiv-text="${source.component}" /></source>
-<target>Kesalahan: setelan sumber tidak didukung: <x id="0" equiv-text="${source.component}" /></target>
+  <source>Error: unsupported source settings: <x id="0" equiv-text="${source.component}"/></source>
+<target>Kesalahan: setelan sumber tidak didukung: <x id="0" equiv-text="${source.component}"/></target>
 </trans-unit>
 <trans-unit id="source-settings-list-item-label">
-  <source>"<x id="0" equiv-text="${source.title}" />" source</source>
-<target>Sumber "<x id="0" equiv-text="${source.title}" />".</target>
+  <source>"<x id="0" equiv-text="${source.title}"/>" source</source>
+<target>Sumber "<x id="0" equiv-text="${source.title}"/>".</target>
 </trans-unit>
 <trans-unit id="s7968dbed9b106c29">
   <source>No services available.</source>
@@ -11395,16 +11391,16 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Sumber berhasil diputus</target>
 </trans-unit>
 <trans-unit id="s67dedada007d4067">
-  <source>Failed to disconnected source: <x id="0" equiv-text="${pluckErrorDetail(parsedError)}" /></source>
-<target>Gagal memutus sumber: <x id="0" equiv-text="${pluckErrorDetail(parsedError)}" /></target>
+  <source>Failed to disconnected source: <x id="0" equiv-text="${pluckErrorDetail(parsedError)}"/></source>
+<target>Gagal memutus sumber: <x id="0" equiv-text="${pluckErrorDetail(parsedError)}"/></target>
 </trans-unit>
 <trans-unit id="s4bb6f209647072f4">
   <source>Successfully connected source</source>
 <target>Sumber berhasil terhubung</target>
 </trans-unit>
 <trans-unit id="sf3ad0b5ebe730780">
-  <source>Failed to connect source: <x id="0" equiv-text="${pluckErrorDetail(parsedError)}" /></source>
-<target>Gagal menghubungkan sumber: <x id="0" equiv-text="${pluckErrorDetail(parsedError)}" /></target>
+  <source>Failed to connect source: <x id="0" equiv-text="${pluckErrorDetail(parsedError)}"/></source>
+<target>Gagal menghubungkan sumber: <x id="0" equiv-text="${pluckErrorDetail(parsedError)}"/></target>
 </trans-unit>
 <trans-unit id="s332a5235948c1a1d">
   <source>Consent</source>
@@ -11427,12 +11423,12 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Skor reputasi</target>
 </trans-unit>
 <trans-unit id="ha8e91858b300a3b7">
-  <source>(Format: <x id="0" equiv-text="&lt;code&gt;" />hours=-1;minutes=-2;seconds=-3)<x id="1" equiv-text="&lt;/code&gt;" />.</source>
-<target>(Format: <x id="0" equiv-text="&lt;code&gt;" />jam=-1;menit=-2;detik=-3)<x id="1" equiv-text="&lt;/code&gt;" />.</target>
+  <source>(Format: <x id="0" equiv-text="&lt;code&gt;"/>hours=-1;minutes=-2;seconds=-3)<x id="1" equiv-text="&lt;/code&gt;"/>.</source>
+<target>(Format: <x id="0" equiv-text="&lt;code&gt;"/>jam=-1;menit=-2;detik=-3)<x id="1" equiv-text="&lt;/code&gt;"/>.</target>
 </trans-unit>
 <trans-unit id="hbe8e6353371ecb22">
-  <source>(Format: <x id="0" equiv-text="&lt;code&gt;" />hours=1;minutes=2;seconds=3).<x id="1" equiv-text="&lt;/code&gt;" /></source>
-<target>(Format: <x id="0" equiv-text="&lt;code&gt;" />jam=1;menit=2;detik=3).<x id="1" equiv-text="&lt;/code&gt;" /></target>
+  <source>(Format: <x id="0" equiv-text="&lt;code&gt;"/>hours=1;minutes=2;seconds=3).<x id="1" equiv-text="&lt;/code&gt;"/></source>
+<target>(Format: <x id="0" equiv-text="&lt;code&gt;"/>jam=1;menit=2;detik=3).<x id="1" equiv-text="&lt;/code&gt;"/></target>
 </trans-unit>
 <trans-unit id="sbb8ad22c83d375b1">
   <source>The following keywords are supported:</source>
@@ -11443,8 +11439,8 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Terapkan perubahan</target>
 </trans-unit>
 <trans-unit id="scffa59cfac1951f2">
-  <source><x id="0" equiv-text="${type.name}" /> Icon</source>
-<target><x id="0" equiv-text="${type.name}" /> Ikon</target>
+  <source><x id="0" equiv-text="${type.name}"/> Icon</source>
+<target><x id="0" equiv-text="${type.name}"/> Ikon</target>
 </trans-unit>
 <trans-unit id="s87616130c08b117c">
   <source>This type is deprecated.</source>
@@ -11474,8 +11470,8 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
   <source>Powered by authentik</source>
 <target>Powered by authentik</target></trans-unit>
 <trans-unit id="brand.footer.copyright">
-  <source>© <x id="0" equiv-text="${new Date().getFullYear()}" /> Authentik Security, Inc.</source>
-<target>© <x id="0" equiv-text="${new Date().getFullYear()}" /> Keamanan Authentik, Inc.</target>
+  <source>© <x id="0" equiv-text="${new Date().getFullYear()}"/> Authentik Security, Inc.</source>
+<target>© <x id="0" equiv-text="${new Date().getFullYear()}"/> Keamanan Authentik, Inc.</target>
 </trans-unit>
 <trans-unit id="sa4be93eb7f4e51e3">
   <source>Site links</source>
@@ -11517,8 +11513,8 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Informasi pengguna</target>
 </trans-unit>
 <trans-unit id="avatar.alt-text-for-user">
-  <source>Avatar for <x id="0" equiv-text="${this.username}" /></source>
-<target>Avatar untuk <x id="0" equiv-text="${this.username}" /></target>
+  <source>Avatar for <x id="0" equiv-text="${this.username}"/></source>
+<target>Avatar untuk <x id="0" equiv-text="${this.username}"/></target>
 </trans-unit>
 <trans-unit id="avatar.alt-text">
   <source>User avatar</source>
@@ -11609,40 +11605,40 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Logout SAML selesai</target>
 </trans-unit>
 <trans-unit id="s7b90eab7969ae056">
-  <source>Redirecting to SAML provider: <x id="0" equiv-text="${providerName}" /></source>
-<target>Mengalihkan ke penyedia SAML: <x id="0" equiv-text="${providerName}" /></target>
+  <source>Redirecting to SAML provider: <x id="0" equiv-text="${providerName}"/></source>
+<target>Mengalihkan ke penyedia SAML: <x id="0" equiv-text="${providerName}"/></target>
 </trans-unit>
 <trans-unit id="saa088a2d0f90d5a9">
-  <source>Posting logout response to SAML provider: <x id="0" equiv-text="${providerName}" /></source>
-<target>Memposting respons logout ke penyedia SAML: <x id="0" equiv-text="${providerName}" /></target>
+  <source>Posting logout response to SAML provider: <x id="0" equiv-text="${providerName}"/></source>
+<target>Memposting respons logout ke penyedia SAML: <x id="0" equiv-text="${providerName}"/></target>
 </trans-unit>
 <trans-unit id="s3e6174b645d96835">
-  <source>Posting logout request to SAML provider: <x id="0" equiv-text="${providerName}" /></source>
-<target>Memposting permintaan logout ke penyedia SAML: <x id="0" equiv-text="${providerName}" /></target>
+  <source>Posting logout request to SAML provider: <x id="0" equiv-text="${providerName}"/></source>
+<target>Memposting permintaan logout ke penyedia SAML: <x id="0" equiv-text="${providerName}"/></target>
 </trans-unit>
 <trans-unit id="sac88482c48453fc8">
-  <source>You've logged out of <x id="0" equiv-text="${challenge.applicationName}" />. You can go back to the overview to launch another application, or log out of your authentik account.</source>
-<target>Anda telah keluar dari <x id="0" equiv-text="${challenge.applicationName}" />. Anda dapat kembali ke ikhtisar untuk meluncurkan aplikasi lain, atau keluar dari akun autentik Anda.</target>
+  <source>You've logged out of <x id="0" equiv-text="${challenge.applicationName}"/>. You can go back to the overview to launch another application, or log out of your authentik account.</source>
+<target>Anda telah keluar dari <x id="0" equiv-text="${challenge.applicationName}"/>. Anda dapat kembali ke ikhtisar untuk meluncurkan aplikasi lain, atau keluar dari akun autentik Anda.</target>
 </trans-unit>
 <trans-unit id="s88c83ac92bfb1f6c">
-  <source>You've logged out of <x id="0" equiv-text="${challenge.applicationName}" />. You can log out of your authentik account.</source>
-<target>Anda telah keluar dari <x id="0" equiv-text="${challenge.applicationName}" />. Anda dapat keluar dari akun autentik Anda.</target>
+  <source>You've logged out of <x id="0" equiv-text="${challenge.applicationName}"/>. You can log out of your authentik account.</source>
+<target>Anda telah keluar dari <x id="0" equiv-text="${challenge.applicationName}"/>. Anda dapat keluar dari akun autentik Anda.</target>
 </trans-unit>
 <trans-unit id="sa5c3a21cbc762ce9">
-  <source>You've logged out of <x id="0" equiv-text="${challenge.applicationName}" />.</source>
-<target>Anda telah keluar dari <x id="0" equiv-text="${challenge.applicationName}" />.</target>
+  <source>You've logged out of <x id="0" equiv-text="${challenge.applicationName}"/>.</source>
+<target>Anda telah keluar dari <x id="0" equiv-text="${challenge.applicationName}"/>.</target>
 </trans-unit>
 <trans-unit id="s3108167b562674e2">
   <source>Go back to overview</source>
 <target>Kembali ke ikhtisar</target>
 </trans-unit>
 <trans-unit id="sdb749e793de55478">
-  <source>Log out of <x id="0" equiv-text="${challenge.brandName}" /></source>
-<target>Keluar dari <x id="0" equiv-text="${challenge.brandName}" /></target>
+  <source>Log out of <x id="0" equiv-text="${challenge.brandName}"/></source>
+<target>Keluar dari <x id="0" equiv-text="${challenge.brandName}"/></target>
 </trans-unit>
 <trans-unit id="s521681ed1d5ff814">
-  <source>Log back into <x id="0" equiv-text="${challenge.applicationName}" /></source>
-<target>Masuk kembali ke <x id="0" equiv-text="${challenge.applicationName}" /></target>
+  <source>Log back into <x id="0" equiv-text="${challenge.applicationName}"/></source>
+<target>Masuk kembali ke <x id="0" equiv-text="${challenge.applicationName}"/></target>
 </trans-unit>
 <trans-unit id="sd766cdc29b25ff95">
   <source>Authenticating with Apple...</source>
@@ -11941,8 +11937,8 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Aplikasi memerlukan izin baru berikut:</target>
 </trans-unit>
 <trans-unit id="s06bfe45ffef2cf60">
-  <source>Stage name: <x id="0" equiv-text="${this.challenge?.name}" /></source>
-<target>Nama panggung: <x id="0" equiv-text="${this.challenge?.name}" /></target>
+  <source>Stage name: <x id="0" equiv-text="${this.challenge?.name}"/></source>
+<target>Nama panggung: <x id="0" equiv-text="${this.challenge?.name}"/></target>
 </trans-unit>
 <trans-unit id="sbd19064fc3f405c1">
   <source>Check your Inbox for a verification email.</source>
@@ -11999,16 +11995,16 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
   <source>Or</source>
 <target>Atau</target></trans-unit>
 <trans-unit id="sd5d2b94a1ccba1a9">
-  <source>Log in to continue to <x id="0" equiv-text="${prelude}" />.</source>
-<target>Masuk untuk melanjutkan ke <x id="0" equiv-text="${prelude}" />.</target>
+  <source>Log in to continue to <x id="0" equiv-text="${prelude}"/>.</source>
+<target>Masuk untuk melanjutkan ke <x id="0" equiv-text="${prelude}"/>.</target>
 </trans-unit>
 <trans-unit id="se5fd752dbbc3cd28">
   <source>Use a security key</source>
 <target>Gunakan kunci keamanan</target>
 </trans-unit>
 <trans-unit id="seb6ab868740e4e36">
-  <source>Continue with <x id="0" equiv-text="${name}" /></source>
-<target>Lanjutkan dengan <x id="0" equiv-text="${name}" /></target>
+  <source>Continue with <x id="0" equiv-text="${name}"/></source>
+<target>Lanjutkan dengan <x id="0" equiv-text="${name}"/></target>
 </trans-unit>
 <trans-unit id="s53dddf1733e26c98">
   <source>Login sources</source>
@@ -12053,8 +12049,8 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Bidang Tidak Diketahui</target>
 </trans-unit>
 <trans-unit id="s47ff2d052ccbcaf3">
-  <source>Unknown Field <x id="0" equiv-text="${fieldLike}" /></source>
-<target>Bidang Tidak Diketahui <x id="0" equiv-text="${fieldLike}" /></target>
+  <source>Unknown Field <x id="0" equiv-text="${fieldLike}"/></source>
+<target>Bidang Tidak Diketahui <x id="0" equiv-text="${fieldLike}"/></target>
 </trans-unit>
 <trans-unit id="s85366fac18679f28">
   <source>Forgot password?</source>
@@ -12112,12 +12108,12 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Terputus</target>
 </trans-unit>
 <trans-unit id="s28b99b59541f54ca">
-  <source>Connection failed after <x id="0" equiv-text="${this.connectionAttempt}" /> attempts.</source>
-<target>Koneksi gagal setelah <x id="0" equiv-text="${this.connectionAttempt}" /> kali mencoba.</target>
+  <source>Connection failed after <x id="0" equiv-text="${this.connectionAttempt}"/> attempts.</source>
+<target>Koneksi gagal setelah <x id="0" equiv-text="${this.connectionAttempt}"/> kali mencoba.</target>
 </trans-unit>
 <trans-unit id="s7c7d956418e1c8c8">
-  <source>Re-connecting in <x id="0" equiv-text="${Math.max(1, delay / 1000)}" /> second(s).</source>
-<target>Menyambungkan kembali dalam <x id="0" equiv-text="${Math.max(1, delay / 1000)}" /> detik.</target>
+  <source>Re-connecting in <x id="0" equiv-text="${Math.max(1, delay / 1000)}"/> second(s).</source>
+<target>Menyambungkan kembali dalam <x id="0" equiv-text="${Math.max(1, delay / 1000)}"/> detik.</target>
 </trans-unit>
 <trans-unit id="sfc003381f593d943">
   <source>Connecting...</source>
@@ -12132,8 +12128,8 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>aplikasi</target>
 </trans-unit>
 <trans-unit id="s33b2f30214a2e99d">
-  <source>Actions for "<x id="0" equiv-text="${applicationName}" />"</source>
-<target>Tindakan untuk "<x id="0" equiv-text="${applicationName}" />"</target>
+  <source>Actions for "<x id="0" equiv-text="${applicationName}"/>"</source>
+<target>Tindakan untuk "<x id="0" equiv-text="${applicationName}"/>"</target>
 </trans-unit>
 <trans-unit id="sfa660d9e563c346f">
   <source>Edit application...</source>
@@ -12176,20 +12172,20 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Pencarian tidak membuahkan hasil.</target>
 </trans-unit>
 <trans-unit id="user.library.application-count-singular-with-query">
-  <source><x id="0" equiv-text="${count}" /> application found for "<x id="1" equiv-text="${query}" />"</source>
-<target><x id="0" equiv-text="${count}" /> permohonan ditemukan untuk "<x id="1" equiv-text="${query}" />"</target>
+  <source><x id="0" equiv-text="${count}"/> application found for "<x id="1" equiv-text="${query}"/>"</source>
+<target><x id="0" equiv-text="${count}"/> permohonan ditemukan untuk "<x id="1" equiv-text="${query}"/>"</target>
 </trans-unit>
 <trans-unit id="user.library.application-count-plural-with-query">
-  <source><x id="0" equiv-text="${count}" /> applications found for "<x id="1" equiv-text="${query}" />"</source>
-<target><x id="0" equiv-text="${count}" /> aplikasi ditemukan untuk "<x id="1" equiv-text="${query}" />"</target>
+  <source><x id="0" equiv-text="${count}"/> applications found for "<x id="1" equiv-text="${query}"/>"</source>
+<target><x id="0" equiv-text="${count}"/> aplikasi ditemukan untuk "<x id="1" equiv-text="${query}"/>"</target>
 </trans-unit>
 <trans-unit id="user.library.application-count-singular">
-  <source><x id="0" equiv-text="${count}" /> application available</source>
-<target><x id="0" equiv-text="${count}" /> aplikasi tersedia</target>
+  <source><x id="0" equiv-text="${count}"/> application available</source>
+<target><x id="0" equiv-text="${count}"/> aplikasi tersedia</target>
 </trans-unit>
 <trans-unit id="user.library.application-count-plural">
-  <source><x id="0" equiv-text="${count}" /> applications available</source>
-<target><x id="0" equiv-text="${count}" /> aplikasi tersedia</target>
+  <source><x id="0" equiv-text="${count}"/> applications available</source>
+<target><x id="0" equiv-text="${count}"/> aplikasi tersedia</target>
 </trans-unit>
 <trans-unit id="s91cfe4fac0957ee7">
   <source>Application list</source>
@@ -12232,8 +12228,8 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
 <target>Perbarui detail</target>
 </trans-unit>
 <trans-unit id="s013620384af7c8b4">
-  <source>Device type <x id="0" equiv-text="${device.verboseName}" /> cannot be edited</source>
-<target>Jenis perangkat <x id="0" equiv-text="${device.verboseName}" /> tidak dapat diedit</target>
+  <source>Device type <x id="0" equiv-text="${device.verboseName}"/> cannot be edited</source>
+<target>Jenis perangkat <x id="0" equiv-text="${device.verboseName}"/> tidak dapat diedit</target>
 </trans-unit>
 <trans-unit id="sff945d3f59b93c5e">
   <source>MFA Devices</source>
@@ -12317,18 +12313,18 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
   <note from="lit-localize">ARIA label for the creation wizard when no entity singular is provided.</note>
 </trans-unit>
 <trans-unit id="wizard.ariaLabel.verbose-name.one">
-  <source>New <x id="0" equiv-text="${verboseName}" /> Wizard</source>
-  <target>Penyihir <x id="0" equiv-text="${verboseName}" /> baru</target>
+  <source>New <x id="0" equiv-text="${verboseName}"/> Wizard</source>
+  <target>Penyihir <x id="0" equiv-text="${verboseName}"/> baru</target>
   <note from="lit-localize">ARIA label for the creation wizard, where the entity singular is interpolated.</note>
 </trans-unit>
 <trans-unit id="used-by.consequence.cascade">
-  <source><x id="0" equiv-text="${relationName}" /> will be deleted</source>
-  <target><x id="0" equiv-text="${relationName}" /> akan dihapus</target>
+  <source><x id="0" equiv-text="${relationName}"/> will be deleted</source>
+  <target><x id="0" equiv-text="${relationName}"/> akan dihapus</target>
   <note from="lit-localize">Consequence of deletion, when the related object will also be deleted. The name of the related object will be included, in the format 'Related object will be deleted'.</note>
 </trans-unit>
 <trans-unit id="tokens.clipboard-copy.description">
-  <source><x id="0" equiv-text="${formatIntentLabel(intent)}" /> token for <x id="1" equiv-text="${userObj.username}" /></source>
-  <target><x id="0" equiv-text="${formatIntentLabel(intent)}" /> token untuk <x id="1" equiv-text="${userObj.username}" /></target>
+  <source><x id="0" equiv-text="${formatIntentLabel(intent)}"/> token for <x id="1" equiv-text="${userObj.username}"/></source>
+  <target><x id="0" equiv-text="${formatIntentLabel(intent)}"/> token untuk <x id="1" equiv-text="${userObj.username}"/></target>
   <note from="lit-localize">Description for a clipboard copy action for tokens, with the token intent and username as variables.</note>
 </trans-unit>
 <trans-unit id="captcha.cap-endpoint.description">
@@ -12347,8 +12343,8 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
   <note from="lit-localize">Description for CAPTCHA secret key field.</note>
 </trans-unit>
 <trans-unit id="stage.authenticator.email.sent-to-address">
-  <source>A verification token has been sent to your configured email address: <x id="0" equiv-text="${email}" /></source>
-  <target>Token verifikasi telah dikirim ke alamat email Anda yang dikonfigurasi: <x id="0" equiv-text="${email}" /></target>
+  <source>A verification token has been sent to your configured email address: <x id="0" equiv-text="${email}"/></source>
+  <target>Token verifikasi telah dikirim ke alamat email Anda yang dikonfigurasi: <x id="0" equiv-text="${email}"/></target>
   <note from="lit-localize">Displayed when a verification token has been sent to the user's configured email address.</note>
 </trans-unit>
 <trans-unit id="stage.authenticator.email.sent">
@@ -12357,13 +12353,13 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
   <note from="lit-localize">Displayed when a verification token has been sent to the user's email address.</note>
 </trans-unit>
 <trans-unit id="table.emptyState.default">
-  <source>No <x id="0" equiv-text="${pluralNoun}" /> found.</source>
-  <target>Tidak ada <x id="0" equiv-text="${pluralNoun}" /> yang ditemukan.</target>
+  <source>No <x id="0" equiv-text="${pluralNoun}"/> found.</source>
+  <target>Tidak ada <x id="0" equiv-text="${pluralNoun}"/> yang ditemukan.</target>
   <note from="lit-localize">Empty state message when no objects are found, where the entity plural is interpolated.</note>
 </trans-unit>
 <trans-unit id="table.emptyState.search">
-  <source>No <x id="0" equiv-text="${singularNoun}" /> matches "<x id="1" equiv-text="${truncateWords(this.search, 50)}" />"</source>
-  <target>Tidak ada <x id="0" equiv-text="${singularNoun}" /> yang cocok dengan "<x id="1" equiv-text="${truncateWords(this.search, 50)}" />"</target>
+  <source>No <x id="0" equiv-text="${singularNoun}"/> matches "<x id="1" equiv-text="${truncateWords(this.search, 50)}"/>"</source>
+  <target>Tidak ada <x id="0" equiv-text="${singularNoun}"/> yang cocok dengan "<x id="1" equiv-text="${truncateWords(this.search, 50)}"/>"</target>
   <note from="lit-localize">Empty state message when no objects match the search query, where the entity singular is interpolated, followed by the search query truncated to 50 characters.</note>
 </trans-unit>
 <trans-unit id="wizard.step.choose-type.generic">
@@ -12377,8 +12373,8 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
   <note from="lit-localize">Header for the creation wizard when no entity singular is provided.</note>
 </trans-unit>
 <trans-unit id="wizard.header.verbose-name.one">
-  <source>Create New <x id="0" equiv-text="${verboseName}" /></source>
-  <target>Buat Baru <x id="0" equiv-text="${verboseName}" /></target>
+  <source>Create New <x id="0" equiv-text="${verboseName}"/></source>
+  <target>Buat Baru <x id="0" equiv-text="${verboseName}"/></target>
   <note from="lit-localize">Header for the creation wizard, where the entity singular is interpolated.</note>
 </trans-unit>
 <trans-unit id="ak-secret-text-input.actions.modify">
@@ -12387,8 +12383,8 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
   <note from="lit-localize">Help text for secret input field to indicate that clicking will allow changing the value.</note>
 </trans-unit>
 <trans-unit id="notification-unread-count">
-  <source><x id="0" equiv-text="${unreadCount}" /> unread</source>
-  <target><x id="0" equiv-text="${unreadCount}" /> belum dibaca</target>
+  <source><x id="0" equiv-text="${unreadCount}"/> unread</source>
+  <target><x id="0" equiv-text="${unreadCount}"/> belum dibaca</target>
   <note from="lit-localize">Indicates the number of unread notifications in the notification drawer</note>
 </trans-unit>
 <trans-unit id="tokens.copy-button.label">
@@ -12402,8 +12398,8 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
   <note from="lit-localize">Label for a token entity, used in clipboard copy success messages.</note>
 </trans-unit>
 <trans-unit id="table-loading-bar-label">
-  <source>Loading <x id="0" equiv-text="${this.label ?? &quot;table&quot;}" /> data</source>
-  <target>Memuat <x id="0" equiv-text="${this.label ?? &quot;table&quot;}" /> data</target>
+  <source>Loading <x id="0" equiv-text="${this.label ?? &quot;table&quot;}"/> data</source>
+  <target>Memuat <x id="0" equiv-text="${this.label ?? &quot;table&quot;}"/> data</target>
   <note from="lit-localize">Label for progress bar shown when table data is loading</note>
 </trans-unit>
 <trans-unit id="locale-auto-detect-option">
@@ -12422,8 +12418,8 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
   <note from="lit-localize">Label for the command palette input</note>
 </trans-unit>
 <trans-unit id="wizard.step.choose-type">
-  <source>Choose <x id="0" equiv-text="${this.verboseName}" /> Type</source>
-  <target>Pilih <x id="0" equiv-text="${this.verboseName}" /> Jenis</target>
+  <source>Choose <x id="0" equiv-text="${this.verboseName}"/> Type</source>
+  <target>Pilih <x id="0" equiv-text="${this.verboseName}"/> Jenis</target>
   <note from="lit-localize">Label for the initial step in the creation wizard where the type of the entity being created is selected. The placeholder {entity} is replaced with the singular name of the entity, for example 'Choose User Type' or 'Choose Group Type'.</note>
 </trans-unit>
 <trans-unit id="language-selector-label">
@@ -12432,12 +12428,12 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
   <note from="lit-localize">Label for the language selection dropdown</note>
 </trans-unit>
 <trans-unit id="wizard.step.details">
-  <source><x id="0" equiv-text="${entityLabel}" /> Details</source>
-  <target><x id="0" equiv-text="${entityLabel}" /> Detail</target>
+  <source><x id="0" equiv-text="${entityLabel}"/> Details</source>
+  <target><x id="0" equiv-text="${entityLabel}"/> Detail</target>
   <note from="lit-localize">Label for the step in the creation wizard where the details of the entity being created are filled in. The placeholder {entity} is replaced with the name of the entity type, for example 'User Details' or 'Group Details'.</note>
 </trans-unit>
 <trans-unit id="locale-option-localized-label">
-  <source><x id="0" equiv-text="${relativeDisplayName}" /> (<x id="1" equiv-text="${localizedDisplayName}" />)</source>
+  <source><x id="0" equiv-text="${relativeDisplayName}"/> (<x id="1" equiv-text="${localizedDisplayName}"/>)</source>
   <note from="lit-localize">Locale option label showing the localized language name along with the native language name in parentheses.</note>
 </trans-unit>
 <trans-unit id="user.display.unknownUser">
@@ -12456,13 +12452,13 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
   <note from="lit-localize">Placeholder for the user search command in the admin interface</note>
 </trans-unit>
 <trans-unit id="table.search.placeholder">
-  <source>Search for <x id="0" equiv-text="${pluralNoun}" />...</source>
-  <target>Telusuri <x id="0" equiv-text="${pluralNoun}" />...</target>
+  <source>Search for <x id="0" equiv-text="${pluralNoun}"/>...</source>
+  <target>Telusuri <x id="0" equiv-text="${pluralNoun}"/>...</target>
   <note from="lit-localize">Placeholder text for the search input, where the entity plural is interpolated.</note>
 </trans-unit>
 <trans-unit id="usedBy.count.other">
-  <source><x id="0" equiv-text="${verboseName}" /> is associated with <x id="1" equiv-text="${usedByList.length}" /> objects.</source>
-  <target><x id="0" equiv-text="${verboseName}" /> dikaitkan dengan objek <x id="1" equiv-text="${usedByList.length}" />.</target>
+  <source><x id="0" equiv-text="${verboseName}"/> is associated with <x id="1" equiv-text="${usedByList.length}"/> objects.</source>
+  <target><x id="0" equiv-text="${verboseName}"/> dikaitkan dengan objek <x id="1" equiv-text="${usedByList.length}"/>.</target>
   <note from="lit-localize">Plural: N objects use this entity.</note>
 </trans-unit>
 <trans-unit id="user.library.search.type-to-filter-hint">
@@ -12471,69 +12467,69 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
   <note from="lit-localize">Screen reader hint to inform the user they can filter the application list by typing</note>
 </trans-unit>
 <trans-unit id="user.library.search.enter-to-open-hint">
-  <source>Press Enter to open <x id="0" equiv-text="${this.selectedApp.name}" /></source>
-  <target>Tekan Enter untuk membuka <x id="0" equiv-text="${this.selectedApp.name}" /></target>
+  <source>Press Enter to open <x id="0" equiv-text="${this.selectedApp.name}"/></source>
+  <target>Tekan Enter untuk membuka <x id="0" equiv-text="${this.selectedApp.name}"/></target>
   <note from="lit-localize">Screen reader hint to inform the user they can open the selected application by pressing Enter</note>
 </trans-unit>
 <trans-unit id="user.library.application-count.enter-to-open-hint">
-  <source>Press Enter to open <x id="0" equiv-text="${this.selectedApp.name}" /></source>
-  <target>Tekan Enter untuk membuka <x id="0" equiv-text="${this.selectedApp.name}" /></target>
+  <source>Press Enter to open <x id="0" equiv-text="${this.selectedApp.name}"/></source>
+  <target>Tekan Enter untuk membuka <x id="0" equiv-text="${this.selectedApp.name}"/></target>
   <note from="lit-localize">Screen reader hint to inform the user they can open the selected application by pressing Enter</note>
 </trans-unit>
 <trans-unit id="library.application.card.aria-label">
-  <source>Open "<x id="0" equiv-text="${application.name}" />"</source>
-  <target>Buka "<x id="0" equiv-text="${application.name}" />"</target>
+  <source>Open "<x id="0" equiv-text="${application.name}"/>"</source>
+  <target>Buka "<x id="0" equiv-text="${application.name}"/>"</target>
   <note from="lit-localize">Screen reader label for the application card</note>
 </trans-unit>
 <trans-unit id="library.application.row.aria-label">
-  <source>Open "<x id="0" equiv-text="${application.name}" />"</source>
-  <target>Buka "<x id="0" equiv-text="${application.name}" />"</target>
+  <source>Open "<x id="0" equiv-text="${application.name}"/>"</source>
+  <target>Buka "<x id="0" equiv-text="${application.name}"/>"</target>
   <note from="lit-localize">Screen reader label for the application list row</note>
 </trans-unit>
 <trans-unit id="usedBy.count.one">
-  <source><x id="0" equiv-text="${verboseName}" /> is associated with one object.</source>
-  <target><x id="0" equiv-text="${verboseName}" /> dikaitkan dengan satu objek.</target>
+  <source><x id="0" equiv-text="${verboseName}"/> is associated with one object.</source>
+  <target><x id="0" equiv-text="${verboseName}"/> dikaitkan dengan satu objek.</target>
   <note from="lit-localize">Singular: exactly one object uses this entity.</note>
 </trans-unit>
 <trans-unit id="captcha.provider-link.cap">
   <source>Use the
-                                        <x id="0" equiv-text="${html `&lt;a&#10;                                            target=&quot;_blank&quot;&#10;                                            rel=&quot;noopener noreferrer&quot;&#10;                                            href=${keyURL}&#10;                                            &gt;${formatAPISource()}&lt;/a&#10;                                        &gt;`}" />
+                                        <x id="0" equiv-text="${html `&lt;a&#10;                                            target=&quot;_blank&quot;&#10;                                            rel=&quot;noopener noreferrer&quot;&#10;                                            href=${keyURL}&#10;                                            &gt;${formatAPISource()}&lt;/a&#10;                                        &gt;`}"/>
                                         to self-host Cap and configure the endpoint.</source>
   <target>Gunakan
-                                        <x id="0" equiv-text="${html `&lt;a&#10;                                            target=&quot;_blank&quot;&#10;                                            rel=&quot;noopener noreferrer&quot;&#10;                                            href=${keyURL}&#10;                                            &gt;${formatAPISource()}&lt;/a&#10;                                        &gt;`}" />
+                                        <x id="0" equiv-text="${html `&lt;a&#10;                                            target=&quot;_blank&quot;&#10;                                            rel=&quot;noopener noreferrer&quot;&#10;                                            href=${keyURL}&#10;                                            &gt;${formatAPISource()}&lt;/a&#10;                                        &gt;`}"/>
                                         untuk menghosting sendiri Cap dan mengonfigurasi titik akhir.</target>
   <note from="lit-localize">Supplementary help text with link to Cap documentation.</note>
 </trans-unit>
 <trans-unit id="captcha.provider-link">
   <source>API keys can be obtained from the
-                                        <x id="0" equiv-text="${html `&lt;a&#10;                                                target=&quot;_blank&quot;&#10;                                                rel=&quot;noopener noreferrer&quot;&#10;                                                href=${keyURL}&#10;                                                &gt;${formatAPISource()}&lt;/a&#10;                                            &gt;.`}" /></source>
+                                        <x id="0" equiv-text="${html `&lt;a&#10;                                                target=&quot;_blank&quot;&#10;                                                rel=&quot;noopener noreferrer&quot;&#10;                                                href=${keyURL}&#10;                                                &gt;${formatAPISource()}&lt;/a&#10;                                            &gt;.`}"/></source>
   <target>Kunci API dapat diperoleh dari
-                                        <x id="0" equiv-text="${html `&lt;a&#10;                                                target=&quot;_blank&quot;&#10;                                                rel=&quot;noopener noreferrer&quot;&#10;                                                href=${keyURL}&#10;                                                &gt;${formatAPISource()}&lt;/a&#10;                                            &gt;.`}" /></target>
+                                        <x id="0" equiv-text="${html `&lt;a&#10;                                                target=&quot;_blank&quot;&#10;                                                rel=&quot;noopener noreferrer&quot;&#10;                                                href=${keyURL}&#10;                                                &gt;${formatAPISource()}&lt;/a&#10;                                            &gt;.`}"/></target>
   <note from="lit-localize">Supplementary help text with link to provider dashboard.</note>
 </trans-unit>
 <trans-unit id="model-form.headline">
-  <source><x id="0" equiv-text="${modifier} ${noun}" /></source>
+  <source><x id="0" equiv-text="${modifier} ${noun}"/></source>
   <note from="lit-localize">The headline for a form that creates or updates a model instance.</note>
 </trans-unit>
 <trans-unit id="form.submitted.verb-entity">
-  <source><x id="0" equiv-text="${verb} ${noun}" /></source>
+  <source><x id="0" equiv-text="${verb} ${noun}"/></source>
   <note from="lit-localize">The message shown after a form is successfully submitted.</note>
 </trans-unit>
 <trans-unit id="form.submitting.no-entity">
-  <source><x id="0" equiv-text="${submittingVerb}" />...</source>
+  <source><x id="0" equiv-text="${submittingVerb}"/>...</source>
   <note from="lit-localize">The message shown while a form is being submitted, when no entity name is provided.</note>
 </trans-unit>
 <trans-unit id="form.submitting">
-  <source><x id="0" equiv-text="${submittingVerb} ${verboseName}" />...</source>
+  <source><x id="0" equiv-text="${submittingVerb} ${verboseName}"/>...</source>
   <note from="lit-localize">The message shown while a form is being submitted.</note>
 </trans-unit>
 <trans-unit id="table.empty">
-  <source>No <x id="0" equiv-text="${verboseNamePlural.toLocaleLowerCase(this.activeLanguageTag)}" /> found.</source>
-  <target>Tidak ada <x id="0" equiv-text="${verboseNamePlural.toLocaleLowerCase(this.activeLanguageTag)}" /> yang ditemukan.</target>
+  <source>No <x id="0" equiv-text="${verboseNamePlural.toLocaleLowerCase(this.activeLanguageTag)}"/> found.</source>
+  <target>Tidak ada <x id="0" equiv-text="${verboseNamePlural.toLocaleLowerCase(this.activeLanguageTag)}"/> yang ditemukan.</target>
   <note from="lit-localize">The message to show when a table has no content. The placeholder {0} is replaced with the pluralized name of the type of entity being shown in the table.</note>
 </trans-unit>
 <trans-unit id="user.display.nameInParens">
-  <source>(<x id="0" equiv-text="${name}" />)</source>
+  <source>(<x id="0" equiv-text="${name}"/>)</source>
   <note from="lit-localize">The user's name in parentheses, used when the name is different from the username</note>
 </trans-unit>
 <trans-unit id="command-palette-trigger-tooltip">
@@ -12556,17 +12552,57 @@ tidak lolos jika salah satu atau kedua opsi yang dipilih sama atau di atas amban
   <note from="lit-localize">Truncation ellipsis</note>
 </trans-unit>
 <trans-unit id="used-by-list-item">
-  <source><x id="0" equiv-text="${formattedName}" /> (<x id="1" equiv-text="${consequence}" />)</source>
+  <source><x id="0" equiv-text="${formattedName}"/> (<x id="1" equiv-text="${consequence}"/>)</source>
   <note from="lit-localize">Used in list item, showing the name of the object and the consequence of deletion.</note>
 </trans-unit>
 <trans-unit id="usedBy.count.zero">
-  <source><x id="0" equiv-text="${verboseName}" /> is not associated with any objects.</source>
-  <target><x id="0" equiv-text="${verboseName}" /> tidak dikaitkan dengan objek apa pun.</target>
+  <source><x id="0" equiv-text="${verboseName}"/> is not associated with any objects.</source>
+  <target><x id="0" equiv-text="${verboseName}"/> tidak dikaitkan dengan objek apa pun.</target>
   <note from="lit-localize">Zero: no objects use this entity.</note>
 </trans-unit>
 <trans-unit id="flow.copyright">
   <source>@ 2026 Poltekkes Kemenkes Malang</source>
   <target>@ 2026 Poltekkes Kemenkes Malang</target>
+</trans-unit>
+<trans-unit id="sfcbfc5d70360ae19">
+  <source>Temporary password set for <x id="0" equiv-text="${result.succeeded.length}"/> user(s).</source>
+  <target>Password sementara berhasil diterapkan untuk <x id="0" equiv-text="${result.succeeded.length}"/> pengguna.</target>
+</trans-unit>
+<trans-unit id="s7f8e5b3f7b8ad076">
+  <source>Password set for <x id="0" equiv-text="${result.succeeded.length}"/> user(s); <x id="1" equiv-text="${result.failed.length}"/> failed.</source>
+  <target>Password berhasil diterapkan untuk <x id="0" equiv-text="${result.succeeded.length}"/> pengguna; <x id="1" equiv-text="${result.failed.length}"/> gagal.</target>
+</trans-unit>
+<trans-unit id="sf3f06998c221bd01">
+  <source>Set temporary password</source>
+  <target>Atur password sementara</target>
+</trans-unit>
+<trans-unit id="s4042262ccdb9603c">
+  <source>The same temporary password will be set for <x id="0" equiv-text="${this.users.length}"/> selected user(s).</source>
+  <target>Password sementara yang sama akan diterapkan untuk <x id="0" equiv-text="${this.users.length}"/> pengguna yang dipilih.</target>
+</trans-unit>
+<trans-unit id="s44771f9d8f5ad575">
+  <source>Temporary password</source>
+  <target>Password sementara</target>
+</trans-unit>
+<trans-unit id="s5515a136187c74c0">
+  <source>Confirm password</source>
+  <target>Konfirmasi password</target>
+</trans-unit>
+<trans-unit id="seed297ff38eb3794">
+  <source>Some passwords could not be set</source>
+  <target>Beberapa password tidak dapat diterapkan</target>
+</trans-unit>
+<trans-unit id="s9a7dea5eb93a8aa4">
+  <source>Imported <x id="0" equiv-text="${summary.created}"/> user(s), <x id="1" equiv-text="${summary.failed.length}"/> row(s) failed and <x id="2" equiv-text="${summary.passwordFailed.length}"/> password(s) failed.</source>
+  <target>Berhasil mengimpor <x id="0" equiv-text="${summary.created}"/> pengguna, <x id="1" equiv-text="${summary.failed.length}"/> baris gagal dan <x id="2" equiv-text="${summary.passwordFailed.length}"/> password gagal diterapkan.</target>
+</trans-unit>
+<trans-unit id="sf9149f8d7e4448ff">
+  <source><x id="0" equiv-text="${this.summary.passwordFailed.length}"/> user(s) were created but their temporary password could not be set:</source>
+  <target><x id="0" equiv-text="${this.summary.passwordFailed.length}"/> pengguna berhasil dibuat tetapi password sementaranya tidak dapat diterapkan:</target>
+</trans-unit>
+<trans-unit id="s9348dc519a57dac1">
+  <source>Set Temporary Password</source>
+  <target>Atur Password Sementara</target>
 </trans-unit>
 </body>
 </file>

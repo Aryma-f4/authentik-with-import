@@ -2,6 +2,7 @@ import "#admin/reports/ExportButton";
 import "#admin/users/UserActiveForm";
 import "#admin/users/ak-user-wizard";
 import "#admin/users/UserBulkRevokeSessionsForm";
+import "#admin/users/UserBulkPasswordForm";
 import "#admin/users/UserCSVImportForm";
 import "#admin/users/UserForm";
 import "#admin/users/UserImpersonateForm";
@@ -212,7 +213,12 @@ export class UserListPage extends WithLicenseSummary(
         const shouldShowWarning = this.selectedElements.find((el) => {
             return el.pk === currentUser?.pk || el.pk === originalUser?.pk;
         });
-        return html`<ak-user-bulk-revoke-sessions .users=${this.selectedElements}>
+        return html`<ak-user-bulk-password .users=${this.selectedElements}>
+                <button ?disabled=${disabled} slot="trigger" class="pf-c-button pf-m-primary">
+                    ${msg("Set Temporary Password")}
+                </button>
+            </ak-user-bulk-password>
+            <ak-user-bulk-revoke-sessions .users=${this.selectedElements}>
                 <button ?disabled=${disabled} slot="trigger" class="pf-c-button pf-m-warning">
                     ${msg("Revoke Sessions")}
                 </button>

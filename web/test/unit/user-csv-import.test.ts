@@ -107,6 +107,21 @@ describe("parseUserCSV", () => {
         expect(result.users[0].user).toEqual({ username: "jdoe", name: "jdoe" });
     });
 
+    it("treats a dash email placeholder as an omitted optional email", () => {
+        const result = parseUserCSV(
+            "username,name,email,type,is_active,path\nP17312265001,Aisyah,-,internal,true,users",
+        );
+
+        expect(result.errors).toEqual([]);
+        expect(result.users[0].user).toEqual({
+            username: "P17312265001",
+            name: "Aisyah",
+            type: "internal",
+            isActive: true,
+            path: "users",
+        });
+    });
+
     it("skips rows with a missing username and keeps the valid ones", () => {
         const result = parseUserCSV("username,name\njdoe,John\n,Nobody\nasmith,Alice");
 
