@@ -543,6 +543,7 @@ class UsersFilter(FilterSet):
     groups_by_pk = ModelMultipleChoiceFilter(
         field_name="groups",
         queryset=Group.objects.all().order_by("name"),
+        method="filter_groups_by_pk",
     )
 
     roles_by_name = ModelMultipleChoiceFilter(
@@ -559,6 +560,16 @@ class UsersFilter(FilterSet):
         if value:
             return queryset.filter(groups__is_superuser=True).distinct()
         return queryset.exclude(groups__is_superuser=True).distinct()
+
+    def filter_groups_by_pk(self, queryset, name, value):
+        """Avoid an expensive DISTINCT when filtering users by one group."""
+        groups = list(value)
+        if not groups:
+            return queryset
+        queryset = queryset.filter(groups__in=groups)
+        if len(groups) == 1:
+            return queryset
+        return queryset.distinct()
 
     def filter_attributes(self, queryset, name, value):
         """Filter attributes by query args"""

@@ -9,6 +9,7 @@ from django.utils.timezone import now
 from rest_framework.test import APITestCase
 
 from authentik.brands.models import Brand
+from authentik.core.api.users import UsersFilter
 from authentik.core.models import (
     USER_ATTRIBUTE_TOKEN_EXPIRING,
     AuthenticatedSession,
@@ -66,6 +67,32 @@ class TestUsersAPI(APITestCase):
             },
         )
         self.assertEqual(response.status_code, 200)
+
+    def test_filter_single_group_avoids_expensive_distinct(self):
+        """A single-group member listing must not DISTINCT every user column."""
+        group = Group.objects.create(name=generate_id())
+        group.users.add(self.user)
+
+        filtered = UsersFilter(
+            data={"groups_by_pk": [str(group.pk)]},
+            queryset=User.objects.all(),
+        ).qs
+
+        self.assertFalse(filtered.query.distinct)
+
+    def test_filter_multiple_groups_keeps_users_unique(self):
+        """Filtering several groups must not return duplicate users."""
+        first = Group.objects.create(name=generate_id())
+        second = Group.objects.create(name=generate_id())
+        first.users.add(self.user)
+        second.users.add(self.user)
+
+        filtered = UsersFilter(
+            data={"groups_by_pk": [str(first.pk), str(second.pk)]},
+            queryset=User.objects.all(),
+        ).qs
+
+        self.assertEqual(list(filtered), [self.user])
 
     def test_filter_is_superuser(self):
         """Test API filtering by superuser status"""
