@@ -74,7 +74,10 @@ class TestUsersAPI(APITestCase):
         group.users.add(self.user)
 
         filtered = UsersFilter(
-            data={"groups_by_pk": [str(group.pk)]},
+            data={
+                "groups_by_pk": [str(group.pk)],
+                "type": [UserTypes.INTERNAL, UserTypes.EXTERNAL],
+            },
             queryset=User.objects.all(),
         ).qs
 
